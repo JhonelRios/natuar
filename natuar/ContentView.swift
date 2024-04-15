@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  natuar
+//  natuAR
 //
 //  Created by Jhonel Rios Jaimes on 14/04/24.
 //
@@ -13,7 +13,7 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("NatuAR")
         }
         .padding()
     }
