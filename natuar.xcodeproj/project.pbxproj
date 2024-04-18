@@ -11,6 +11,12 @@
 		4928D3312BCCB9CF005420BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928D3302BCCB9CF005420BF /* ContentView.swift */; };
 		4928D3332BCCB9D0005420BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4928D3322BCCB9D0005420BF /* Assets.xcassets */; };
 		4928D3362BCCB9D0005420BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4928D3352BCCB9D0005420BF /* Preview Assets.xcassets */; };
+		49FE80D22BD0C97100C23E57 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80D12BD0C97100C23E57 /* MainScreen.swift */; };
+		49FE80DE2BD0CABC00C23E57 /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80DD2BD0CABC00C23E57 /* MapScreen.swift */; };
+		49FE80E02BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80DF2BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift */; };
+		49FE80E22BD0CB3B00C23E57 /* UserConfigScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80E12BD0CB3B00C23E57 /* UserConfigScreen.swift */; };
+		49FE80E42BD0CE1900C23E57 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80E32BD0CE1900C23E57 /* MapView.swift */; };
+		49FE80E72BD0D4E400C23E57 /* ControlButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80E62BD0D4E400C23E57 /* ControlButtonsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		4928D3302BCCB9CF005420BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4928D3322BCCB9D0005420BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4928D3352BCCB9D0005420BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49FE80D12BD0C97100C23E57 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		49FE80DD2BD0CABC00C23E57 /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
+		49FE80DF2BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAnimalsScreen.swift; sourceTree = "<group>"; };
+		49FE80E12BD0CB3B00C23E57 /* UserConfigScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigScreen.swift; sourceTree = "<group>"; };
+		49FE80E32BD0CE1900C23E57 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		49FE80E62BD0D4E400C23E57 /* ControlButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +63,12 @@
 		4928D32D2BCCB9CF005420BF /* natuar */ = {
 			isa = PBXGroup;
 			children = (
-				4928D32E2BCCB9CF005420BF /* natuarApp.swift */,
 				4928D3302BCCB9CF005420BF /* ContentView.swift */,
+				4928D32E2BCCB9CF005420BF /* natuarApp.swift */,
 				4928D3322BCCB9D0005420BF /* Assets.xcassets */,
+				49FE80D32BD0CA1000C23E57 /* Domains */,
 				4928D3342BCCB9D0005420BF /* Preview Content */,
+				49FE80CF2BD0C6DC00C23E57 /* Screens */,
 			);
 			path = natuar;
 			sourceTree = "<group>";
@@ -65,6 +79,98 @@
 				4928D3352BCCB9D0005420BF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		49FE80CF2BD0C6DC00C23E57 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				49FE80D12BD0C97100C23E57 /* MainScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		49FE80D32BD0CA1000C23E57 /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				49FE80D62BD0CA6700C23E57 /* UserConfig */,
+				49FE80D52BD0CA2F00C23E57 /* FavoriteAnimals */,
+				49FE80D42BD0CA2900C23E57 /* Map */,
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		49FE80D42BD0CA2900C23E57 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				49FE80D82BD0CA8900C23E57 /* Views */,
+				49FE80D72BD0CA7D00C23E57 /* Screens */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		49FE80D52BD0CA2F00C23E57 /* FavoriteAnimals */ = {
+			isa = PBXGroup;
+			children = (
+				49FE80DA2BD0CA9900C23E57 /* Screens */,
+				49FE80D92BD0CA9400C23E57 /* Views */,
+			);
+			path = FavoriteAnimals;
+			sourceTree = "<group>";
+		};
+		49FE80D62BD0CA6700C23E57 /* UserConfig */ = {
+			isa = PBXGroup;
+			children = (
+				49FE80DC2BD0CAA500C23E57 /* Screens */,
+				49FE80DB2BD0CAA000C23E57 /* Views */,
+			);
+			path = UserConfig;
+			sourceTree = "<group>";
+		};
+		49FE80D72BD0CA7D00C23E57 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				49FE80DD2BD0CABC00C23E57 /* MapScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		49FE80D82BD0CA8900C23E57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49FE80E32BD0CE1900C23E57 /* MapView.swift */,
+				49FE80E62BD0D4E400C23E57 /* ControlButtonsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		49FE80D92BD0CA9400C23E57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		49FE80DA2BD0CA9900C23E57 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				49FE80DF2BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		49FE80DB2BD0CAA000C23E57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		49FE80DC2BD0CAA500C23E57 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				49FE80E12BD0CB3B00C23E57 /* UserConfigScreen.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +243,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FE80E42BD0CE1900C23E57 /* MapView.swift in Sources */,
+				49FE80DE2BD0CABC00C23E57 /* MapScreen.swift in Sources */,
 				4928D3312BCCB9CF005420BF /* ContentView.swift in Sources */,
+				49FE80D22BD0C97100C23E57 /* MainScreen.swift in Sources */,
+				49FE80E02BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift in Sources */,
+				49FE80E22BD0CB3B00C23E57 /* UserConfigScreen.swift in Sources */,
+				49FE80E72BD0D4E400C23E57 /* ControlButtonsView.swift in Sources */,
 				4928D32F2BCCB9CF005420BF /* natuarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
