@@ -16,7 +16,7 @@
 		49FE80E02BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80DF2BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift */; };
 		49FE80E22BD0CB3B00C23E57 /* UserConfigScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80E12BD0CB3B00C23E57 /* UserConfigScreen.swift */; };
 		49FE80E42BD0CE1900C23E57 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80E32BD0CE1900C23E57 /* MapView.swift */; };
-		49FE80E72BD0D4E400C23E57 /* ControlButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80E62BD0D4E400C23E57 /* ControlButtonsView.swift */; };
+		49FE80E72BD0D4E400C23E57 /* ToggleMapStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80E62BD0D4E400C23E57 /* ToggleMapStyleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		49FE80DF2BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAnimalsScreen.swift; sourceTree = "<group>"; };
 		49FE80E12BD0CB3B00C23E57 /* UserConfigScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigScreen.swift; sourceTree = "<group>"; };
 		49FE80E32BD0CE1900C23E57 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		49FE80E62BD0D4E400C23E57 /* ControlButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonsView.swift; sourceTree = "<group>"; };
+		49FE80E62BD0D4E400C23E57 /* ToggleMapStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleMapStyleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +102,7 @@
 		49FE80D42BD0CA2900C23E57 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				49FE80E82BD0DFB500C23E57 /* Models */,
 				49FE80D82BD0CA8900C23E57 /* Views */,
 				49FE80D72BD0CA7D00C23E57 /* Screens */,
 			);
@@ -138,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				49FE80E32BD0CE1900C23E57 /* MapView.swift */,
-				49FE80E62BD0D4E400C23E57 /* ControlButtonsView.swift */,
+				49FE80E62BD0D4E400C23E57 /* ToggleMapStyleButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +172,13 @@
 				49FE80E12BD0CB3B00C23E57 /* UserConfigScreen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		49FE80E82BD0DFB500C23E57 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +257,7 @@
 				49FE80D22BD0C97100C23E57 /* MainScreen.swift in Sources */,
 				49FE80E02BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift in Sources */,
 				49FE80E22BD0CB3B00C23E57 /* UserConfigScreen.swift in Sources */,
-				49FE80E72BD0D4E400C23E57 /* ControlButtonsView.swift in Sources */,
+				49FE80E72BD0D4E400C23E57 /* ToggleMapStyleButton.swift in Sources */,
 				4928D32F2BCCB9CF005420BF /* natuarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +395,7 @@
 				DEVELOPMENT_TEAM = C77BXF2QSN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tu localización se usará para mostrarte animales cercanos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -416,6 +425,7 @@
 				DEVELOPMENT_TEAM = C77BXF2QSN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tu localización se usará para mostrarte animales cercanos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

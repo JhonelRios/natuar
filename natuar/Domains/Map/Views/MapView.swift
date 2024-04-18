@@ -10,23 +10,30 @@ import MapKit
 
 struct MapView : View {
     @State private var mapStyleCounter: Int = 0
-    
-    @State private var cameraPosition: MapCameraPosition = .region(.userRegion)
     @State private var currentMapStyle: MapStyle = .standard
     
+    @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
+    
+    
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            Map(position: $cameraPosition) { }
-                .mapStyle(currentMapStyle)
+        ZStack(alignment: .topLeading) {
+            Map(position: $position) {
+                UserAnnotation()
+            }
+            .mapControls {
+                MapUserLocationButton()
+            }
+            .mapStyle(currentMapStyle)
+            .onAppear {
+                CLLocationManager().requestWhenInUseAuthorization()
+            }
             
-            ControlButtonsView(
+            ToggleMapStyleButton(
                 onMapStyleButtonTapped: {
                     toggleMapStyle()
-                },
-                onLocationButtonTapped: {
-                    print("Test")
                 }
-            ).padding(.trailing, 20)
+            )
+            .padding(.trailing, 20)
         }
     }
     
