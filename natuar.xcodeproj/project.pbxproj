@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		417507652BD3270000BED55E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417507612BD3270000BED55E /* LoginView.swift */; };
+		417507662BD3270000BED55E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417507632BD3270000BED55E /* RegisterView.swift */; };
 		4928D32F2BCCB9CF005420BF /* natuarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928D32E2BCCB9CF005420BF /* natuarApp.swift */; };
 		4928D3312BCCB9CF005420BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928D3302BCCB9CF005420BF /* ContentView.swift */; };
 		4928D3332BCCB9D0005420BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4928D3322BCCB9D0005420BF /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		417507612BD3270000BED55E /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		417507632BD3270000BED55E /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		4928D32B2BCCB9CF005420BF /* natuar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = natuar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4928D32E2BCCB9CF005420BF /* natuarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = natuarApp.swift; sourceTree = "<group>"; };
 		4928D3302BCCB9CF005420BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +48,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		417507622BD3270000BED55E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				417507612BD3270000BED55E /* LoginView.swift */,
+			);
+			name = Login;
+			path = ../../../../Login;
+			sourceTree = "<group>";
+		};
+		417507642BD3270000BED55E /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				417507632BD3270000BED55E /* RegisterView.swift */,
+			);
+			name = Register;
+			path = ../../../../Register;
+			sourceTree = "<group>";
+		};
 		4928D3222BCCB9CF005420BF = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +106,8 @@
 		49FE80CF2BD0C6DC00C23E57 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				417507622BD3270000BED55E /* Login */,
+				417507642BD3270000BED55E /* Register */,
 				49FE80D12BD0C97100C23E57 /* MainScreen.swift */,
 			);
 			path = Screens;
@@ -252,8 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FE80E42BD0CE1900C23E57 /* MapView.swift in Sources */,
+				417507662BD3270000BED55E /* RegisterView.swift in Sources */,
 				49FE80DE2BD0CABC00C23E57 /* MapScreen.swift in Sources */,
 				4928D3312BCCB9CF005420BF /* ContentView.swift in Sources */,
+				417507652BD3270000BED55E /* LoginView.swift in Sources */,
 				49FE80D22BD0C97100C23E57 /* MainScreen.swift in Sources */,
 				49FE80E02BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift in Sources */,
 				49FE80E22BD0CB3B00C23E57 /* UserConfigScreen.swift in Sources */,
