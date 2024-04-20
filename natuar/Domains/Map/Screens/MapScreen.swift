@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct MapScreen: View {
+    @State private var showDetails = false
+    
     var body: some View {
-        MapView()
+        NavigationStack {
+            MapView()
+                .navigationTitle("Lima")
+                .toolbar {
+                    ToolbarItem {
+                        Button(action: {
+                            showDetails.toggle()
+                        }, label: {
+                            Image(systemName: "info.circle")
+                        })
+                    }
+                }
+        }
+        .sheet(isPresented: $showDetails, content: {
+            UbicationDetailsView(onCloseButtonTapped: {
+                showDetails.toggle()
+            })
+            .presentationDetents([.large])
+            .presentationDragIndicator(.visible)
+        })
     }
 }
 
