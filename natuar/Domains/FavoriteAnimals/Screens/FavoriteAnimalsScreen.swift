@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct FavoriteAnimalsScreen: View {
+    @State private var searchTerm = ""
+    
     var body: some View {
-        VStack {
-            Text("Lista de favoritos")
+        NavigationStack {
+            List {
+                ForEach(["Animal 1", "Animal 2", "Animal 3"], id: \.self) { text in
+                    Text(text)
+                }
+                .swipeActions {
+                    Button(role: .destructive) {
+                        print("delete")
+                    } label: {
+                        Image(systemName: "trash")
+                    }
+                }
+            }
+            .navigationTitle("Animales Favoritos")
+            .searchable(text: $searchTerm, prompt: "Buscar")
+            .listStyle(.plain)
         }
-        .padding()
     }
 }
 

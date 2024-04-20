@@ -17,6 +17,7 @@
 		49FE80E22BD0CB3B00C23E57 /* UserConfigScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80E12BD0CB3B00C23E57 /* UserConfigScreen.swift */; };
 		49FE80E42BD0CE1900C23E57 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80E32BD0CE1900C23E57 /* MapView.swift */; };
 		49FE80E72BD0D4E400C23E57 /* ToggleMapStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80E62BD0D4E400C23E57 /* ToggleMapStyleButton.swift */; };
+		49FE80EC2BD37F8E00C23E57 /* UbicationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80EB2BD37F8E00C23E57 /* UbicationDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		49FE80E12BD0CB3B00C23E57 /* UserConfigScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigScreen.swift; sourceTree = "<group>"; };
 		49FE80E32BD0CE1900C23E57 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		49FE80E62BD0D4E400C23E57 /* ToggleMapStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleMapStyleButton.swift; sourceTree = "<group>"; };
+		49FE80EB2BD37F8E00C23E57 /* UbicationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbicationDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				49FE80E32BD0CE1900C23E57 /* MapView.swift */,
 				49FE80E62BD0D4E400C23E57 /* ToggleMapStyleButton.swift */,
+				49FE80EB2BD37F8E00C23E57 /* UbicationDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				49FE80D22BD0C97100C23E57 /* MainScreen.swift in Sources */,
 				49FE80E02BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift in Sources */,
 				49FE80E22BD0CB3B00C23E57 /* UserConfigScreen.swift in Sources */,
+				49FE80EC2BD37F8E00C23E57 /* UbicationDetailsView.swift in Sources */,
 				49FE80E72BD0D4E400C23E57 /* ToggleMapStyleButton.swift in Sources */,
 				4928D32F2BCCB9CF005420BF /* natuarApp.swift in Sources */,
 			);
