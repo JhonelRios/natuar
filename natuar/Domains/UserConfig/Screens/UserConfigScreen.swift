@@ -7,14 +7,43 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct UserConfigScreen: View {
+
     var body: some View {
-        VStack {
-            Text("Configuración del usuario")
+        NavigationStack {
+            VStack {
+       
+                HStack {
+                    Image(systemName: "person.circle")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                    Text("Nombre y apellido")
+                }
+                .padding(.vertical, 30)
+                
+                List {
+                    Section(header: Text("CUENTA")) {
+                        ForEach(["Actualizar datos", "Idioma", "Cerrar Sesión", "Eliminar cuenta"], id: \.self) { text in
+                            NavigationLink(destination: Text(text)) {
+                                HStack {
+                                    Text(text)
+                                   
+                                }
+                                .padding(10)
+                            }
+                        }
+                    }
+                }
+                .listStyle(.plain)
+            }
+            .navigationTitle("Ajustes")
         }
-        .padding()
     }
 }
+
+
 
 #Preview {
     UserConfigScreen()
