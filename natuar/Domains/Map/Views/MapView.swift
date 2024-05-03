@@ -16,25 +16,38 @@ struct MapView : View {
     
     
     var body: some View {
-        ZStack(alignment: .topLeading) {
-            Map(position: $position) {
-                UserAnnotation()
-            }
-            .mapControls {
-                MapUserLocationButton()
-            }
-            .mapStyle(currentMapStyle)
-            .onAppear {
-                CLLocationManager().requestWhenInUseAuthorization()
+        ZStack(alignment: .bottom) {
+            ZStack(alignment: .topLeading) {
+                Map(position: $position) {
+                    UserAnnotation()
+                }
+                .mapControls {
+                    MapUserLocationButton()
+                }
+                .mapStyle(currentMapStyle)
+                .onAppear {
+                    CLLocationManager().requestWhenInUseAuthorization()
+                }
+                
+                ToggleMapStyleButton(
+                    onMapStyleButtonTapped: {
+                        toggleMapStyle()
+                    }
+                )
+                .padding(.trailing, 20)
+                
+                
             }
             
-            ToggleMapStyleButton(
-                onMapStyleButtonTapped: {
-                    toggleMapStyle()
-                }
-            )
-            .padding(.trailing, 20)
+            NavigationLink(destination: AnimalScreen(), label: {
+                Text("Ver modelo 3D")
+                    .padding(.all, 10)
+                    .background(.blue)
+                    .cornerRadius(8)
+                    .foregroundColor(.white)
+            })
         }
+        
     }
     
     private func toggleMapStyle() {
