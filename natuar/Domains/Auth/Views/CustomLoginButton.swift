@@ -17,8 +17,8 @@ struct CustomLoginButton: View {
                 .foregroundColor(.white)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(Color.blue)
-                .cornerRadius(10)
+                .background(Color("PrimaryColor"))
+                .cornerRadius(30)
         }
         .padding()
     }

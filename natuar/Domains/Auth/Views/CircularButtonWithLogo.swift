@@ -14,10 +14,13 @@ struct CircularButtonWithLogo: View {
     var body: some View {
         Button(action: action) {
             Image(imageName)
+            
                 .resizable()
-                .frame(width: 64, height: 64)
-                .padding(24)
-                .background(Color.gray)
+                .aspectRatio(contentMode: .fill)
+
+                .frame(width: 24, height: 24)
+                .padding(12)
+                .background(Color("BackgroundCircularButton"))
                 .clipShape(Circle())
         }
     }
