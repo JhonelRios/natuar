@@ -29,30 +29,37 @@ struct ARViewContainer: UIViewRepresentable {
         
         arView.session.run(config)
         
-//        let material = SimpleMaterial(color: .purple, isMetallic: true)
-//        
-//        let mesh = MeshResource.generateBox(size: 0.2, cornerRadius: 0.005)
-//        
-//        let animal = ModelEntity(mesh: mesh, materials: [material])
+        //        let material = SimpleMaterial(color: .purple, isMetallic: true)
+        //
+        //        let mesh = MeshResource.generateBox(size: 0.2, cornerRadius: 0.005)
+        //
+        //        let animal = ModelEntity(mesh: mesh, materials: [material])
         
-        let animal = try! Entity.load(named: "alpaca")
-//        let animal = try! ModelEntity.loadModel(named: "llama")
-        animal.transform.translation.z = -1.5
-//        animal.scale = SIMD3<Float>(repeating: )
+//                let animal = try! Entity.load(named: "alpaca")
+        let animal = try! Entity.load(named: "llama6")
+//        animal.transform.translation.z = -1.5
         
-//        let anchor = AnchorEntity(.plane(.horizontal, classification: .any, minimumBounds: SIMD2<Float>(0.2, 0.2)))
-//        let worldPosition = SIMD3<Float>(0, -10.0, -20.0)
-//        let worldPosition = SIMD3<Float>(0, 0, -1)
+        if let animalAnimation = animal.availableAnimations.first {
+            animal.playAnimation(animalAnimation.repeat(duration: .infinity), transitionDuration: 0.5, startsPaused: false)
+        } else {
+            print("No animation in USDZ")
+        }
+        
+        //        animal.scale = SIMD3<Float>(repeating: )
+        
+        //        let anchor = AnchorEntity(.plane(.horizontal, classification: .any, minimumBounds: SIMD2<Float>(0.2, 0.2)))
+        //        let worldPosition = SIMD3<Float>(0, -10.0, -20.0)
+        //        let worldPosition = SIMD3<Float>(0, 0, -1)
         let anchor = AnchorEntity(plane: .horizontal)
-//        anchor.position = SIMD3<Float>(0, 0, -1)
+        //        anchor.position = SIMD3<Float>(0, 0, -1)
         
-//        anchor.children.append(animal)
+        //        anchor.children.append(animal)
         anchor.addChild(animal)
         
-//        let cameraPosition = SIMD3<Float>(0, 0, -1)
-//        anchor.position += cameraPosition
+        //        let cameraPosition = SIMD3<Float>(0, 0, -1)
+        //        anchor.position += cameraPosition
         
-//        arView.scene.anchors.append(anchor)
+        //        arView.scene.anchors.append(anchor)
         arView.scene.addAnchor(anchor)
         
         return arView

@@ -11,7 +11,7 @@
 		4928D3312BCCB9CF005420BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928D3302BCCB9CF005420BF /* ContentView.swift */; };
 		4928D3332BCCB9D0005420BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4928D3322BCCB9D0005420BF /* Assets.xcassets */; };
 		4928D3362BCCB9D0005420BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4928D3352BCCB9D0005420BF /* Preview Assets.xcassets */; };
-		49FBF1CA2BE564E0007D05D0 /* llama.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49FBF1C92BE564E0007D05D0 /* llama.usdz */; };
+		49A4297C2BF91FD500EC8E8B /* llama6.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49A4297B2BF91FD500EC8E8B /* llama6.usdz */; };
 		49FBF1CE2BE567B3007D05D0 /* AnimalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBF1CD2BE567B3007D05D0 /* AnimalScreen.swift */; };
 		49FBF1EA2BE58590007D05D0 /* alpaca.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49FBF1E92BE58590007D05D0 /* alpaca.usdz */; };
 		49FE80D22BD0C97100C23E57 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80D12BD0C97100C23E57 /* MainScreen.swift */; };
@@ -29,7 +29,7 @@
 		4928D3302BCCB9CF005420BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4928D3322BCCB9D0005420BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4928D3352BCCB9D0005420BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		49FBF1C92BE564E0007D05D0 /* llama.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = llama.usdz; sourceTree = "<group>"; };
+		49A4297B2BF91FD500EC8E8B /* llama6.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = llama6.usdz; sourceTree = "<group>"; };
 		49FBF1CD2BE567B3007D05D0 /* AnimalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalScreen.swift; sourceTree = "<group>"; };
 		49FBF1E92BE58590007D05D0 /* alpaca.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = alpaca.usdz; sourceTree = "<group>"; };
 		49FE80D12BD0C97100C23E57 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -93,8 +93,8 @@
 		49FBF1C82BE564A5007D05D0 /* 3DModels */ = {
 			isa = PBXGroup;
 			children = (
+				49A4297B2BF91FD500EC8E8B /* llama6.usdz */,
 				49FBF1E92BE58590007D05D0 /* alpaca.usdz */,
-				49FBF1C92BE564E0007D05D0 /* llama.usdz */,
 			);
 			path = 3DModels;
 			sourceTree = "<group>";
@@ -275,9 +275,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49FBF1CA2BE564E0007D05D0 /* llama.usdz in Resources */,
 				49FBF1EA2BE58590007D05D0 /* alpaca.usdz in Resources */,
 				4928D3362BCCB9D0005420BF /* Preview Assets.xcassets in Resources */,
+				49A4297C2BF91FD500EC8E8B /* llama6.usdz in Resources */,
 				4928D3332BCCB9D0005420BF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
