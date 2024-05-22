@@ -15,22 +15,24 @@ struct MapScreen: View {
             MapView()
                 .navigationTitle("Lima")
                 .toolbar {
-                    ToolbarItem {
-                        Button(action: {
-                            showDetails.toggle()
-                        }, label: {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        HStack {
+                            Image(systemName: "mappin.and.ellipse")
+                                .imageScale(.medium)
+                            
+                            Text("Zona").bold()
+                        }
+                        .foregroundColor(Color("MapHeading"))
+                    }
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: UbicationDetailsView()) {
                             Image(systemName: "info.circle")
-                        })
+                        }
                     }
                 }
         }
-        .sheet(isPresented: $showDetails, content: {
-            UbicationDetailsView(onCloseButtonTapped: {
-                showDetails.toggle()
-            })
-            .presentationDetents([.large])
-            .presentationDragIndicator(.visible)
-        })
+        .accentColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
     }
 }
 

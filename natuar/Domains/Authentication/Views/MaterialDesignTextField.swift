@@ -21,12 +21,12 @@ public struct MaterialDesignTextField: View {
                     Text(placeholder)
                         .foregroundColor(.white)
                         .colorMultiply(placeholderColor)
-//                        .animatableFont(size: placeholderFontSize)
+                    //                        .animatableFont(size: placeholderFontSize)
                         .padding(2.0)
                         .layoutPriority(1)
                 }
-                    .padding([.leading], placeholderLeadingPadding)
-                    .padding([.bottom], placeholderBottomPadding)
+                .padding([.leading], placeholderLeadingPadding)
+                .padding([.bottom], placeholderBottomPadding)
                 Spacer()
             }
             HStack {
@@ -40,20 +40,20 @@ public struct MaterialDesignTextField: View {
                 Spacer()
             }
         }
-            .onChange(of: editing) {
-                focusField = $0
-                    ? .textField
-                    : nil
-                withAnimation(.easeOut(duration: 0.1)) {
-                    updateBorder()
-                    updatePlaceholder()
-                }
+        .onChange(of: editing) {
+            focusField = $0
+            ? .textField
+            : nil
+            withAnimation(.easeOut(duration: 0.1)) {
+                updateBorder()
+                updatePlaceholder()
             }
-            .frame(width: .infinity, height: 80)
+        }
+        .frame(width: .infinity, height: 80)
     }
     
     // MARK: Private properties
-
+    
     private let autocapitalization: TextInputAutocapitalization
     private let placeholder: String
     @State
@@ -126,8 +126,8 @@ public struct MaterialDesignTextField: View {
     
     private func updateBorderWidth() {
         borderWidth = editing
-            ? 2.0
-            : 1.0
+        ? 2.0
+        : 1.0
     }
     
     private func updatePlaceholder() {
@@ -149,12 +149,12 @@ public struct MaterialDesignTextField: View {
     private func updatePlaceholderColor() {
         if valid {
             placeholderColor = editing
-                ? Color("TextFieldColor")
-                : .gray
+            ? Color("TextFieldColor")
+            : .gray
         } else if text.isEmpty {
             placeholderColor = editing
-                ? .red
-                : .gray
+            ? .red
+            : .gray
         } else {
             placeholderColor = .red
         }

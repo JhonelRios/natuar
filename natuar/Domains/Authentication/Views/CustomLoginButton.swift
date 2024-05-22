@@ -23,3 +23,9 @@ struct CustomLoginButton: View {
         .padding()
     }
 }
+
+#Preview {
+    CustomLoginButton(text: "Hola") {
+        print("Hola")
+    }
+}

@@ -12,22 +12,23 @@ struct MainScreen: View {
         TabView {
             MapScreen()
                 .tabItem {
-                    Image(systemName: "map.fill")
+                    Image(systemName: "mappin.and.ellipse")
                     Text("Mapa")
                 }
             
             FavoriteAnimalsScreen()
                 .tabItem {
-                    Image(systemName: "heart.fill")
+                    Image(systemName: "heart").environment(\.symbolVariants, .none)
                     Text("Favoritos")
                 }
             
             UserConfigScreen()
                 .tabItem {
-                    Image(systemName: "gear")
+                    Image(systemName: "gearshape").environment(\.symbolVariants, .none)
                     Text("Ajustes")
                 }
         }
+        .accentColor(Color("PrimaryColor"))
     }
 }
 

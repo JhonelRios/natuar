@@ -23,16 +23,16 @@ final class ContentViewModel: ObservableObject {
     var text1Valid = true {
         didSet {
             hint1 = text1Valid
-                ? "Hint 1"
-                : "Error 1"
+            ? "Hint 1"
+            : "Error 1"
         }
     }
     @Published
     var text2Valid = true {
         didSet {
             hint2 = text2Valid
-                ? "Hint 2"
-                : "Error 2"
+            ? "Hint 2"
+            : "Error 2"
         }
     }
     
@@ -92,34 +92,34 @@ struct LoginScreen: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width*1, height: geometry.size.height*0.4)
                 VStack(alignment: .leading){
-
-                    Text("Iniciar Sesion").font(.system(size: 24,weight: .bold))
-                   
-//                    VStack {
-                        MaterialDesignTextField($viewModel.text1,
-                                                placeholder: viewModel.placeholder1,
-                                                hint: $viewModel.hint1,
-                                                editing: $editingTextField1,
-                                                valid: $viewModel.text1Valid)
-                            .onTapGesture { editingTextField1 = true }
-                        MaterialDesignTextField($viewModel.text2,
-                                                placeholder: viewModel.placeholder2,
-                                                hint: $viewModel.hint2,
-                                                editing: $editingTextField2,
-                                                valid: $viewModel.text2Valid)
-                            .onTapGesture { editingTextField2 = true }
-//                    }
-                        .contentShape(Rectangle())
-                        .onTapGesture {
-                            editingTextField1 = false
-                            editingTextField2 = false
-                        }
-
-        
-               
+                    
+                    Text("Iniciar Sesión").font(.system(size: 24,weight: .bold))
+                    
+                    //                    VStack {
+                    MaterialDesignTextField($viewModel.text1,
+                                            placeholder: viewModel.placeholder1,
+                                            hint: $viewModel.hint1,
+                                            editing: $editingTextField1,
+                                            valid: $viewModel.text1Valid)
+                    .onTapGesture { editingTextField1 = true }
+                    MaterialDesignTextField($viewModel.text2,
+                                            placeholder: viewModel.placeholder2,
+                                            hint: $viewModel.hint2,
+                                            editing: $editingTextField2,
+                                            valid: $viewModel.text2Valid)
+                    .onTapGesture { editingTextField2 = true }
+                    //                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        editingTextField1 = false
+                        editingTextField2 = false
+                    }
+                    
+                    
+                    
                     
                     VStack(alignment: .center,spacing: 20){
-                       
+                        
                         CustomLoginButton(text: "Ingresar", action:{})
                         Button("Olvidaste tu contraseña?") {
                             //TODO: login
@@ -127,26 +127,26 @@ struct LoginScreen: View {
                         Text("o").foregroundColor(Color(.gray))
                         HStack {
                             Spacer() // Agrega un espacio antes del botón de Google
-                              CircularButtonWithLogo(imageName: "google-logo") {
-                                  // Acción del botón de Google
-                              }
-
-                              CircularButtonWithLogo(imageName: "apple-logo") {
-                                  // Acción del botón de Apple
-                              }
-                              Spacer() // Agrega un espa
-                              }
+                            CircularButtonWithLogo(imageName: "google-logo") {
+                                // Acción del botón de Google
+                            }
                             
-                    }.frame(width: geometry.size.width * 0.9).font(.system(size: 16,weight: .bold)).foregroundColor(Color("PrimaryColor"))
-                 
+                            CircularButtonWithLogo(imageName: "apple-logo") {
+                                // Acción del botón de Apple
+                            }
+                            Spacer() // Agrega un espacio
+                        }
+                        
+                    }.frame(width: geometry.size.width * 0.9).font(.system(size: 16, weight: .bold)).foregroundColor(Color("PrimaryColor"))
+                    
                     
                     Spacer().frame(height: 40)
-                
-         
-                        
+                    
+                    
+                    
                     
                 }.padding()
-
+                
             }.ignoresSafeArea()
             
             

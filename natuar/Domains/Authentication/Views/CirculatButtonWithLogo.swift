@@ -17,7 +17,7 @@ struct CircularButtonWithLogo: View {
             
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-
+            
                 .frame(width: 24, height: 24)
                 .padding(12)
                 .background(Color("BackgroundCircularButton"))
