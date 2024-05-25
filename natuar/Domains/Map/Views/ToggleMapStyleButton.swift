@@ -14,33 +14,17 @@ struct ToggleMapStyleButton : View {
     var body: some View {
         Button(action: onMapStyleButtonTapped) {
             Image(systemName: "map.fill")
-                .foregroundColor(.gray)
-                .padding()
+                .font(.system(size: 16, weight: .bold)) // Customize the size and weight as needed
+                .foregroundColor(.blue)
+                .padding(10)  // Adjust padding to match the size of the icon and background
+                .background(.white)  // Button background color
+                .opacity(9)
+                .clipShape(RoundedRectangle(cornerRadius: 8))  // Rounded corners
+//                .shadow(color: .gray, radius: 1, x: 0, y: 0)  // Subtle shadow for 3D effect
         }
-        .background(.white)
-        .frame(width: 60, height: 60)
-        .cornerRadius(20)
-        .shadow(radius: 2)
-//        .opacity(0.5)
+        
     }
 }
-
-// Extensión para redondear esquinas específicas
-//extension View {
-//    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-//        clipShape( RoundedCorner(radius: radius, corners: corners) )
-//    }
-//}
-//
-//struct RoundedCorner: Shape {
-//    var radius: CGFloat = .infinity
-//    var corners: UIRectCorner = .allCorners
-//
-//    func path(in rect: CGRect) -> Path {
-//        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-//        return Path(path.cgPath)
-//    }
-//}
 
 #Preview {
     ToggleMapStyleButton(

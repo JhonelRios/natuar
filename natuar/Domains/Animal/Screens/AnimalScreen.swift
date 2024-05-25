@@ -10,8 +10,27 @@ import RealityKit
 import ARKit
 
 struct AnimalScreen: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State private var showDetails = true
+    
     var body: some View {
-        ARViewContainer()
+        ZStack(alignment: .topLeading) {
+            ARViewContainer()
+                .ignoresSafeArea()
+                .navigationBarHidden(true)
+                .sheet(isPresented: $showDetails, content: {
+                    AnimalDetailsView()
+                        .presentationDetents([.height(50), .medium, .large])
+                        .presentationDragIndicator(.visible)
+                        .presentationBackgroundInteraction(.enabled(upThrough: .large))
+                        .interactiveDismissDisabled()
+                })
+            
+            BackButton(action: {
+                presentationMode.wrappedValue.dismiss()
+            })
+        }
     }
 }
 
@@ -40,7 +59,7 @@ struct ARViewContainer: UIViewRepresentable {
         let anchor = AnchorEntity(plane: .horizontal)
         
         anchor.addChild(animal)
-
+        
         arView.scene.addAnchor(anchor)
         
         return arView

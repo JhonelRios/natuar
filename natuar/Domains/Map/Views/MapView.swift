@@ -20,24 +20,44 @@ struct MapView : View {
             ZStack(alignment: .topLeading) {
                 Map(position: $position) {
                     UserAnnotation()
+                    
+                    //                    let currentCoordinate = position.region?.center ?? CLLocationCoordinate2D()
+                    
+                    //                    Marker("Llama", coordinate: CLLocationCoordinate2D(latitude: -12.057191582326803, longitude: -77.05857539270373))
+                    Annotation("Llama", coordinate: CLLocationCoordinate2D(latitude: -12.057191582326803, longitude: -77.05857539270373)) {
+                        NavigationLink(destination: AnimalScreen()) {
+                            Image(systemName: "mappin.circle.fill")
+                                .font(.system(size: 24))
+                                .foregroundColor(Color("PrimaryColor"))
+                        }
+                    }
                 }
                 .mapControls {
                     MapUserLocationButton()
+                    MapCompass()
                 }
                 .mapStyle(currentMapStyle)
                 .onAppear {
                     CLLocationManager().requestWhenInUseAuthorization()
                 }
-                
-                ToggleMapStyleButton(
-                    onMapStyleButtonTapped: {
-                        toggleMapStyle()
-                    }
-                )
-                .padding(.trailing, 20)
-                
-                
+                .onMapCameraChange { context in
+                    print(context.region)
+                }
             }
+            
+            //            ToggleMapStyleButton(
+            //                onMapStyleButtonTapped: {
+            //                    toggleMapStyle()
+            //                }
+            //            )
+            Button(action: { toggleMapStyle() }, label: {
+                Text("Cambiar estilo del mapa")
+                    .foregroundColor(.white)
+                    .padding(.all, 10)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+            })
+            .padding(.bottom)
             
             NavigationLink(destination: AnimalScreen(), label: {
                 Text("Ver modelo 3D")
@@ -46,6 +66,7 @@ struct MapView : View {
                     .cornerRadius(8)
                     .foregroundColor(.white)
             })
+            .padding(.bottom, 80)
         }
         
     }
@@ -53,18 +74,6 @@ struct MapView : View {
     private func toggleMapStyle() {
         mapStyleCounter += 1
         currentMapStyle = mapStyleCounter % 2 == 0 ? .standard : .imagery
-    }
-}
-
-extension CLLocationCoordinate2D {
-    static var userLocation: CLLocationCoordinate2D {
-        return .init(latitude: 25.7602, longitude: -80.1959)
-    }
-}
-
-extension MKCoordinateRegion {
-    static var userRegion: MKCoordinateRegion {
-        return .init(center: .userLocation, latitudinalMeters: 1000, longitudinalMeters: 1000)
     }
 }
 

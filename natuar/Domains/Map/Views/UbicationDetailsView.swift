@@ -8,28 +8,38 @@
 import SwiftUI
 
 struct UbicationDetailsView : View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var showDetails = true
     
     var body: some View {
-        VStack(alignment: .leading) {
-            AsyncImage(url: URL(string: "https://cdn.getyourguide.com/img/location/54b40793cd6af.jpeg/49.webp")) { image in
-                image.resizable().aspectRatio(contentMode: .fill)
-            } placeholder: {
-                ProgressView()
+        ZStack(alignment: .topLeading) {
+            VStack(alignment: .leading) {
+                AsyncImage(url: URL(string: "https://cdn.getyourguide.com/img/location/54b40793cd6af.jpeg/49.webp")) { image in
+                    image.resizable().aspectRatio(contentMode: .fill)
+                } placeholder: {
+                    ProgressView()
+                }
+                .containerRelativeFrame(.horizontal)
+                .frame(height: 450, alignment: .bottom)
+                .clipped()
+                
+                Spacer()
             }
-            .frame(height: 450, alignment: .bottom)
-            .clipped()
+            .ignoresSafeArea(edges: .top)
+            .navigationBarHidden(true)
+            .sheet(isPresented: $showDetails, content: {
+                DetailsView()
+                    .presentationDetents([.medium])
+                    .presentationDragIndicator(.visible)
+                    .presentationBackgroundInteraction(.enabled(upThrough: .medium))
+                    .interactiveDismissDisabled()
+            })
             
-            Spacer()
+            BackButton(action: {
+                presentationMode.wrappedValue.dismiss()
+            })
         }
-        .ignoresSafeArea()
-        .sheet(isPresented: $showDetails, content: {
-            DetailsView()
-                .presentationDetents([.medium])
-                .presentationDragIndicator(.visible)
-                .presentationBackgroundInteraction(.enabled(upThrough: .medium))
-                .interactiveDismissDisabled()
-        })
     }
 }
 
