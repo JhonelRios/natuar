@@ -49,10 +49,10 @@ final class ContentViewModel: ObservableObject {
 }
 
 struct LoginScreen: View {
-    
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var emailBool: Bool = true
+    
     @State
     private var editingTextField1 = false {
         didSet {
@@ -66,6 +66,7 @@ struct LoginScreen: View {
             }
         }
     }
+    
     @State
     private var editingTextField2 = false {
         didSet {
@@ -79,13 +80,14 @@ struct LoginScreen: View {
             }
         }
     }
+    
     @StateObject
     private var viewModel = ContentViewModel()
     
+    var loginAction: () -> Void
+    
     var body : some View {
-        
         GeometryReader{ geometry in
-            
             VStack{
                 Image("FrontPage")
                     .resizable()
@@ -115,16 +117,15 @@ struct LoginScreen: View {
                         editingTextField2 = false
                     }
                     
-                    
-                    
-                    
                     VStack(alignment: .center,spacing: 20){
+                        CustomLoginButton(text: "Ingresar", action: loginAction)
                         
-                        CustomLoginButton(text: "Ingresar", action:{})
                         Button("Olvidaste tu contraseña?") {
                             //TODO: login
                         }
+                        
                         Text("o").foregroundColor(Color(.gray))
+                        
                         HStack {
                             Spacer() // Agrega un espacio antes del botón de Google
                             CircularButtonWithLogo(imageName: "google-logo") {
@@ -134,30 +135,22 @@ struct LoginScreen: View {
                             CircularButtonWithLogo(imageName: "apple-logo") {
                                 // Acción del botón de Apple
                             }
+                            
                             Spacer() // Agrega un espacio
                         }
-                        
                     }.frame(width: geometry.size.width * 0.9).font(.system(size: 16, weight: .bold)).foregroundColor(Color("PrimaryColor"))
                     
                     
                     Spacer().frame(height: 40)
-                    
-                    
-                    
-                    
                 }.padding()
-                
             }.ignoresSafeArea()
-            
-            
         }
     }
-    
 }
 
 
 #Preview {
-    LoginScreen()
+    LoginScreen(loginAction: { print("Test") })
 }
 
 

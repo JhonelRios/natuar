@@ -8,27 +8,33 @@
 import SwiftUI
 
 struct MainScreen: View {
+    @State var logged = false
+    
     var body: some View {
-        TabView {
-            MapScreen()
-                .tabItem {
-                    Image(systemName: "mappin.and.ellipse")
-                    Text("Mapa")
-                }
-            
-            FavoriteAnimalsScreen()
-                .tabItem {
-                    Image(systemName: "heart").environment(\.symbolVariants, .none)
-                    Text("Favoritos")
-                }
-            
-            UserConfigScreen()
-                .tabItem {
-                    Image(systemName: "gearshape").environment(\.symbolVariants, .none)
-                    Text("Ajustes")
-                }
+        if !logged {
+            LoginScreen(loginAction: { logged.toggle() })
+        } else {
+            TabView {
+                MapScreen()
+                    .tabItem {
+                        Image(systemName: "mappin.and.ellipse")
+                        Text("Mapa")
+                    }
+                
+                FavoriteAnimalsScreen()
+                    .tabItem {
+                        Image(systemName: "heart").environment(\.symbolVariants, .none)
+                        Text("Favoritos")
+                    }
+                
+                UserConfigScreen()
+                    .tabItem {
+                        Image(systemName: "gearshape").environment(\.symbolVariants, .none)
+                        Text("Ajustes")
+                    }
+            }
+            .accentColor(Color("PrimaryColor"))
         }
-        .accentColor(Color("PrimaryColor"))
     }
 }
 
