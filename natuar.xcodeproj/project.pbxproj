@@ -15,6 +15,7 @@
 		49737BC32C016961009D4459 /* AnimalDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49737BC22C016961009D4459 /* AnimalDetailsView.swift */; };
 		49737BC62C016A93009D4459 /* InfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49737BC52C016A93009D4459 /* InfoCardView.swift */; };
 		49737BC92C017424009D4459 /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49737BC82C017424009D4459 /* SegmentedPicker.swift */; };
+		498A49212C0683CE003DBFF0 /* AnimalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A49202C0683CE003DBFF0 /* AnimalCard.swift */; };
 		49A4297C2BF91FD500EC8E8B /* llama6.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49A4297B2BF91FD500EC8E8B /* llama6.usdz */; };
 		49DFB7502BFD9B8700EEA79E /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB74F2BFD9B8700EEA79E /* LoginScreen.swift */; };
 		49DFB7522BFD9C0800EEA79E /* CirculatButtonWithLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */; };
@@ -41,6 +42,7 @@
 		49737BC22C016961009D4459 /* AnimalDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailsView.swift; sourceTree = "<group>"; };
 		49737BC52C016A93009D4459 /* InfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardView.swift; sourceTree = "<group>"; };
 		49737BC82C017424009D4459 /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
+		498A49202C0683CE003DBFF0 /* AnimalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCard.swift; sourceTree = SOURCE_ROOT; };
 		49A4297B2BF91FD500EC8E8B /* llama6.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = llama6.usdz; sourceTree = "<group>"; };
 		49DFB74F2BFD9B8700EEA79E /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirculatButtonWithLogo.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		49FE80D92BD0CA9400C23E57 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				498A49202C0683CE003DBFF0 /* AnimalCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				49FE80E22BD0CB3B00C23E57 /* UserConfigScreen.swift in Sources */,
 				49FE80EC2BD37F8E00C23E57 /* UbicationDetailsView.swift in Sources */,
 				49737BC92C017424009D4459 /* SegmentedPicker.swift in Sources */,
+				498A49212C0683CE003DBFF0 /* AnimalCard.swift in Sources */,
 				49FE80E72BD0D4E400C23E57 /* ToggleMapStyleButton.swift in Sources */,
 				4928D32F2BCCB9CF005420BF /* natuarApp.swift in Sources */,
 				49DFB7502BFD9B8700EEA79E /* LoginScreen.swift in Sources */,
