@@ -14,15 +14,16 @@ struct FavoriteAnimalsScreen: View {
         NavigationStack {
             List {
                 ForEach(["Animal 1", "Animal 2", "Animal 3"], id: \.self) { text in
-                    Text(text)
+                    AnimalCard(background: .green)
+                        .listRowSeparator(.hidden)
                 }
-                .swipeActions {
-                    Button(role: .destructive) {
-                        print("delete")
-                    } label: {
-                        Image(systemName: "trash")
-                    }
-                }
+//                .swipeActions {
+//                    Button(role: .destructive) {
+//                        print("delete")
+//                    } label: {
+//                        Image(systemName: "trash")
+//                    }
+//                }
             }
             .navigationTitle("Animales Favoritos")
             .searchable(text: $searchTerm, prompt: "Buscar")
