@@ -7,12 +7,22 @@ public struct MaterialDesignTextField: View {
     
     public var body: some View {
         ZStack {
-            TextField("", text: $text)
-                .padding(10)
-                .background(RoundedRectangle(cornerRadius: 4.0, style: .continuous)
-                    .stroke(borderColor, lineWidth: borderWidth))
-                .focused($focusField, equals: .textField)
-                .textInputAutocapitalization(autocapitalization)
+            if isPassword {
+                SecureField("", text: $text)
+                    .padding(12)
+                    .background(RoundedRectangle(cornerRadius: 4.0, style: .continuous)
+                        .stroke(borderColor, lineWidth: borderWidth))
+                    .focused($focusField, equals: .textField)
+                    .textInputAutocapitalization(autocapitalization)
+            } else {
+                TextField("", text: $text)
+                    .padding(12)
+                    .background(RoundedRectangle(cornerRadius: 4.0, style: .continuous)
+                        .stroke(borderColor, lineWidth: borderWidth))
+                    .focused($focusField, equals: .textField)
+                    .textInputAutocapitalization(autocapitalization)
+            }
+                
             HStack {
                 ZStack {
                     Color(.white)
@@ -21,7 +31,7 @@ public struct MaterialDesignTextField: View {
                     Text(placeholder)
                         .foregroundColor(.white)
                         .colorMultiply(placeholderColor)
-                    //                        .animatableFont(size: placeholderFontSize)
+//                                            .animatableFont(size: placeholderFontSize)
                         .padding(2.0)
                         .layoutPriority(1)
                 }
@@ -29,21 +39,20 @@ public struct MaterialDesignTextField: View {
                 .padding([.bottom], placeholderBottomPadding)
                 Spacer()
             }
-            HStack {
-                VStack {
-                    Spacer()
-                    Text(hint)
-                        .font(.system(size: 10.0))
-                        .foregroundColor(.gray)
-                        .padding([.leading], 10.0)
-                }
-                Spacer()
-            }
+//            HStack {
+//                VStack {
+//                    Spacer()
+//                    Text(hint)
+//                        .font(.system(size: 10.0))
+//                        .foregroundColor(.gray)
+//                        .padding([.leading], 10.0)
+//                }
+//                Spacer()
+//            }
         }
         .onChange(of: editing) {
-            focusField = $0
-            ? .textField
-            : nil
+            focusField = editing ? .textField : nil
+            
             withAnimation(.easeOut(duration: 0.1)) {
                 updateBorder()
                 updatePlaceholder()
@@ -81,6 +90,10 @@ public struct MaterialDesignTextField: View {
     @Binding
     private var valid: Bool
     
+    private var isPassword: Bool
+    
+    private var onFocus: () -> Void
+    
     // MARK: - Initialization
     
     /// Creates a Material Design inspired text field with an animated border and placeholder.
@@ -96,13 +109,17 @@ public struct MaterialDesignTextField: View {
                 hint: Binding<String>,
                 editing: Binding<Bool>,
                 valid: Binding<Bool>,
-                autocapitalization: TextInputAutocapitalization = .sentences) {
+                autocapitalization: TextInputAutocapitalization = .sentences,
+                onFocus: @escaping () -> Void = {},
+                isPassword: Bool = false) {
         _text = text
         self.placeholder = placeholder
         _hint = hint
         _editing = editing
         _valid = valid
         self.autocapitalization = autocapitalization
+        self.isPassword = isPassword
+        self.onFocus = onFocus
     }
     
     // MARK: - Methods
@@ -173,7 +190,7 @@ public struct MaterialDesignTextField: View {
     private func updatePlaceholderPosition() {
         if editing
             || !text.isEmpty {
-            placeholderBottomPadding = 34.0
+            placeholderBottomPadding = 40.0
             placeholderLeadingPadding = 8.0
         } else {
             placeholderBottomPadding = 0.0

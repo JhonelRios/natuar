@@ -16,8 +16,11 @@
 		49737BC62C016A93009D4459 /* InfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49737BC52C016A93009D4459 /* InfoCardView.swift */; };
 		49737BC92C017424009D4459 /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49737BC82C017424009D4459 /* SegmentedPicker.swift */; };
 		498A49212C0683CE003DBFF0 /* AnimalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A49202C0683CE003DBFF0 /* AnimalCard.swift */; };
+		4996375C2C07DF1E004486BB /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996375B2C07DF1E004486BB /* LoginScreen.swift */; };
+		4996375F2C07F604004486BB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996375E2C07F604004486BB /* LoginViewModel.swift */; };
+		499637632C07F97F004486BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499637622C07F97F004486BB /* Constants.swift */; };
+		499637652C08033A004486BB /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499637642C08033A004486BB /* UserDefaultsManager.swift */; };
 		49A4297C2BF91FD500EC8E8B /* llama6.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49A4297B2BF91FD500EC8E8B /* llama6.usdz */; };
-		49DFB7502BFD9B8700EEA79E /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB74F2BFD9B8700EEA79E /* LoginScreen.swift */; };
 		49DFB7522BFD9C0800EEA79E /* CirculatButtonWithLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */; };
 		49DFB7542BFD9C5800EEA79E /* CustomLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */; };
 		49DFB7562BFD9C7300EEA79E /* MaterialDesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7552BFD9C7300EEA79E /* MaterialDesignTextField.swift */; };
@@ -43,8 +46,11 @@
 		49737BC52C016A93009D4459 /* InfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardView.swift; sourceTree = "<group>"; };
 		49737BC82C017424009D4459 /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
 		498A49202C0683CE003DBFF0 /* AnimalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCard.swift; sourceTree = SOURCE_ROOT; };
+		4996375B2C07DF1E004486BB /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		4996375E2C07F604004486BB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		499637622C07F97F004486BB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		499637642C08033A004486BB /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		49A4297B2BF91FD500EC8E8B /* llama6.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = llama6.usdz; sourceTree = "<group>"; };
-		49DFB74F2BFD9B8700EEA79E /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirculatButtonWithLogo.swift; sourceTree = "<group>"; };
 		49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginButton.swift; sourceTree = "<group>"; };
 		49DFB7552BFD9C7300EEA79E /* MaterialDesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDesignTextField.swift; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 		49737BBD2C0158F2009D4459 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				499637602C07F96D004486BB /* Utils */,
 				49737BBE2C0158F9009D4459 /* Views */,
 			);
 			path = Shared;
@@ -134,9 +141,27 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		4996375D2C07F5F4004486BB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4996375E2C07F604004486BB /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		499637602C07F96D004486BB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				499637622C07F97F004486BB /* Constants.swift */,
+				499637642C08033A004486BB /* UserDefaultsManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		49DFB74C2BFD9B2700EEA79E /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				4996375D2C07F5F4004486BB /* ViewModel */,
 				49DFB74E2BFD9B4300EEA79E /* Screens */,
 				49DFB74D2BFD9B3E00EEA79E /* Views */,
 			);
@@ -156,7 +181,7 @@
 		49DFB74E2BFD9B4300EEA79E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				49DFB74F2BFD9B8700EEA79E /* LoginScreen.swift */,
+				4996375B2C07DF1E004486BB /* LoginScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -368,20 +393,23 @@
 				49737BC62C016A93009D4459 /* InfoCardView.swift in Sources */,
 				49FE80E42BD0CE1900C23E57 /* MapView.swift in Sources */,
 				49FE80DE2BD0CABC00C23E57 /* MapScreen.swift in Sources */,
+				499637652C08033A004486BB /* UserDefaultsManager.swift in Sources */,
 				4928D3312BCCB9CF005420BF /* ContentView.swift in Sources */,
 				49DFB7522BFD9C0800EEA79E /* CirculatButtonWithLogo.swift in Sources */,
 				49737BC32C016961009D4459 /* AnimalDetailsView.swift in Sources */,
 				49FE80D22BD0C97100C23E57 /* MainScreen.swift in Sources */,
+				4996375F2C07F604004486BB /* LoginViewModel.swift in Sources */,
 				49DFB7542BFD9C5800EEA79E /* CustomLoginButton.swift in Sources */,
 				49FE80E02BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift in Sources */,
+				499637632C07F97F004486BB /* Constants.swift in Sources */,
 				49FE80E22BD0CB3B00C23E57 /* UserConfigScreen.swift in Sources */,
 				49FE80EC2BD37F8E00C23E57 /* UbicationDetailsView.swift in Sources */,
 				49737BC92C017424009D4459 /* SegmentedPicker.swift in Sources */,
 				498A49212C0683CE003DBFF0 /* AnimalCard.swift in Sources */,
 				49FE80E72BD0D4E400C23E57 /* ToggleMapStyleButton.swift in Sources */,
 				4928D32F2BCCB9CF005420BF /* natuarApp.swift in Sources */,
-				49DFB7502BFD9B8700EEA79E /* LoginScreen.swift in Sources */,
 				49FBF1CE2BE567B3007D05D0 /* AnimalScreen.swift in Sources */,
+				4996375C2C07DF1E004486BB /* LoginScreen.swift in Sources */,
 				49737BC02C01590D009D4459 /* BackButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

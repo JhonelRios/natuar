@@ -20,30 +20,18 @@ final class ContentViewModel: ObservableObject {
     @Published
     var text2 = ""
     @Published
-    var text1Valid = true {
-        didSet {
-            hint1 = text1Valid
-            ? "Hint 1"
-            : "Error 1"
-        }
-    }
+    var text1Valid = true
     @Published
-    var text2Valid = true {
-        didSet {
-            hint2 = text2Valid
-            ? "Hint 2"
-            : "Error 2"
-        }
-    }
+    var text2Valid = true
     
     // MARK: - Methods
     
     func validateText1() {
-        text1Valid.toggle()
+        // TODO
     }
     
     func validateText2() {
-        text2Valid.toggle()
+        // TODO
     }
     
 }
@@ -51,7 +39,6 @@ final class ContentViewModel: ObservableObject {
 struct LoginScreen: View {
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var emailBool: Bool = true
     
     @State
     private var editingTextField1 = false {
@@ -61,8 +48,6 @@ struct LoginScreen: View {
             }
             if editingTextField1 {
                 editingTextField2 = false
-            } else {
-                viewModel.validateText1()
             }
         }
     }
@@ -75,8 +60,6 @@ struct LoginScreen: View {
             }
             if editingTextField2 {
                 editingTextField1 = false
-            } else {
-                viewModel.validateText2()
             }
         }
     }
@@ -84,7 +67,12 @@ struct LoginScreen: View {
     @StateObject
     private var viewModel = ContentViewModel()
     
+    @StateObject private var loginViewModel = LoginViewModel()
+    
     var loginAction: () -> Void
+    
+    @State var hasLoginError: Bool = false
+    @State var isLoading: Bool = false
     
     var body : some View {
         GeometryReader{ geometry in
@@ -93,6 +81,7 @@ struct LoginScreen: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width*1, height: geometry.size.height*0.4)
+                
                 VStack(alignment: .leading){
                     
                     Text("Iniciar Sesión").font(.system(size: 24,weight: .bold))
@@ -102,23 +91,42 @@ struct LoginScreen: View {
                                             placeholder: viewModel.placeholder1,
                                             hint: $viewModel.hint1,
                                             editing: $editingTextField1,
-                                            valid: $viewModel.text1Valid)
-                    .onTapGesture { editingTextField1 = true }
+                                            valid: $viewModel.text1Valid,
+                                            autocapitalization: .never)
+                    .onTapGesture {
+                        editingTextField1 = true
+                    }
+                    
                     MaterialDesignTextField($viewModel.text2,
                                             placeholder: viewModel.placeholder2,
                                             hint: $viewModel.hint2,
                                             editing: $editingTextField2,
-                                            valid: $viewModel.text2Valid)
-                    .onTapGesture { editingTextField2 = true }
-                    //                    }
-                    .contentShape(Rectangle())
+                                            valid: $viewModel.text2Valid,
+                                            autocapitalization: .never,
+                                            isPassword: true)
                     .onTapGesture {
-                        editingTextField1 = false
-                        editingTextField2 = false
+                        editingTextField2 = true
                     }
+                    //                    }
+                    //                    .contentShape(Rectangle())
+                    //                    .onTapGesture {
+                    //                        editingTextField1 = false
+                    //                        editingTextField2 = false
+                    //                    }
                     
-                    VStack(alignment: .center,spacing: 20){
-                        CustomLoginButton(text: "Ingresar", action: loginAction)
+                    VStack(alignment: .center, spacing: 20){
+                        CustomLoginButton(text: "Ingresar", action: {
+                            isLoading = true
+                            loginViewModel.login(email: viewModel.text1, password: viewModel.text2) { success in
+                                if success {
+                                    loginAction()
+                                } else {
+                                    print("Login failed")
+                                    hasLoginError = true
+                                }
+                                isLoading = false
+                            }
+                        }, isLoading: $isLoading)
                         
                         Button("Olvidaste tu contraseña?") {
                             //TODO: login
@@ -143,7 +151,13 @@ struct LoginScreen: View {
                     
                     Spacer().frame(height: 40)
                 }.padding()
-            }.ignoresSafeArea()
+            }
+            .ignoresSafeArea()
+            .alert("Error al iniciar sesión", isPresented: $hasLoginError) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text(loginViewModel.errorMessage ?? "Ha ocurrido un error")
+            }
         }
     }
 }
