@@ -9,6 +9,8 @@ import SwiftUI
 import MapKit
 
 struct MapView : View {
+    @StateObject private var mapViewModel = MapViewModel()
+    
     @State private var mapStyleCounter: Int = 0
     @State private var currentMapStyle: MapStyle = .standard
     
@@ -40,8 +42,18 @@ struct MapView : View {
                 .onAppear {
                     CLLocationManager().requestWhenInUseAuthorization()
                 }
-                .onMapCameraChange { context in
-                    print(context.region)
+                .onMapCameraChange(frequency: .onEnd) { context in
+                    print(context.region.center)
+                    
+                    let regionCenter = context.region.center
+                    
+                    mapViewModel.fetchNearestSpot(latitude: regionCenter.latitude, longitude: regionCenter.longitude) { success in
+                        if success {
+                            print("SPOOOOT: ", mapViewModel.spot ?? "")
+                        } else {
+                            print("Error: ", mapViewModel.errorMessage ?? "")
+                        }
+                    }
                 }
             }
             

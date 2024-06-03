@@ -14,12 +14,8 @@ enum TokenError: Error {
 class UserDefaultsManager {
     static let shared = UserDefaultsManager()
     
-    func getAccessToken() throws -> String? {
-        guard let token = UserDefaults.standard.string(forKey: Constants.accessTokenKey) else {
-            throw TokenError.tokenNotFound
-        }
-        
-        return token
+    func getAccessToken() -> String {
+        return UserDefaults.standard.string(forKey: Constants.accessTokenKey) ?? ""
     }
     
     func clearAccessToken() {

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MapScreen: View {
+    @StateObject private var mapViewModel = MapViewModel()
     @State private var showDetails = false
     
     var body: some View {
@@ -26,8 +27,12 @@ struct MapScreen: View {
                     }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: UbicationDetailsView()) {
-                            Image(systemName: "info.circle")
+                        if let spot = mapViewModel.spot {
+                            NavigationLink(destination: UbicationDetailsView(spot: spot)) {
+                                Image(systemName: "info.circle")
+                            }
+                        } else {
+                            EmptyView()
                         }
                     }
                 }

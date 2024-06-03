@@ -11,6 +11,7 @@ struct UbicationDetailsView : View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var showDetails = true
+    var spot: Spot
     
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -29,7 +30,7 @@ struct UbicationDetailsView : View {
             .ignoresSafeArea(edges: .top)
             .navigationBarHidden(true)
             .sheet(isPresented: $showDetails, content: {
-                DetailsView()
+                DetailsView(spot: spot)
                     .presentationDetents([.medium])
                     .presentationDragIndicator(.visible)
                     .presentationBackgroundInteraction(.enabled(upThrough: .medium))
@@ -44,6 +45,8 @@ struct UbicationDetailsView : View {
 }
 
 struct DetailsView : View {
+    var spot: Spot
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -55,13 +58,13 @@ struct DetailsView : View {
                 
                 Spacer().frame(height: 6)
                 
-                Text("Parque natural")
+                Text(spot.name)
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(Color("TextPrimary"))
                 
                 Spacer().frame(height: 12)
                 
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+                Text(spot.description)
                     .font(.system(size: 16, weight: .regular))
                     .foregroundColor(Color("TextPrimary"))
                 
