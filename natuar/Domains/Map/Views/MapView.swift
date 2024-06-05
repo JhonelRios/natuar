@@ -10,6 +10,7 @@ import MapKit
 
 struct MapView : View {
     @ObservedObject var mapViewModel: MapViewModel
+    @StateObject private var animalViewModel = AnimalViewModel()
     
     @State private var mapStyleCounter: Int = 0
     @State private var currentMapStyle: MapStyle = .standard
@@ -26,11 +27,13 @@ struct MapView : View {
                     //                    let currentCoordinate = position.region?.center ?? CLLocationCoordinate2D()
                     
                     //                    Marker("Llama", coordinate: CLLocationCoordinate2D(latitude: -12.057191582326803, longitude: -77.05857539270373))
-                    Annotation("Llama", coordinate: CLLocationCoordinate2D(latitude: -12.057191582326803, longitude: -77.05857539270373)) {
-                        NavigationLink(destination: AnimalScreen()) {
-                            Image(systemName: "mappin.circle.fill")
-                                .font(.system(size: 24))
-                                .foregroundColor(Color("PrimaryColor"))
+                    ForEach(animalViewModel.animals, id: \.id) { animal in
+                        Annotation(animal.name, coordinate: CLLocationCoordinate2D(latitude: animal.latitude, longitude: animal.longitude)) {
+                            NavigationLink(destination: AnimalScreen()) {
+                                Image(systemName: "mappin.circle.fill")
+                                    .font(.system(size: 30))
+                                    .foregroundColor(Color("PrimaryColor"))
+                            }
                         }
                     }
                 }
@@ -41,6 +44,13 @@ struct MapView : View {
                 .mapStyle(currentMapStyle)
                 .onAppear {
                     CLLocationManager().requestWhenInUseAuthorization()
+                    animalViewModel.fetchAnimals() {success in
+                        if success {
+                            print("ANIMALS: ", animalViewModel.animals)
+                        } else {
+                            print("ANIMALS Error: ", animalViewModel.errorMessage ?? "")
+                        }
+                    }
                 }
                 .onMapCameraChange(frequency: .onEnd) { context in
                     print(context.region.center)
@@ -49,9 +59,9 @@ struct MapView : View {
                     
                     mapViewModel.fetchNearestSpot(latitude: regionCenter.latitude, longitude: regionCenter.longitude) { success in
                         if success {
-                            print("SPOOOOT: ", mapViewModel.spot ?? "")
+                            print("SPOT: ", mapViewModel.spot ?? "")
                         } else {
-                            print("Error: ", mapViewModel.errorMessage ?? "")
+                            print("SPOT Error: ", mapViewModel.errorMessage ?? "")
                         }
                     }
                 }
