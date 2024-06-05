@@ -13,4 +13,6 @@ struct Spot : Codable, Identifiable {
     var description: String
     var latitude: Double
     var longitude: Double
+    var picture: String
+    var images: [String]
 }

@@ -30,22 +30,21 @@ class MapViewModel : ObservableObject {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
+                self.isLoading = false
+                
                 if let error = error {
-                    self.isLoading = true
                     self.errorMessage = "Spot request failed: \(error.localizedDescription)"
                     completion(false)
                     return
                 }
                 
                 guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    self.isLoading = true
                     self.errorMessage = "Error: Non-200 HTTP status code"
                     completion(false)
                     return
                 }
                 
                 if let spotResponse = try? JSONDecoder().decode(Spot.self, from: data) {
-                    self.isLoading = true
                     self.spot = spotResponse
                     completion(true)
                 } else {

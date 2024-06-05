@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MapView : View {
-    @StateObject private var mapViewModel = MapViewModel()
+    @ObservedObject var mapViewModel: MapViewModel
     
     @State private var mapStyleCounter: Int = 0
     @State private var currentMapStyle: MapStyle = .standard
@@ -89,6 +89,6 @@ struct MapView : View {
     }
 }
 
-#Preview {
-    MapView()
-}
+//#Preview {
+////    MapView()
+//}

@@ -13,8 +13,8 @@ struct MapScreen: View {
     
     var body: some View {
         NavigationStack {
-            MapView()
-                .navigationTitle("Lima")
+            MapView(mapViewModel: mapViewModel)
+                .navigationTitle(mapViewModel.spot?.name ?? "Cargando...")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         HStack {

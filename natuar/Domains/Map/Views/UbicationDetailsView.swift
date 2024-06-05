@@ -16,7 +16,7 @@ struct UbicationDetailsView : View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             VStack(alignment: .leading) {
-                AsyncImage(url: URL(string: "https://cdn.getyourguide.com/img/location/54b40793cd6af.jpeg/49.webp")) { image in
+                AsyncImage(url: URL(string: spot.picture)) { image in
                     image.resizable().aspectRatio(contentMode: .fill)
                 } placeholder: {
                     ProgressView()
@@ -78,8 +78,8 @@ struct DetailsView : View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
-                        ForEach(0..<5) { _ in
-                            AsyncImage(url: URL(string: "https://cdn.getyourguide.com/img/location/54b40793cd6af.jpeg/49.webp")) { image in
+                        ForEach(spot.images, id: \.self) { imageUrl in
+                            AsyncImage(url: URL(string: imageUrl)) { image in
                                 image.resizable().aspectRatio(contentMode: .fill)
                             } placeholder: {
                                 ProgressView()
@@ -99,5 +99,7 @@ struct DetailsView : View {
 }
 
 #Preview {
-    UbicationDetailsView()
+    let testSpot = Spot(id: 1, name: "Lima", description: "Esta es Lima", latitude: 12.21, longitude: 12.21, picture: "placeholder", images: ["test1", "test2"])
+    
+    return UbicationDetailsView(spot: testSpot)
 }
