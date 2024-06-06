@@ -9,60 +9,86 @@ import SwiftUI
 import RealityKit
 import ARKit
 
+struct ARVariables {
+    static var arView: ARView!
+}
+
 struct AnimalScreen: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var showDetails = true
     
     var body: some View {
-        ZStack(alignment: .topLeading) {
-            ARViewContainer()
-                .ignoresSafeArea()
-                .navigationBarHidden(true)
-                .sheet(isPresented: $showDetails, content: {
-                    AnimalDetailsView()
-                        .presentationDetents([.height(50), .medium, .large])
-                        .presentationDragIndicator(.visible)
-                        .presentationBackgroundInteraction(.enabled(upThrough: .large))
-                        .interactiveDismissDisabled()
+        ZStack(alignment: .bottom) {
+            ZStack(alignment: .topLeading) {
+                ARViewContainer()
+                    .ignoresSafeArea()
+                    .navigationBarHidden(true)
+                    .sheet(isPresented: $showDetails, content: {
+                        AnimalDetailsView()
+                            .presentationDetents([.height(50), .medium, .large])
+                            .presentationDragIndicator(.visible)
+                            .presentationBackgroundInteraction(.enabled(upThrough: .large))
+                            .interactiveDismissDisabled()
+                    })
+                
+                BackButton(action: {
+                    presentationMode.wrappedValue.dismiss()
                 })
+            }
             
-            BackButton(action: {
-                presentationMode.wrappedValue.dismiss()
-            })
+            Button {
+                // Placeholder: take a snapshot
+                ARVariables.arView.snapshot(saveToHDR: false) { (image) in
+                    let compressedImage = UIImage(data: (image?.pngData())!)
+                    
+                    UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+                }
+            } label: {
+                Image(systemName: "camera.aperture")
+                    .frame(width: 60, height: 60)
+                    .font(.largeTitle)
+                //                    .background(.white.opacity(0.75))
+                    .background(.white)
+                    .foregroundColor(Color("TextPrimary"))
+                    .cornerRadius(30)
+                    .padding()
+                    .padding(.bottom, 50)
+            }
         }
     }
 }
 
 struct ARViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> ARView {
-        let arView = ARView(frame: .zero)
+        ARVariables.arView = ARView(frame: .zero)
         
-//        let config = ARWorldTrackingConfiguration()
-//        config.planeDetection = [.horizontal, .vertical]
-//        config.environmentTexturing = .automatic
-//        
-//        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
-//            config.sceneReconstruction = .mesh
-//        }
-//        
-//        arView.session.run(config)
-//        
-//        let animal = try! Entity.load(named: "llama6")
-//        
-//        if let animalAnimation = animal.availableAnimations.first {
-//            animal.playAnimation(animalAnimation.repeat(duration: .infinity), transitionDuration: 0.5, startsPaused: false)
-//        } else {
-//            print("No animation in USDZ")
-//        }
-//        
-//        let anchor = AnchorEntity(plane: .horizontal)
-//        
-//        anchor.addChild(animal)
-//        
-//        arView.scene.addAnchor(anchor)
+        let config = ARWorldTrackingConfiguration()
+        //        config.planeDetection = [.horizontal, .vertical]
+        //        config.environmentTexturing = .automatic
+        //
+        //        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
+        //            config.sceneReconstruction = .mesh
+        //        }
+        //
+        ARVariables.arView.session.run(config)
         
-        return arView
+        //
+        //        let animal = try! Entity.load(named: "llama6")
+        //
+        //        if let animalAnimation = animal.availableAnimations.first {
+        //            animal.playAnimation(animalAnimation.repeat(duration: .infinity), transitionDuration: 0.5, startsPaused: false)
+        //        } else {
+        //            print("No animation in USDZ")
+        //        }
+        //
+        //        let anchor = AnchorEntity(plane: .horizontal)
+        //
+        //        anchor.addChild(animal)
+        //
+        //        ARVariables.arView.scene.addAnchor(anchor)
+        
+        return ARVariables.arView
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
