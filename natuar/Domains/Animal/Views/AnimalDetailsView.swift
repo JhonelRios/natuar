@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AnimalDetailsView: View {
+    var animal: Animal
+    
     @State var selection: Int = 0
     let items: [String] = ["Habitat", "Dieta", "Gestación"]
     
@@ -22,29 +24,29 @@ struct AnimalDetailsView: View {
                 
                 Spacer().frame(height: 6)
                 
-                Text("Llama")
+                Text(animal.name)
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(Color("TextPrimary"))
                 
                 Spacer().frame(height: 4)
                 
-                Text("Lorem ipsum dolor sit amet")
+                Text(animal.scientific_name)
                     .font(.system(size: 16, weight: .regular))
                     .foregroundColor(.gray)
                 
                 Spacer().frame(height: 16)
                 
                 HStack(spacing: 10) {
-                    InfoCardView(icon: Image(systemName: "gauge.with.needle"), title: "Peso", value: "20.4 kg", background: Color("PrimaryColorLigth"))
+                    InfoCardView(icon: Image(systemName: "gauge.with.needle"), title: "Peso", value: "\(animal.weigth) kg", background: Color("PrimaryColorLigth"))
                     
-                    InfoCardView(icon: Image(systemName: "ruler"), title: "Medidas", value: "70 cm", rotationDegrees: 135, background: Color("PrimaryColorAccent"))
+                    InfoCardView(icon: Image(systemName: "ruler"), title: "Medidas", value: "\(animal.height) cm", rotationDegrees: 135, background: Color("PrimaryColorAccent"))
                     
-                    InfoCardView(icon: Image(systemName: "clock"), title: "Edad", value: "20 años", background: Color("PrimaryColorDark"))
+                    InfoCardView(icon: Image(systemName: "clock"), title: "Edad", value: "\(animal.average_age) años", background: Color("PrimaryColorDark"))
                 }
                 
                 Spacer().frame(height: 12)
                 
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude dolor in reprehenderit in. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude dolor in reprehenderit in.")
+                Text(animal.description)
                     .font(.system(size: 16, weight: .regular))
                     .foregroundColor(Color("TextPrimary"))
                 
@@ -56,19 +58,19 @@ struct AnimalDetailsView: View {
                 
                 switch selection {
                 case 0:
-                    Text("Habitat - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                    Text(animal.habitat)
                         .font(.system(size: 16, weight: .regular))
                         .foregroundColor(Color("TextPrimary"))
                 case 1:
-                    Text("Dieta - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                    Text(animal.diet)
                         .font(.system(size: 16, weight: .regular))
                         .foregroundColor(Color("TextPrimary"))
                 case 2:
-                    Text("Gestación - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                    Text(animal.gestation)
                         .font(.system(size: 16, weight: .regular))
                         .foregroundColor(Color("TextPrimary"))
                 default:
-                    Text("Def")
+                    Text("Undefined selected tab")
                 }
                 
                 Text("IMÁGENES")
@@ -79,8 +81,8 @@ struct AnimalDetailsView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
-                        ForEach(0..<5) { _ in
-                            AsyncImage(url: URL(string: "https://1.bp.blogspot.com/-wp5IGEG_syw/WA-aHE9EapI/AAAAAAAAehM/HsEKPoC-NAcz2_dIEOHNBBa0bq4krduTQCLcB/s1600/llama%2Bperu%2Bmachu%2Bpicchu.jpg")) { image in
+                        ForEach(animal.images, id: \.self) { imageUrl in
+                            AsyncImage(url: URL(string: imageUrl)) { image in
                                 image.resizable().aspectRatio(contentMode: .fill)
                             } placeholder: {
                                 ProgressView()
@@ -100,5 +102,5 @@ struct AnimalDetailsView: View {
 }
 
 #Preview {
-    AnimalDetailsView()
+    AnimalDetailsView(animal: Animal(id: 1, name: "Llama", scientific_name: "Llama cientifica", description: "Descripcion del animal", weigth: 20, height: 13, average_age: 32, habitat: "Peru", diet: "Pasto", gestation: "Tiene un tiempo de gestacion en prueba", in_danger: false, images: [""], model_name: "llama", latitude: -12.23, longitude: -12.23, spotId: 1))
 }

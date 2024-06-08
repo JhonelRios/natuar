@@ -17,15 +17,16 @@ struct AnimalScreen: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var showDetails = true
+    var selectedAnimal: Animal
     
     var body: some View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .topLeading) {
-                ARViewContainer()
+                ARViewContainer(animal: selectedAnimal)
                     .ignoresSafeArea()
                     .navigationBarHidden(true)
                     .sheet(isPresented: $showDetails, content: {
-                        AnimalDetailsView()
+                        AnimalDetailsView(animal: selectedAnimal)
                             .presentationDetents([.height(50), .medium, .large])
                             .presentationDragIndicator(.visible)
                             .presentationBackgroundInteraction(.enabled(upThrough: .large))
@@ -60,6 +61,8 @@ struct AnimalScreen: View {
 }
 
 struct ARViewContainer: UIViewRepresentable {
+    var animal: Animal
+    
     func makeUIView(context: Context) -> ARView {
         ARVariables.arView = ARView(frame: .zero)
         
@@ -72,7 +75,7 @@ struct ARViewContainer: UIViewRepresentable {
         //        }
         //
         ARVariables.arView.session.run(config)
-        
+        print(animal.model_name)
         //
         //        let animal = try! Entity.load(named: "llama6")
         //
@@ -97,5 +100,5 @@ struct ARViewContainer: UIViewRepresentable {
 }
 
 #Preview {
-    AnimalScreen()
+    AnimalScreen(selectedAnimal: Animal(id: 1, name: "Llama", scientific_name: "Llama cientifica", description: "Descripcion del animal", weigth: 20, height: 13, average_age: 32, habitat: "Peru", diet: "Pasto", gestation: "Tiene un tiempo de gestacion en prueba", in_danger: false, images: [""], model_name: "llama", latitude: -12.23, longitude: -12.23, spotId: 1))
 }

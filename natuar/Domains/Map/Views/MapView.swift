@@ -29,7 +29,7 @@ struct MapView : View {
                     //                    Marker("Llama", coordinate: CLLocationCoordinate2D(latitude: -12.057191582326803, longitude: -77.05857539270373))
                     ForEach(animalViewModel.animals, id: \.id) { animal in
                         Annotation(animal.name, coordinate: CLLocationCoordinate2D(latitude: animal.latitude, longitude: animal.longitude)) {
-                            NavigationLink(destination: AnimalScreen()) {
+                            NavigationLink(destination: AnimalScreen(selectedAnimal: animal)) {
                                 Image(systemName: "mappin.circle.fill")
                                     .font(.system(size: 30))
                                     .foregroundColor(Color("PrimaryColor"))
@@ -81,14 +81,14 @@ struct MapView : View {
             })
             .padding(.bottom)
             
-            NavigationLink(destination: AnimalScreen(), label: {
-                Text("Ver modelo 3D")
-                    .padding(.all, 10)
-                    .background(.blue)
-                    .cornerRadius(8)
-                    .foregroundColor(.white)
-            })
-            .padding(.bottom, 80)
+//            NavigationLink(destination: AnimalScreen(), label: {
+//                Text("Ver modelo 3D")
+//                    .padding(.all, 10)
+//                    .background(.blue)
+//                    .cornerRadius(8)
+//                    .foregroundColor(.white)
+//            })
+//            .padding(.bottom, 80)
         }
         
     }
