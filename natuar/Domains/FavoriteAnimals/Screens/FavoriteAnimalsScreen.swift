@@ -8,26 +8,30 @@
 import SwiftUI
 
 struct FavoriteAnimalsScreen: View {
+    @StateObject private var favoriteViewModel = FavoriteViewModel()
+    
     @State private var searchTerm = ""
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(["Animal 1", "Animal 2", "Animal 3"], id: \.self) { text in
-                    AnimalCard(background: .green)
+                ForEach(favoriteViewModel.favoriteAnimals, id: \.id) { animal in
+                    AnimalCard(animal: animal, background: .green)
                         .listRowSeparator(.hidden)
                 }
-//                .swipeActions {
-//                    Button(role: .destructive) {
-//                        print("delete")
-//                    } label: {
-//                        Image(systemName: "trash")
-//                    }
-//                }
             }
             .navigationTitle("Animales Favoritos")
             .searchable(text: $searchTerm, prompt: "Buscar")
             .listStyle(.plain)
+        }
+        .onAppear {
+            favoriteViewModel.fetchFavoriteAnimals() { success in
+                if success {
+                    print(favoriteViewModel.favoriteAnimals)
+                } else {
+                    print(favoriteViewModel.errorMessage ?? "")
+                }
+            }
         }
     }
 }
