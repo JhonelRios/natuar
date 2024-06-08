@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AnimalDetailsView: View {
+    @StateObject private var animalViewModel = AnimalViewModel()
+    
     var animal: Animal
     
     @State var selection: Int = 0
@@ -16,23 +18,49 @@ struct AnimalDetailsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                Text("ANIMAL")
-                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
-                    .kerning(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(.gray)
-                    .padding(.top, 10)
-                
-                Spacer().frame(height: 6)
-                
-                Text(animal.name)
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(Color("TextPrimary"))
-                
-                Spacer().frame(height: 4)
-                
-                Text(animal.scientific_name)
-                    .font(.system(size: 16, weight: .regular))
-                    .foregroundColor(.gray)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("ANIMAL")
+                            .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                            .kerning(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(.gray)
+                            .padding(.top, 10)
+                        
+                        Spacer().frame(height: 6)
+                        
+                        Text(animal.name)
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(Color("TextPrimary"))
+                        
+                        Spacer().frame(height: 4)
+                        
+                        Text(animal.scientific_name)
+                            .font(.system(size: 16, weight: .regular))
+                            .foregroundColor(.gray)
+                    }
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        animalViewModel.markAsFavorite(animalId: animal.id) { success in
+                            if success {
+                                print("Animal marked as favorite")
+                            } else {
+                                print(animalViewModel.errorMessage ?? "")
+                            }
+                        }
+                    }, label: {
+                        if animalViewModel.isLoading {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle())
+                                .padding(.trailing, 15)
+                        } else {
+                            Image(systemName: animalViewModel.isFavorite ? "heart.fill" : "heart")
+                                .foregroundColor(.red)
+                                .font(.system(size: 40))
+                        }
+                    })
+                }
                 
                 Spacer().frame(height: 16)
                 
@@ -97,6 +125,15 @@ struct AnimalDetailsView: View {
                 Spacer()
             }
             .padding()
+            .onAppear {
+                animalViewModel.fetchIsFavorite(animalId: animal.id) { success in
+                    if success {
+                        print(animalViewModel.isFavorite)
+                    } else {
+                        print(animalViewModel.errorMessage ?? "")
+                    }
+                }
+            }
         }
     }
 }
