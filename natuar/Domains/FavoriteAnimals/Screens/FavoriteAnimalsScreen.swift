@@ -10,13 +10,15 @@ import SwiftUI
 struct FavoriteAnimalsScreen: View {
     @StateObject private var favoriteViewModel = FavoriteViewModel()
     
+    private let colors: [Color] = [Color("PrimaryColor"), Color("PrimaryColorLigth"), Color("PrimaryColorAccent"), Color("PrimaryColorDark")]
+    
     @State private var searchTerm = ""
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(favoriteViewModel.favoriteAnimals, id: \.id) { animal in
-                    AnimalCard(animal: animal, background: .green)
+                    AnimalCard(animal: animal, background: colors[animal.id % colors.count])
                         .listRowSeparator(.hidden)
                 }
             }
