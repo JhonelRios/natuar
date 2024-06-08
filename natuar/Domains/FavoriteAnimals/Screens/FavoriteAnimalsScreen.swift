@@ -14,10 +14,16 @@ struct FavoriteAnimalsScreen: View {
     
     @State private var searchTerm = ""
     
+    var filteredAnimals: [Animal] {
+        guard !searchTerm.isEmpty else { return favoriteViewModel.favoriteAnimals }
+        
+        return favoriteViewModel.favoriteAnimals.filter { $0.name.localizedCaseInsensitiveContains(searchTerm) }
+    }
+    
     var body: some View {
         NavigationStack {
             List {
-                ForEach(favoriteViewModel.favoriteAnimals, id: \.id) { animal in
+                ForEach(filteredAnimals, id: \.id) { animal in
                     AnimalCard(animal: animal, background: colors[animal.id % colors.count])
                         .listRowSeparator(.hidden)
                 }
