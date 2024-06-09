@@ -180,18 +180,20 @@ struct LoginScreen: View {
             
             // Send ID token to backend via HTTPS
             // This token can be used to access Google APIs on behalf of the user.
-            print("ID Token: \(user.accessToken.tokenString)")
+            print("ID Token: \(String(describing: user.idToken?.tokenString))")
             //                self.sendTokenToServer(token: idToken)
             
             
             print(user.profile?.email ?? "No current user email")
             
-            loginViewModel.loginWithGoogle(token: user.accessToken.tokenString) { success in
-                if success {
-                    loginAction()
-                } else {
-                    print("Login failed")
-                    hasLoginError = true
+            if let idToken = user.idToken?.tokenString {
+                loginViewModel.loginWithGoogle(token: idToken) { success in
+                    if success {
+                        loginAction()
+                    } else {
+                        print("Login failed")
+                        hasLoginError = true
+                    }
                 }
             }
         }
