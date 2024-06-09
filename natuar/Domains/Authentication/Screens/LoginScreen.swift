@@ -135,9 +135,9 @@ struct LoginScreen: View {
                                 handleGoogleSignIn()
                             }
                             
-                            CircularButtonWithLogo(imageName: "apple-logo") {
-                                // Acción del botón de Apple
-                            }
+//                            CircularButtonWithLogo(imageName: "apple-logo") {
+//                                // Acción del botón de Apple
+//                            }
                             
                             Spacer() // Agrega un espacio
                         }
