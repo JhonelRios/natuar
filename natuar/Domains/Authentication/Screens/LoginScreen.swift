@@ -87,26 +87,24 @@ struct LoginScreen: View {
                     Text("Iniciar Sesión").font(.system(size: 24,weight: .bold))
                     
                     //                    VStack {
-                    MaterialDesignTextField($viewModel.text1,
-                                            placeholder: viewModel.placeholder1,
-                                            hint: $viewModel.hint1,
-                                            editing: $editingTextField1,
-                                            valid: $viewModel.text1Valid,
-                                            autocapitalization: .never)
-                    .onTapGesture {
-                        editingTextField1 = true
-                    }
+//                    Form {
+                        MaterialDesignTextField($viewModel.text1,
+                                                placeholder: viewModel.placeholder1,
+                                                hint: $viewModel.hint1,
+                                                editing: $editingTextField1,
+                                                valid: $viewModel.text1Valid,
+                                                autocapitalization: .never)
+                        
+                        MaterialDesignTextField($viewModel.text2,
+                                                placeholder: viewModel.placeholder2,
+                                                hint: $viewModel.hint2,
+                                                editing: $editingTextField2,
+                                                valid: $viewModel.text2Valid,
+                                                autocapitalization: .never,
+                                                isPassword: true)
+//                    }
+//                    .formStyle(.columns)
                     
-                    MaterialDesignTextField($viewModel.text2,
-                                            placeholder: viewModel.placeholder2,
-                                            hint: $viewModel.hint2,
-                                            editing: $editingTextField2,
-                                            valid: $viewModel.text2Valid,
-                                            autocapitalization: .never,
-                                            isPassword: true)
-                    .onTapGesture {
-                        editingTextField2 = true
-                    }
                     //                    }
                     //                    .contentShape(Rectangle())
                     //                    .onTapGesture {

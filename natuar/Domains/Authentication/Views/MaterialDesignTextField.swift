@@ -8,57 +8,62 @@ public struct MaterialDesignTextField: View {
     public var body: some View {
         ZStack {
             if isPassword {
-                SecureField("", text: $text)
+                SecureField(placeholder, text: $text)
                     .padding(12)
                     .background(RoundedRectangle(cornerRadius: 4.0, style: .continuous)
                         .stroke(borderColor, lineWidth: borderWidth))
-                    .focused($focusField, equals: .textField)
+                //                    .focused($focusField, equals: .textField)
                     .textInputAutocapitalization(autocapitalization)
             } else {
-                TextField("", text: $text)
+                TextField(placeholder, text: $text)
                     .padding(12)
                     .background(RoundedRectangle(cornerRadius: 4.0, style: .continuous)
                         .stroke(borderColor, lineWidth: borderWidth))
-                    .focused($focusField, equals: .textField)
+                //                    .focused($focusField, equals: .textField)
                     .textInputAutocapitalization(autocapitalization)
             }
-                
+            
             HStack {
                 ZStack {
                     Color(.white)
                         .cornerRadius(4.0)
                         .opacity(placeholderBackgroundOpacity)
-                    Text(placeholder)
-                        .foregroundColor(.white)
-                        .colorMultiply(placeholderColor)
-//                                            .animatableFont(size: placeholderFontSize)
-                        .padding(2.0)
-                        .layoutPriority(1)
+                    
+                    if !text.isEmpty {
+                        Text(placeholder)
+                            .foregroundColor(.white)
+                            .colorMultiply(placeholderColor)
+                        //                                            .animatableFont(size: placeholderFontSize)
+                            .padding(2.0)
+                        //                        .padding(.leading, 2)
+                            .layoutPriority(1)
+                    }
                 }
                 .padding([.leading], placeholderLeadingPadding)
                 .padding([.bottom], placeholderBottomPadding)
-                Spacer()
+                
+                if !text.isEmpty { Spacer() }
             }
-//            HStack {
-//                VStack {
-//                    Spacer()
-//                    Text(hint)
-//                        .font(.system(size: 10.0))
-//                        .foregroundColor(.gray)
-//                        .padding([.leading], 10.0)
-//                }
-//                Spacer()
+            //            HStack {
+            //                VStack {
+            //                    Spacer()
+            //                    Text(hint)
+            //                        .font(.system(size: 10.0))
+            //                        .foregroundColor(.gray)
+            //                        .padding([.leading], 10.0)
+            //                }
+            //                Spacer()
+            //            }
+        }
+        .frame(maxWidth: .infinity, minHeight: 80)
+        .onChange(of: text) {
+//            if !text.isEmpty {
+                withAnimation(.easeOut(duration: 0.1)) {
+                    updateBorder()
+                    updatePlaceholder()
+                }
 //            }
         }
-        .onChange(of: editing) {
-            focusField = editing ? .textField : nil
-            
-            withAnimation(.easeOut(duration: 0.1)) {
-                updateBorder()
-                updatePlaceholder()
-            }
-        }
-        .frame(width: .infinity, height: 80)
     }
     
     // MARK: Private properties
@@ -142,7 +147,7 @@ public struct MaterialDesignTextField: View {
     }
     
     private func updateBorderWidth() {
-        borderWidth = editing
+        borderWidth = !text.isEmpty
         ? 2.0
         : 1.0
     }
@@ -155,8 +160,7 @@ public struct MaterialDesignTextField: View {
     }
     
     private func updatePlaceholderBackground() {
-        if editing
-            || !text.isEmpty {
+        if !text.isEmpty {
             placeholderBackgroundOpacity = 1.0
         } else {
             placeholderBackgroundOpacity = 0.0
@@ -179,8 +183,7 @@ public struct MaterialDesignTextField: View {
     }
     
     private func updatePlaceholderFontSize() {
-        if editing
-            || !text.isEmpty {
+        if !text.isEmpty {
             placeholderFontSize = 10.0
         } else {
             placeholderFontSize = 16.0
@@ -188,8 +191,7 @@ public struct MaterialDesignTextField: View {
     }
     
     private func updatePlaceholderPosition() {
-        if editing
-            || !text.isEmpty {
+        if !text.isEmpty {
             placeholderBottomPadding = 40.0
             placeholderLeadingPadding = 8.0
         } else {

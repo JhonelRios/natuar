@@ -22,18 +22,19 @@ struct CustomLoginButton: View {
                 if isLoading {
                     ProgressView()  // Show a spinner when loading
                         .progressViewStyle(CircularProgressViewStyle())
-                        .scaleEffect(0.5)
+                        .scaleEffect(0.8)
+                        .foregroundColor(.gray)
+//                        .opacity(0.65)
+                } else {
+                    Text(text)
                         .foregroundColor(.white)
                 }
-                
-                Text(text)
-                    .foregroundColor(.white)
-                    .padding()
             }
+            .padding()
+            .frame(maxWidth: .infinity)
         }
-        .frame(maxWidth: .infinity)
         .background(Color("PrimaryColor"))
-        .opacity(isLoading ? 0.65 : 1.0)
+        .opacity(isLoading ? 0.75 : 1.0)
         .cornerRadius(30)
         .disabled(isLoading)
         .padding()
