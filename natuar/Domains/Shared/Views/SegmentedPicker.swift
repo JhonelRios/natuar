@@ -72,7 +72,6 @@ struct SegmentedPicker: View {
         return
             RoundedRectangle(cornerRadius: SegmentedPicker.SegmentCornerRadius)
                 .foregroundColor(SegmentedPicker.ActiveSegmentColor)
-//                .shadow(color: SegmentedPicker.ShadowColor, radius: SegmentedPicker.ShadowRadius)
                 .frame(width: self.segmentSize.width, height: self.segmentSize.height)
                 .offset(x: self.computeActiveSegmentHorizontalOffset(), y: 0)
                 .animation(Animation.linear(duration: SegmentedPicker.AnimationDuration))
@@ -98,11 +97,13 @@ struct SegmentedPicker: View {
                 }
             }
         }
-//        .padding(SegmentedPicker.PickerPadding)
         .background(Color("PickerBorder"))
-        .border(Color("PickerBorder"))
         .clipShape(RoundedRectangle(cornerRadius: SegmentedPicker.SegmentCornerRadius))
-//        .clipped()
+        // This is the fix to the clipped borders
+        .overlay(
+            RoundedRectangle(cornerRadius: SegmentedPicker.SegmentCornerRadius)
+                .stroke(Color("PickerBorder"), lineWidth: 1)
+        )
     }
 
     // Helper method to compute the offset based on the selected index
@@ -126,7 +127,7 @@ struct SegmentedPicker: View {
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .background(isSelected ? Color("PrimaryColor") : .white)
                 // Watch for the size of the
-                .modifier(SizeAwareViewModifier(viewSize: self.$segmentSize))
+//                .modifier(SizeAwareViewModifier(viewSize: self.$segmentSize))
                 .onTapGesture { self.onItemTap(index: index) }
                 .eraseToAnyView()
     }
@@ -141,20 +142,9 @@ struct SegmentedPicker: View {
     
 }
 
-
-//struct PreviewView: View {
-//    @State var selection: Int = 0
-//    private let items: [String] = ["M", "T", "W", "T", "F"]
-//    
-//    var body: some View {
-//        SegmentedPicker(items: self.items, selection: self.$selection)
-//            .padding()
-//    }
-//}
-
 #Preview {
-    @State var selection: Int = 0
-    let items: [String] = ["M", "T", "W", "T", "F"]
+    @State var selection: Int = 1
+    let items: [String] = ["Habitat", "Dieta", "Gestacion"]
     
-    return SegmentedPicker(items: ["M", "T", "W", "T", "F"], selection: $selection)
+    return SegmentedPicker(items: items, selection: $selection).padding()
 }
