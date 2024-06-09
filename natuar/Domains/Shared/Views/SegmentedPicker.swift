@@ -143,7 +143,7 @@ struct SegmentedPicker: View {
 }
 
 #Preview {
-    @State var selection: Int = 1
+    @State var selection: Int = 0
     let items: [String] = ["Habitat", "Dieta", "Gestacion"]
     
     return SegmentedPicker(items: items, selection: $selection).padding()
