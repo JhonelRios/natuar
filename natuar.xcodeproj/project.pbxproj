@@ -25,6 +25,9 @@
 		499637702C112060004486BB /* AnimalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996376F2C112060004486BB /* AnimalViewModel.swift */; };
 		499637722C1150C9004486BB /* AnimalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499637712C1150C9004486BB /* AnimalCard.swift */; };
 		499637752C1517D3004486BB /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499637742C1517D3004486BB /* FavoriteViewModel.swift */; };
+		499637772C163682004486BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499637762C163682004486BB /* AppDelegate.swift */; };
+		4996377A2C16370D004486BB /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 499637792C16370D004486BB /* GoogleSignIn */; };
+		4996377C2C16370D004486BB /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4996377B2C16370D004486BB /* GoogleSignInSwift */; };
 		49A4297C2BF91FD500EC8E8B /* llama6.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49A4297B2BF91FD500EC8E8B /* llama6.usdz */; };
 		49DFB7522BFD9C0800EEA79E /* CirculatButtonWithLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */; };
 		49DFB7542BFD9C5800EEA79E /* CustomLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */; };
@@ -60,6 +63,8 @@
 		4996376F2C112060004486BB /* AnimalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewModel.swift; sourceTree = "<group>"; };
 		499637712C1150C9004486BB /* AnimalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCard.swift; sourceTree = "<group>"; };
 		499637742C1517D3004486BB /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		499637762C163682004486BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4996377D2C1639CB004486BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		49A4297B2BF91FD500EC8E8B /* llama6.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = llama6.usdz; sourceTree = "<group>"; };
 		49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirculatButtonWithLogo.swift; sourceTree = "<group>"; };
 		49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginButton.swift; sourceTree = "<group>"; };
@@ -80,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4996377A2C16370D004486BB /* GoogleSignIn in Frameworks */,
+				4996377C2C16370D004486BB /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +112,7 @@
 		4928D32D2BCCB9CF005420BF /* natuar */ = {
 			isa = PBXGroup;
 			children = (
+				4996377D2C1639CB004486BB /* Info.plist */,
 				49FBF1C82BE564A5007D05D0 /* 3DModels */,
 				4928D3302BCCB9CF005420BF /* ContentView.swift */,
 				4928D32E2BCCB9CF005420BF /* natuarApp.swift */,
@@ -112,6 +120,7 @@
 				49FE80D32BD0CA1000C23E57 /* Domains */,
 				4928D3342BCCB9D0005420BF /* Preview Content */,
 				49FE80CF2BD0C6DC00C23E57 /* Screens */,
+				499637762C163682004486BB /* AppDelegate.swift */,
 			);
 			path = natuar;
 			sourceTree = "<group>";
@@ -380,6 +389,10 @@
 			dependencies = (
 			);
 			name = natuar;
+			packageProductDependencies = (
+				499637792C16370D004486BB /* GoogleSignIn */,
+				4996377B2C16370D004486BB /* GoogleSignInSwift */,
+			);
 			productName = natuar;
 			productReference = 4928D32B2BCCB9CF005420BF /* natuar.app */;
 			productType = "com.apple.product-type.application";
@@ -408,6 +421,9 @@
 				Base,
 			);
 			mainGroup = 4928D3222BCCB9CF005420BF;
+			packageReferences = (
+				499637782C16370D004486BB /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = 4928D32C2BCCB9CF005420BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -440,6 +456,7 @@
 				49DFB7562BFD9C7300EEA79E /* MaterialDesignTextField.swift in Sources */,
 				49737BC62C016A93009D4459 /* InfoCardView.swift in Sources */,
 				49FE80E42BD0CE1900C23E57 /* MapView.swift in Sources */,
+				499637772C163682004486BB /* AppDelegate.swift in Sources */,
 				49FE80DE2BD0CABC00C23E57 /* MapScreen.swift in Sources */,
 				499637652C08033A004486BB /* UserDefaultsManager.swift in Sources */,
 				499637722C1150C9004486BB /* AnimalCard.swift in Sources */,
@@ -599,6 +616,7 @@
 				DEVELOPMENT_TEAM = C77BXF2QSN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = natuar/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Se necesita acceso a la cámara para usarla en la realidad aumentada";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tu localización se usará para mostrarte animales cercanos";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Permiso requerido para guardar las fotografías de Realidad Aumentada";
@@ -632,6 +650,7 @@
 				DEVELOPMENT_TEAM = C77BXF2QSN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = natuar/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Se necesita acceso a la cámara para usarla en la realidad aumentada";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tu localización se usará para mostrarte animales cercanos";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Permiso requerido para guardar las fotografías de Realidad Aumentada";
@@ -676,6 +695,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		499637782C16370D004486BB /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		499637792C16370D004486BB /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 499637782C16370D004486BB /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		4996377B2C16370D004486BB /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 499637782C16370D004486BB /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4928D3232BCCB9CF005420BF /* Project object */;
 }

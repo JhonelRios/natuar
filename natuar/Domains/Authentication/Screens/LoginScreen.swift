@@ -1,8 +1,7 @@
 
 import SwiftUI
 import Foundation
-
-
+import GoogleSignIn
 import Combine
 
 final class ContentViewModel: ObservableObject {
@@ -87,23 +86,23 @@ struct LoginScreen: View {
                     Text("Iniciar Sesión").font(.system(size: 24,weight: .bold))
                     
                     //                    VStack {
-//                    Form {
-                        MaterialDesignTextField($viewModel.text1,
-                                                placeholder: viewModel.placeholder1,
-                                                hint: $viewModel.hint1,
-                                                editing: $editingTextField1,
-                                                valid: $viewModel.text1Valid,
-                                                autocapitalization: .never)
-                        
-                        MaterialDesignTextField($viewModel.text2,
-                                                placeholder: viewModel.placeholder2,
-                                                hint: $viewModel.hint2,
-                                                editing: $editingTextField2,
-                                                valid: $viewModel.text2Valid,
-                                                autocapitalization: .never,
-                                                isPassword: true)
-//                    }
-//                    .formStyle(.columns)
+                    //                    Form {
+                    MaterialDesignTextField($viewModel.text1,
+                                            placeholder: viewModel.placeholder1,
+                                            hint: $viewModel.hint1,
+                                            editing: $editingTextField1,
+                                            valid: $viewModel.text1Valid,
+                                            autocapitalization: .never)
+                    
+                    MaterialDesignTextField($viewModel.text2,
+                                            placeholder: viewModel.placeholder2,
+                                            hint: $viewModel.hint2,
+                                            editing: $editingTextField2,
+                                            valid: $viewModel.text2Valid,
+                                            autocapitalization: .never,
+                                            isPassword: true)
+                    //                    }
+                    //                    .formStyle(.columns)
                     
                     //                    }
                     //                    .contentShape(Rectangle())
@@ -136,6 +135,7 @@ struct LoginScreen: View {
                             Spacer() // Agrega un espacio antes del botón de Google
                             CircularButtonWithLogo(imageName: "google-logo") {
                                 // Acción del botón de Google
+                                handleGoogleSignIn()
                             }
                             
                             CircularButtonWithLogo(imageName: "apple-logo") {
@@ -155,6 +155,44 @@ struct LoginScreen: View {
                 Button("OK", role: .cancel) { }
             } message: {
                 Text(loginViewModel.errorMessage ?? "Ha ocurrido un error")
+            }
+        }
+    }
+    
+    func handleGoogleSignIn() {
+        guard let rootViewController = UIApplication.shared.windows.first?.rootViewController else {
+            print("There is no root view controller!")
+            return
+        }
+        
+        GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController) { signInResult, error in
+            if let error = error {
+                print("Error sending token to server: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let user = signInResult?.user else {
+                print("No user data available.")
+                return
+            }
+            
+            // Access the ID Token to send to your server
+            
+            // Send ID token to backend via HTTPS
+            // This token can be used to access Google APIs on behalf of the user.
+            print("ID Token: \(user.accessToken.tokenString)")
+            //                self.sendTokenToServer(token: idToken)
+            
+            
+            print(user.profile?.email ?? "No current user email")
+            
+            loginViewModel.loginWithGoogle(token: user.accessToken.tokenString) { success in
+                if success {
+                    loginAction()
+                } else {
+                    print("Login failed")
+                    hasLoginError = true
+                }
             }
         }
     }
