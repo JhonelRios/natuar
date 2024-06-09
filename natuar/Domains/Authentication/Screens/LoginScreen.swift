@@ -71,7 +71,6 @@ struct LoginScreen: View {
     var loginAction: () -> Void
     
     @State var hasLoginError: Bool = false
-    @State var isLoading: Bool = false
     
     var body : some View {
         GeometryReader{ geometry in
@@ -113,7 +112,6 @@ struct LoginScreen: View {
                     
                     VStack(alignment: .center, spacing: 20){
                         CustomLoginButton(text: "Ingresar", action: {
-                            isLoading = true
                             loginViewModel.login(email: viewModel.text1, password: viewModel.text2) { success in
                                 if success {
                                     loginAction()
@@ -121,9 +119,8 @@ struct LoginScreen: View {
                                     print("Login failed")
                                     hasLoginError = true
                                 }
-                                isLoading = false
                             }
-                        }, isLoading: $isLoading)
+                        }, isLoading: loginViewModel.isLoading)
                         
                         Button("Olvidaste tu contraseña?") {
                             //TODO: login

@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomLoginButton: View {
     var text: String
     var action: () -> Void
-    @Binding var isLoading: Bool
+    var isLoading: Bool
     
     var body: some View {
         Button(action: {
@@ -42,9 +42,7 @@ struct CustomLoginButton: View {
 }
 
 #Preview {
-    @State var loading: Bool = false
-    
     return CustomLoginButton(text: "Login", action: {
         print("login")
-    }, isLoading: $loading)
+    }, isLoading: true)
 }

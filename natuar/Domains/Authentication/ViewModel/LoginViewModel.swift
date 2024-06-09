@@ -14,6 +14,7 @@ struct LoginResponse: Codable {
 class LoginViewModel : ObservableObject {
     @Published var accessToken: String?
     @Published var errorMessage: String?
+    @Published var isLoading: Bool = false
     
     func login(email: String, password: String, completion: @escaping (Bool) -> Void) {
         let loginURL = "\(Constants.backendURL)/auth/login"
@@ -27,8 +28,12 @@ class LoginViewModel : ObservableObject {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonBody
         
+        isLoading = true
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
+                self.isLoading = false
+                
                 if let error = error {
                     self.errorMessage = "Login request failed: \(error.localizedDescription)"
                     completion(false)
@@ -65,8 +70,12 @@ class LoginViewModel : ObservableObject {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonBody
         
+        isLoading = true
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
+                self.isLoading = false
+                
                 if let error = error {
                     self.errorMessage = "Login with google request failed: \(error.localizedDescription)"
                     completion(false)
