@@ -24,8 +24,16 @@ struct FavoriteAnimalsScreen: View {
         NavigationStack {
             List {
                 ForEach(filteredAnimals, id: \.id) { animal in
-                    AnimalCard(animal: animal, background: colors[animal.id % colors.count])
-                        .listRowSeparator(.hidden)
+                    AnimalCard(animal: animal, background: colors[animal.id % colors.count], onDelete: {
+                        favoriteViewModel.fetchFavoriteAnimals() { success in
+                            if success {
+                                print(favoriteViewModel.favoriteAnimals)
+                            } else {
+                                print(favoriteViewModel.errorMessage ?? "")
+                            }
+                        }
+                    })
+                    .listRowSeparator(.hidden)
                 }
             }
             .navigationTitle("Animales Favoritos")

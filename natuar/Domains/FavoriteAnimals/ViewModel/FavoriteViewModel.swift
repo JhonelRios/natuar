@@ -56,7 +56,7 @@ class FavoriteViewModel : ObservableObject {
     }
     
     func deleteFavoriteAnimals(animalId: Int, completion: @escaping (Bool) -> Void) {
-        let favoritesUrl = "\(Constants.backendURL)/animals/favorites/\(animalId)"
+        let favoritesUrl = "\(Constants.backendURL)/animals/favorite/\(animalId)"
         guard let url = URL(string: favoritesUrl) else {
             errorMessage = "Invalid URL"
             return

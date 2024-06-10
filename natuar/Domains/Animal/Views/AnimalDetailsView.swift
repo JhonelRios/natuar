@@ -42,11 +42,21 @@ struct AnimalDetailsView: View {
                     Spacer()
                     
                     Button(action: {
-                        animalViewModel.markAsFavorite(animalId: animal.id) { success in
-                            if success {
-                                print("Animal marked as favorite")
-                            } else {
-                                print(animalViewModel.errorMessage ?? "")
+                        if animalViewModel.isFavorite {
+                            animalViewModel.deleteFavoriteAnimals(animalId: animal.id) { success in
+                                if success {
+                                    print("Animal unmarked as favorite")
+                                } else {
+                                    print(animalViewModel.errorMessage ?? "")
+                                }
+                            }
+                        } else {
+                            animalViewModel.markAsFavorite(animalId: animal.id) { success in
+                                if success {
+                                    print("Animal marked as favorite")
+                                } else {
+                                    print(animalViewModel.errorMessage ?? "")
+                                }
                             }
                         }
                     }, label: {
