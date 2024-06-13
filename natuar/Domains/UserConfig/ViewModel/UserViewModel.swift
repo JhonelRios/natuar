@@ -1,26 +1,21 @@
 //
-//  AnimalViewModel.swift
+//  UserViewModel.swift
 //  natuar
 //
-//  Created by Jhonel Rios Jaimes on 5/06/24.
+//  Created by Jhonel Rios Jaimes on 12/06/24.
 //
 
 import Foundation
 
-struct isFavoriteResponse: Decodable {
-    var isFavorite: Bool
-}
-
-class AnimalViewModel : ObservableObject {
-    @Published var animals: [Animal] = []
+class UserViewModel: ObservableObject {
+    @Published var user: User?
+    @Published var seenAnimals: [Animal] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
     
-    @Published var isFavorite = false
-    
-    func fetchAnimals(completion: @escaping (Bool) -> Void) {
-        let animalsUrl = "\(Constants.backendURL)/animals"
-        guard let url = URL(string: animalsUrl) else {
+    func fetchUserDetails() {
+        let userUrl = "\(Constants.backendURL)/tourists/me"
+        guard let url = URL(string: userUrl) else {
             errorMessage = "Invalid URL"
             return
         }
@@ -39,31 +34,31 @@ class AnimalViewModel : ObservableObject {
                 self.isLoading = false
                 
                 if let error = error {
-                    self.errorMessage = "Animals request failed: \(error.localizedDescription)"
-                    completion(false)
+                    self.errorMessage = "User request failed: \(error.localizedDescription)"
+//                    completion(false)
                     return
                 }
                 
                 guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     self.errorMessage = "Error: Non-200 HTTP status code"
-                    completion(false)
+//                    completion(false)
                     return
                 }
                 
-                if let animalsResponse = try? JSONDecoder().decode([Animal].self, from: data) {
-                    self.animals = animalsResponse
-                    completion(true)
+                if let userResponse = try? JSONDecoder().decode(User.self, from: data) {
+                    self.user = userResponse
+//                    completion(true)
                 } else {
-                    self.errorMessage = "Failed to decode animals response"
-                    completion(false)
+                    self.errorMessage = "Failed to decode user response"
+//                    completion(false)
                 }
             }
         }.resume()
     }
     
-    func fetchIsFavorite(animalId: Int, completion: @escaping (Bool) -> Void) {
-        let isFavoriteUrl = "\(Constants.backendURL)/animals/\(animalId)/favorite"
-        guard let url = URL(string: isFavoriteUrl) else {
+    func fetchSeenAnimals() {
+        let seenAnimalsUrl = "\(Constants.backendURL)/animals/seen"
+        guard let url = URL(string: seenAnimalsUrl) else {
             errorMessage = "Invalid URL"
             return
         }
@@ -82,31 +77,31 @@ class AnimalViewModel : ObservableObject {
                 self.isLoading = false
                 
                 if let error = error {
-                    self.errorMessage = "Is Favorite request failed: \(error.localizedDescription)"
-                    completion(false)
+                    self.errorMessage = "User request failed: \(error.localizedDescription)"
+//                    completion(false)
                     return
                 }
                 
                 guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     self.errorMessage = "Error: Non-200 HTTP status code"
-                    completion(false)
+//                    completion(false)
                     return
                 }
                 
-                if let isFavoriteResponse = try? JSONDecoder().decode(isFavoriteResponse.self, from: data) {
-                    self.isFavorite = isFavoriteResponse.isFavorite
-                    completion(true)
+                if let seenAnimalsResponse = try? JSONDecoder().decode([Animal].self, from: data) {
+                    self.seenAnimals = seenAnimalsResponse
+//                    completion(true)
                 } else {
-                    self.errorMessage = "Failed to decode is favorite response"
-                    completion(false)
+                    self.errorMessage = "Failed to decode user response"
+//                    completion(false)
                 }
             }
         }.resume()
     }
     
-    func markAsFavorite(animalId: Int, completion: @escaping (Bool) -> Void) {
-        let isFavoriteUrl = "\(Constants.backendURL)/animals/\(animalId)/favorite"
-        guard let url = URL(string: isFavoriteUrl) else {
+    func updateUser(userId: Int, name: String, completion: @escaping (Bool) -> Void) {
+        let userUrl = "\(Constants.backendURL)/tourists/\(userId)"
+        guard let url = URL(string: userUrl) else {
             errorMessage = "Invalid URL"
             return
         }
@@ -114,46 +109,42 @@ class AnimalViewModel : ObservableObject {
         let accessToken = UserDefaultsManager().getAccessToken()
         
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = "PATCH"
         request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization") // Add your token
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-//        isLoading = true
-        isFavorite = true
+        isLoading = true
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
-//                self.isLoading = false
+                self.isLoading = false
                 
                 if let error = error {
-                    self.errorMessage = "Mark as Favorite request failed: \(error.localizedDescription)"
-                    self.isFavorite = false
+                    self.errorMessage = "Update user request failed: \(error.localizedDescription)"
                     completion(false)
                     return
                 }
                 
                 guard let httpResponse = response as? HTTPURLResponse else {
                     self.errorMessage = "Invalid response from the server"
-                    self.isFavorite = false
                     completion(false)
                     return
                 }
                 
                 switch httpResponse.statusCode {
-                case 201:
+                case 200:
                     completion(true)
                 default:
                     self.errorMessage = "Failed with HTTP code: \(httpResponse.statusCode)"
-                    self.isFavorite = false
                     completion(false)
                 }
             }
         }.resume()
     }
     
-    func deleteFavoriteAnimals(animalId: Int, completion: @escaping (Bool) -> Void) {
-        let favoritesUrl = "\(Constants.backendURL)/animals/favorite/\(animalId)"
-        guard let url = URL(string: favoritesUrl) else {
+    func deleteUser(userId: Int, completion: @escaping (Bool) -> Void) {
+        let userUrl = "\(Constants.backendURL)/tourists/\(userId)"
+        guard let url = URL(string: userUrl) else {
             errorMessage = "Invalid URL"
             return
         }
@@ -165,24 +156,21 @@ class AnimalViewModel : ObservableObject {
         request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization") // Add your token
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-//        isLoading = true
-        isFavorite = false
+        isLoading = true
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
-//                self.isLoading = false
+                self.isLoading = false
                 
                 if let error = error {
-                    self.errorMessage = "Delete request failed: \(error.localizedDescription)"
+                    self.errorMessage = "Delete user request failed: \(error.localizedDescription)"
                     completion(false)
-                    self.isFavorite = true
                     return
                 }
                 
                 guard let httpResponse = response as? HTTPURLResponse else {
                     self.errorMessage = "Invalid response from the server"
                     completion(false)
-                    self.isFavorite = true
                     return
                 }
                 
@@ -192,56 +180,12 @@ class AnimalViewModel : ObservableObject {
                 default:
                     self.errorMessage = "Failed with HTTP code: \(httpResponse.statusCode)"
                     completion(false)
-                    self.isFavorite = true
                 }
             }
         }.resume()
     }
     
-    func markAsSeen(animalId: Int, completion: @escaping (Bool) -> Void) {
-        let seenUrl = "\(Constants.backendURL)/animals/\(animalId)/seen"
-        guard let url = URL(string: seenUrl) else {
-            errorMessage = "Invalid URL"
-            return
-        }
-        
-        let accessToken = UserDefaultsManager().getAccessToken()
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization") // Add your token
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-//        isLoading = true
-//        isFavorite = true
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            DispatchQueue.main.async {
-//                self.isLoading = false
-                
-                if let error = error {
-                    self.errorMessage = "Mark as Seen request failed: \(error.localizedDescription)"
-//                    self.isFavorite = false
-                    completion(false)
-                    return
-                }
-                
-                guard let httpResponse = response as? HTTPURLResponse else {
-                    self.errorMessage = "Invalid response from the server"
-//                    self.isFavorite = false
-                    completion(false)
-                    return
-                }
-                
-                switch httpResponse.statusCode {
-                case 201:
-                    completion(true)
-                default:
-                    self.errorMessage = "Failed with HTTP code: \(httpResponse.statusCode)"
-//                    self.isFavorite = false
-                    completion(false)
-                }
-            }
-        }.resume()
+    func logout() {
+        UserDefaultsManager().clearAccessToken()
     }
 }

@@ -22,23 +22,25 @@ struct FavoriteAnimalsScreen: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(filteredAnimals, id: \.id) { animal in
-                    AnimalCard(animal: animal, background: colors[animal.id % colors.count], onDelete: {
-                        favoriteViewModel.fetchFavoriteAnimals() { success in
-                            if success {
-                                print(favoriteViewModel.favoriteAnimals)
-                            } else {
-                                print(favoriteViewModel.errorMessage ?? "")
-                            }
-                        }
-                    })
-                    .listRowSeparator(.hidden)
+            ZStack {
+                List {
+                    ForEach(filteredAnimals, id: \.id) { animal in
+                        AnimalCard(animal: animal, background: colors[animal.id % colors.count])
+                            .listRowSeparator(.hidden)
+                    }
+                }
+                .navigationTitle("Animales Favoritos")
+                .searchable(text: $searchTerm, prompt: "Buscar")
+                .listStyle(.plain)
+                
+                if favoriteViewModel.isLoading {
+                    ProgressView()
+                        .scaleEffect(1.5)
+                        .progressViewStyle(CircularProgressViewStyle())
+//                        .background(Color.black.opacity(0.4))
+                        .ignoresSafeArea(edges: .all)
                 }
             }
-            .navigationTitle("Animales Favoritos")
-            .searchable(text: $searchTerm, prompt: "Buscar")
-            .listStyle(.plain)
         }
         .onAppear {
             favoriteViewModel.fetchFavoriteAnimals() { success in

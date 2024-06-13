@@ -18,6 +18,7 @@ struct AnimalScreen: View {
     
     @State private var showDetails = true
     var selectedAnimal: Animal
+    var fromFavorites: Bool = false
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -26,8 +27,8 @@ struct AnimalScreen: View {
                     .ignoresSafeArea()
                     .navigationBarHidden(true)
                     .sheet(isPresented: $showDetails, content: {
-                        AnimalDetailsView(animal: selectedAnimal)
-                            .presentationDetents([.height(50), .medium, .large])
+                        AnimalDetailsView(animal: selectedAnimal, fromFavorites: fromFavorites)
+                            .presentationDetents([.height(75), .medium, .large])
                             .presentationDragIndicator(.visible)
                             .presentationBackgroundInteraction(.enabled(upThrough: .large))
                             .interactiveDismissDisabled()
@@ -54,7 +55,7 @@ struct AnimalScreen: View {
                     .foregroundColor(Color("TextPrimary"))
                     .cornerRadius(30)
                     .padding()
-                    .padding(.bottom, 50)
+                    .padding(.bottom, 45)
             }
         }
     }

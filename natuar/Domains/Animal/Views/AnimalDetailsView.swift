@@ -11,6 +11,7 @@ struct AnimalDetailsView: View {
     @StateObject private var animalViewModel = AnimalViewModel()
     
     var animal: Animal
+    var fromFavorites: Bool = false
     
     @State var selection: Int = 0
     let items: [String] = ["Habitat", "Dieta", "Gestación"]
@@ -41,35 +42,37 @@ struct AnimalDetailsView: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        if animalViewModel.isFavorite {
-                            animalViewModel.deleteFavoriteAnimals(animalId: animal.id) { success in
-                                if success {
-                                    print("Animal unmarked as favorite")
-                                } else {
-                                    print(animalViewModel.errorMessage ?? "")
+                    if !fromFavorites {
+                        Button(action: {
+                            if animalViewModel.isFavorite {
+                                animalViewModel.deleteFavoriteAnimals(animalId: animal.id) { success in
+                                    if success {
+                                        print("Animal unmarked as favorite")
+                                    } else {
+                                        print(animalViewModel.errorMessage ?? "")
+                                    }
+                                }
+                            } else {
+                                animalViewModel.markAsFavorite(animalId: animal.id) { success in
+                                    if success {
+                                        print("Animal marked as favorite")
+                                    } else {
+                                        print(animalViewModel.errorMessage ?? "")
+                                    }
                                 }
                             }
-                        } else {
-                            animalViewModel.markAsFavorite(animalId: animal.id) { success in
-                                if success {
-                                    print("Animal marked as favorite")
-                                } else {
-                                    print(animalViewModel.errorMessage ?? "")
-                                }
+                        }, label: {
+                            if animalViewModel.isLoading {
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle())
+                                    .padding(.trailing, 15)
+                            } else {
+                                Image(systemName: animalViewModel.isFavorite ? "heart.fill" : "heart")
+                                    .foregroundColor(.red)
+                                    .font(.system(size: 40))
                             }
-                        }
-                    }, label: {
-                        if animalViewModel.isLoading {
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle())
-                                .padding(.trailing, 15)
-                        } else {
-                            Image(systemName: animalViewModel.isFavorite ? "heart.fill" : "heart")
-                                .foregroundColor(.red)
-                                .font(.system(size: 40))
-                        }
-                    })
+                        })
+                    }
                 }
                 
                 Spacer().frame(height: 16)

@@ -27,7 +27,7 @@ struct MainScreen: View {
                         Text("Favoritos")
                     }
                 
-                UserConfigScreen()
+                UserConfigScreen(logoutAction: { logged.toggle() })
                     .tabItem {
                         Image(systemName: "gearshape").environment(\.symbolVariants, .none)
                         Text("Ajustes")

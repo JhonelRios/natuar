@@ -29,6 +29,9 @@
 		4996377A2C16370D004486BB /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 499637792C16370D004486BB /* GoogleSignIn */; };
 		4996377C2C16370D004486BB /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4996377B2C16370D004486BB /* GoogleSignInSwift */; };
 		49A4297C2BF91FD500EC8E8B /* llama6.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49A4297B2BF91FD500EC8E8B /* llama6.usdz */; };
+		49C928752C1A8A9F0046325B /* SeenAnimals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928742C1A8A9F0046325B /* SeenAnimals.swift */; };
+		49C928772C1A8AC00046325B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928762C1A8AC00046325B /* UserViewModel.swift */; };
+		49C9287A2C1A8B2E0046325B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928792C1A8B2E0046325B /* User.swift */; };
 		49DFB7522BFD9C0800EEA79E /* CirculatButtonWithLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */; };
 		49DFB7542BFD9C5800EEA79E /* CustomLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */; };
 		49DFB7562BFD9C7300EEA79E /* MaterialDesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7552BFD9C7300EEA79E /* MaterialDesignTextField.swift */; };
@@ -66,6 +69,9 @@
 		499637762C163682004486BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4996377D2C1639CB004486BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		49A4297B2BF91FD500EC8E8B /* llama6.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = llama6.usdz; sourceTree = "<group>"; };
+		49C928742C1A8A9F0046325B /* SeenAnimals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeenAnimals.swift; sourceTree = "<group>"; };
+		49C928762C1A8AC00046325B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		49C928792C1A8B2E0046325B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirculatButtonWithLogo.swift; sourceTree = "<group>"; };
 		49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginButton.swift; sourceTree = "<group>"; };
 		49DFB7552BFD9C7300EEA79E /* MaterialDesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDesignTextField.swift; sourceTree = "<group>"; };
@@ -209,6 +215,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		49C928732C1A8A7E0046325B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				49C928762C1A8AC00046325B /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		49C928782C1A8B240046325B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49C928792C1A8B2E0046325B /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		49DFB74C2BFD9B2700EEA79E /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +332,8 @@
 		49FE80D62BD0CA6700C23E57 /* UserConfig */ = {
 			isa = PBXGroup;
 			children = (
+				49C928782C1A8B240046325B /* Model */,
+				49C928732C1A8A7E0046325B /* ViewModel */,
 				49FE80DC2BD0CAA500C23E57 /* Screens */,
 				49FE80DB2BD0CAA000C23E57 /* Views */,
 			);
@@ -353,6 +377,7 @@
 		49FE80DB2BD0CAA000C23E57 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				49C928742C1A8A9F0046325B /* SeenAnimals.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -456,6 +481,7 @@
 				49DFB7562BFD9C7300EEA79E /* MaterialDesignTextField.swift in Sources */,
 				49737BC62C016A93009D4459 /* InfoCardView.swift in Sources */,
 				49FE80E42BD0CE1900C23E57 /* MapView.swift in Sources */,
+				49C9287A2C1A8B2E0046325B /* User.swift in Sources */,
 				499637772C163682004486BB /* AppDelegate.swift in Sources */,
 				49FE80DE2BD0CABC00C23E57 /* MapScreen.swift in Sources */,
 				499637652C08033A004486BB /* UserDefaultsManager.swift in Sources */,
@@ -464,6 +490,8 @@
 				49DFB7522BFD9C0800EEA79E /* CirculatButtonWithLogo.swift in Sources */,
 				49737BC32C016961009D4459 /* AnimalDetailsView.swift in Sources */,
 				499637702C112060004486BB /* AnimalViewModel.swift in Sources */,
+				49C928752C1A8A9F0046325B /* SeenAnimals.swift in Sources */,
+				49C928772C1A8AC00046325B /* UserViewModel.swift in Sources */,
 				49FE80D22BD0C97100C23E57 /* MainScreen.swift in Sources */,
 				4996375F2C07F604004486BB /* LoginViewModel.swift in Sources */,
 				49DFB7542BFD9C5800EEA79E /* CustomLoginButton.swift in Sources */,
@@ -631,7 +659,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = natuar.natuar;
+				PRODUCT_BUNDLE_IDENTIFIER = natuartp.natuar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -665,7 +693,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = natuar.natuar;
+				PRODUCT_BUNDLE_IDENTIFIER = natuartp.natuar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

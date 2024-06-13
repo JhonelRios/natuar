@@ -10,33 +10,48 @@ import SwiftUI
 import SwiftUI
 
 struct UserConfigScreen: View {
-
+    var logoutAction: () -> Void
+    
     var body: some View {
         NavigationStack {
             VStack {
-       
-                HStack {
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 100, height: 100)
+                VStack(alignment: .leading) {
+                    
                     Text("Nombre y apellido")
-                }
-                .padding(.vertical, 30)
-                
-                List {
-                    Section(header: Text("CUENTA")) {
-                        ForEach(["Actualizar datos", "Idioma", "Cerrar Sesión", "Eliminar cuenta"], id: \.self) { text in
-                            NavigationLink(destination: Text(text)) {
-                                HStack {
-                                    Text(text)
-                                   
-                                }
-                                .padding(10)
-                            }
+                        .font(.headline)
+                        .padding([.top, .leading])
+                    
+                    List {
+                        NavigationLink(destination: Text("hola"), label: {
+                            Text("Actualizar datos")
+                        })
+                        
+                        NavigationLink(destination: Text("hola"), label: {
+                            Text("Animales vistos")
+                        })
+                        
+                        Button {
+                            print("hola")
+                        } label: {
+                            Text("Cerrar sesión")
+                                .foregroundStyle(.blue)
+                        }
+                        
+                        Button {
+                            print("hola")
+                        } label: {
+                            Text("Eliminar cuenta")
+                                .foregroundStyle(.red)
                         }
                     }
+                    .listStyle(.plain)
                 }
-                .listStyle(.plain)
+                
+                Spacer()
+                
+                Text("NatuAR - 2024")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
             }
             .navigationTitle("Ajustes")
         }
@@ -46,6 +61,6 @@ struct UserConfigScreen: View {
 
 
 #Preview {
-    UserConfigScreen()
+    UserConfigScreen(logoutAction: {})
 }
 
