@@ -32,6 +32,7 @@
 		49C928752C1A8A9F0046325B /* SeenAnimals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928742C1A8A9F0046325B /* SeenAnimals.swift */; };
 		49C928772C1A8AC00046325B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928762C1A8AC00046325B /* UserViewModel.swift */; };
 		49C9287A2C1A8B2E0046325B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928792C1A8B2E0046325B /* User.swift */; };
+		49C9287C2C1A967D0046325B /* UpdateUserForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C9287B2C1A967D0046325B /* UpdateUserForm.swift */; };
 		49DFB7522BFD9C0800EEA79E /* CirculatButtonWithLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */; };
 		49DFB7542BFD9C5800EEA79E /* CustomLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */; };
 		49DFB7562BFD9C7300EEA79E /* MaterialDesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7552BFD9C7300EEA79E /* MaterialDesignTextField.swift */; };
@@ -72,6 +73,7 @@
 		49C928742C1A8A9F0046325B /* SeenAnimals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeenAnimals.swift; sourceTree = "<group>"; };
 		49C928762C1A8AC00046325B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		49C928792C1A8B2E0046325B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		49C9287B2C1A967D0046325B /* UpdateUserForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserForm.swift; sourceTree = "<group>"; };
 		49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirculatButtonWithLogo.swift; sourceTree = "<group>"; };
 		49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginButton.swift; sourceTree = "<group>"; };
 		49DFB7552BFD9C7300EEA79E /* MaterialDesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDesignTextField.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				49C928742C1A8A9F0046325B /* SeenAnimals.swift */,
+				49C9287B2C1A967D0046325B /* UpdateUserForm.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				49737BC62C016A93009D4459 /* InfoCardView.swift in Sources */,
 				49FE80E42BD0CE1900C23E57 /* MapView.swift in Sources */,
 				49C9287A2C1A8B2E0046325B /* User.swift in Sources */,
+				49C9287C2C1A967D0046325B /* UpdateUserForm.swift in Sources */,
 				499637772C163682004486BB /* AppDelegate.swift in Sources */,
 				49FE80DE2BD0CABC00C23E57 /* MapScreen.swift in Sources */,
 				499637652C08033A004486BB /* UserDefaultsManager.swift in Sources */,

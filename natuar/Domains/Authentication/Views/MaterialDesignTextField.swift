@@ -55,7 +55,7 @@ public struct MaterialDesignTextField: View {
             //                Spacer()
             //            }
         }
-        .frame(maxWidth: .infinity, minHeight: 80)
+        .frame(maxWidth: .infinity, maxHeight: 80)
         .onChange(of: text) {
 //            if !text.isEmpty {
                 withAnimation(.easeOut(duration: 0.1)) {
