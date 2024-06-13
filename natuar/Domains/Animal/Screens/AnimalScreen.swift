@@ -15,6 +15,7 @@ struct ARVariables {
 
 struct AnimalScreen: View {
     @Environment(\.presentationMode) var presentationMode
+    @StateObject private var animalViewModel = AnimalViewModel()
     
     @State private var showDetails = true
     var selectedAnimal: Animal
@@ -28,7 +29,7 @@ struct AnimalScreen: View {
                     .navigationBarHidden(true)
                     .sheet(isPresented: $showDetails, content: {
                         AnimalDetailsView(animal: selectedAnimal, fromFavorites: fromFavorites)
-                            .presentationDetents([.height(75), .medium, .large])
+                            .presentationDetents([.height(76), .medium, .large])
                             .presentationDragIndicator(.visible)
                             .presentationBackgroundInteraction(.enabled(upThrough: .large))
                             .interactiveDismissDisabled()
@@ -57,6 +58,9 @@ struct AnimalScreen: View {
                     .padding()
                     .padding(.bottom, 45)
             }
+        }
+        .onAppear {
+            animalViewModel.markAsSeen(animalId: selectedAnimal.id)
         }
     }
 }

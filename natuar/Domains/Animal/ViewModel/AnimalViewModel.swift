@@ -198,7 +198,7 @@ class AnimalViewModel : ObservableObject {
         }.resume()
     }
     
-    func markAsSeen(animalId: Int, completion: @escaping (Bool) -> Void) {
+    func markAsSeen(animalId: Int) {
         let seenUrl = "\(Constants.backendURL)/animals/\(animalId)/seen"
         guard let url = URL(string: seenUrl) else {
             errorMessage = "Invalid URL"
@@ -222,24 +222,25 @@ class AnimalViewModel : ObservableObject {
                 if let error = error {
                     self.errorMessage = "Mark as Seen request failed: \(error.localizedDescription)"
 //                    self.isFavorite = false
-                    completion(false)
+//                    completion(false)
                     return
                 }
                 
                 guard let httpResponse = response as? HTTPURLResponse else {
                     self.errorMessage = "Invalid response from the server"
 //                    self.isFavorite = false
-                    completion(false)
+//                    completion(false)
                     return
                 }
                 
                 switch httpResponse.statusCode {
                 case 201:
-                    completion(true)
+//                    completion(true)
+                    print("Animal \(animalId) was marked as seen")
                 default:
                     self.errorMessage = "Failed with HTTP code: \(httpResponse.statusCode)"
 //                    self.isFavorite = false
-                    completion(false)
+//                    completion(false)
                 }
             }
         }.resume()
