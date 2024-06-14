@@ -73,12 +73,17 @@ struct UserConfigScreen: View {
                     Text("NatuAR - 2024")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
+                        .padding(.bottom)
                 }
                 .navigationTitle("Ajustes")
             } else {
                 ProgressView()
                     .navigationTitle("Ajustes")
             }
+        }
+        .onAppear {
+            userViewModel.fetchUserDetails()
+            userViewModel.fetchSeenAnimals()
         }
     }
 }

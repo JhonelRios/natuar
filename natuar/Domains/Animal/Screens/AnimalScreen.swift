@@ -79,22 +79,22 @@ struct ARViewContainer: UIViewRepresentable {
             config.sceneReconstruction = .mesh
         }
         //
-        ARVariables.arView.session.run(config)
+//        ARVariables.arView.session.run(config)
         print(animal.model_name)
         //
-        let animal = try! Entity.load(named: animal.model_name)
+//        let animal = try! Entity.load(named: animal.model_name)
+//        
+//        if let animalAnimation = animal.availableAnimations.first {
+//            animal.playAnimation(animalAnimation.repeat(duration: .infinity), transitionDuration: 0.5, startsPaused: false)
+//        } else {
+//            print("No animation in USDZ")
+//        }
         
-        if let animalAnimation = animal.availableAnimations.first {
-            animal.playAnimation(animalAnimation.repeat(duration: .infinity), transitionDuration: 0.5, startsPaused: false)
-        } else {
-            print("No animation in USDZ")
-        }
-        
-        let anchor = AnchorEntity(plane: .horizontal)
-        
-        anchor.addChild(animal)
-        
-        ARVariables.arView.scene.addAnchor(anchor)
+//        let anchor = AnchorEntity(plane: .horizontal)
+//        
+//        anchor.addChild(animal)
+//        
+//        ARVariables.arView.scene.addAnchor(anchor)
         
         return ARVariables.arView
     }

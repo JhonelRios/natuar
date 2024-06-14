@@ -32,9 +32,9 @@ struct UpdateUserForm: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 8) {
-                Text("Actualizar datos")
-                    .font(.system(size: 24, weight: .bold))
-                    .padding(.bottom)
+//                Text("Actualizar datos")
+//                    .font(.system(size: 24, weight: .bold))
+//                    .padding(.bottom)
                 
                 MaterialDesignTextField(
                     $viewModel.name,
@@ -59,6 +59,7 @@ struct UpdateUserForm: View {
                 Spacer()
             }
             .padding()
+            .navigationTitle("Actualizar datos")
         }
     }
 }

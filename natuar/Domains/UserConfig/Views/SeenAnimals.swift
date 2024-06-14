@@ -22,6 +22,7 @@ struct SeenAnimals: View {
                 }
             }
             .listStyle(.plain)
+            .navigationTitle("Animales vistos")
         }
     }
 }
