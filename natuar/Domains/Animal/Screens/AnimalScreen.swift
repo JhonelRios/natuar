@@ -72,29 +72,29 @@ struct ARViewContainer: UIViewRepresentable {
         ARVariables.arView = ARView(frame: .zero)
         
         let config = ARWorldTrackingConfiguration()
-        //        config.planeDetection = [.horizontal, .vertical]
-        //        config.environmentTexturing = .automatic
-        //
-        //        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
-        //            config.sceneReconstruction = .mesh
-        //        }
+        config.planeDetection = [.horizontal, .vertical]
+        config.environmentTexturing = .automatic
+        
+        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
+            config.sceneReconstruction = .mesh
+        }
         //
         ARVariables.arView.session.run(config)
         print(animal.model_name)
         //
-        //        let animal = try! Entity.load(named: "llama6")
-        //
-        //        if let animalAnimation = animal.availableAnimations.first {
-        //            animal.playAnimation(animalAnimation.repeat(duration: .infinity), transitionDuration: 0.5, startsPaused: false)
-        //        } else {
-        //            print("No animation in USDZ")
-        //        }
-        //
-        //        let anchor = AnchorEntity(plane: .horizontal)
-        //
-        //        anchor.addChild(animal)
-        //
-        //        ARVariables.arView.scene.addAnchor(anchor)
+        let animal = try! Entity.load(named: animal.model_name)
+        
+        if let animalAnimation = animal.availableAnimations.first {
+            animal.playAnimation(animalAnimation.repeat(duration: .infinity), transitionDuration: 0.5, startsPaused: false)
+        } else {
+            print("No animation in USDZ")
+        }
+        
+        let anchor = AnchorEntity(plane: .horizontal)
+        
+        anchor.addChild(animal)
+        
+        ARVariables.arView.scene.addAnchor(anchor)
         
         return ARVariables.arView
     }

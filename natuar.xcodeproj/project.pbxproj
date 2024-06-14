@@ -33,11 +33,34 @@
 		49C928772C1A8AC00046325B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928762C1A8AC00046325B /* UserViewModel.swift */; };
 		49C9287A2C1A8B2E0046325B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928792C1A8B2E0046325B /* User.swift */; };
 		49C9287C2C1A967D0046325B /* UpdateUserForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C9287B2C1A967D0046325B /* UpdateUserForm.swift */; };
+		49C928952C1CCC120046325B /* red_monkey.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9287D2C1CCC0E0046325B /* red_monkey.usdz */; };
+		49C928962C1CCC120046325B /* jaguar.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9287E2C1CCC0E0046325B /* jaguar.usdz */; };
+		49C928972C1CCC120046325B /* andean_flamenco.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9287F2C1CCC0E0046325B /* andean_flamenco.usdz */; };
+		49C928982C1CCC120046325B /* black_caiman.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928802C1CCC0E0046325B /* black_caiman.usdz */; };
+		49C928992C1CCC120046325B /* capibara.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928812C1CCC0E0046325B /* capibara.usdz */; };
+		49C9289A2C1CCC120046325B /* pink_dolphin.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928822C1CCC0E0046325B /* pink_dolphin.usdz */; };
+		49C9289B2C1CCC120046325B /* andean_fox.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928832C1CCC0F0046325B /* andean_fox.usdz */; };
+		49C9289C2C1CCC120046325B /* constrictor.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928842C1CCC0F0046325B /* constrictor.usdz */; };
+		49C9289D2C1CCC120046325B /* andean_toucan.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928852C1CCC0F0046325B /* andean_toucan.usdz */; };
+		49C9289E2C1CCC120046325B /* carpenter.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928862C1CCC0F0046325B /* carpenter.usdz */; };
+		49C9289F2C1CCC120046325B /* sajino.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928872C1CCC0F0046325B /* sajino.usdz */; };
+		49C928A02C1CCC120046325B /* pelican.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928882C1CCC0F0046325B /* pelican.usdz */; };
+		49C928A12C1CCC120046325B /* charapa_turtle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928892C1CCC0F0046325B /* charapa_turtle.usdz */; };
+		49C928A22C1CCC120046325B /* cascabel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9288A2C1CCC0F0046325B /* cascabel.usdz */; };
+		49C928A32C1CCC120046325B /* lllama.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9288B2C1CCC0F0046325B /* lllama.usdz */; };
+		49C928A42C1CCC120046325B /* puma.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9288C2C1CCC100046325B /* puma.usdz */; };
+		49C928A52C1CCC120046325B /* red_macaw.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9288D2C1CCC100046325B /* red_macaw.usdz */; };
+		49C928A62C1CCC120046325B /* vicuna.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9288E2C1CCC100046325B /* vicuna.usdz */; };
+		49C928A72C1CCC120046325B /* white_deer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9288F2C1CCC100046325B /* white_deer.usdz */; };
+		49C928A82C1CCC120046325B /* red_deer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928902C1CCC110046325B /* red_deer.usdz */; };
+		49C928A92C1CCC120046325B /* river_wolf.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928912C1CCC110046325B /* river_wolf.usdz */; };
+		49C928AA2C1CCC120046325B /* alpaca.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928922C1CCC120046325B /* alpaca.usdz */; };
+		49C928AB2C1CCC120046325B /* giant_frog.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928932C1CCC120046325B /* giant_frog.usdz */; };
+		49C928AC2C1CCC120046325B /* yellow_monkey.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928942C1CCC120046325B /* yellow_monkey.usdz */; };
 		49DFB7522BFD9C0800EEA79E /* CirculatButtonWithLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */; };
 		49DFB7542BFD9C5800EEA79E /* CustomLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */; };
 		49DFB7562BFD9C7300EEA79E /* MaterialDesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7552BFD9C7300EEA79E /* MaterialDesignTextField.swift */; };
 		49FBF1CE2BE567B3007D05D0 /* AnimalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBF1CD2BE567B3007D05D0 /* AnimalScreen.swift */; };
-		49FBF1EA2BE58590007D05D0 /* alpaca.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49FBF1E92BE58590007D05D0 /* alpaca.usdz */; };
 		49FE80D22BD0C97100C23E57 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80D12BD0C97100C23E57 /* MainScreen.swift */; };
 		49FE80DE2BD0CABC00C23E57 /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80DD2BD0CABC00C23E57 /* MapScreen.swift */; };
 		49FE80E02BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80DF2BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift */; };
@@ -74,11 +97,34 @@
 		49C928762C1A8AC00046325B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		49C928792C1A8B2E0046325B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		49C9287B2C1A967D0046325B /* UpdateUserForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserForm.swift; sourceTree = "<group>"; };
+		49C9287D2C1CCC0E0046325B /* red_monkey.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = red_monkey.usdz; sourceTree = "<group>"; };
+		49C9287E2C1CCC0E0046325B /* jaguar.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = jaguar.usdz; sourceTree = "<group>"; };
+		49C9287F2C1CCC0E0046325B /* andean_flamenco.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = andean_flamenco.usdz; sourceTree = "<group>"; };
+		49C928802C1CCC0E0046325B /* black_caiman.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = black_caiman.usdz; sourceTree = "<group>"; };
+		49C928812C1CCC0E0046325B /* capibara.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = capibara.usdz; sourceTree = "<group>"; };
+		49C928822C1CCC0E0046325B /* pink_dolphin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pink_dolphin.usdz; sourceTree = "<group>"; };
+		49C928832C1CCC0F0046325B /* andean_fox.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = andean_fox.usdz; sourceTree = "<group>"; };
+		49C928842C1CCC0F0046325B /* constrictor.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = constrictor.usdz; sourceTree = "<group>"; };
+		49C928852C1CCC0F0046325B /* andean_toucan.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = andean_toucan.usdz; sourceTree = "<group>"; };
+		49C928862C1CCC0F0046325B /* carpenter.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = carpenter.usdz; sourceTree = "<group>"; };
+		49C928872C1CCC0F0046325B /* sajino.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sajino.usdz; sourceTree = "<group>"; };
+		49C928882C1CCC0F0046325B /* pelican.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pelican.usdz; sourceTree = "<group>"; };
+		49C928892C1CCC0F0046325B /* charapa_turtle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = charapa_turtle.usdz; sourceTree = "<group>"; };
+		49C9288A2C1CCC0F0046325B /* cascabel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = cascabel.usdz; sourceTree = "<group>"; };
+		49C9288B2C1CCC0F0046325B /* lllama.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = lllama.usdz; sourceTree = "<group>"; };
+		49C9288C2C1CCC100046325B /* puma.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = puma.usdz; sourceTree = "<group>"; };
+		49C9288D2C1CCC100046325B /* red_macaw.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = red_macaw.usdz; sourceTree = "<group>"; };
+		49C9288E2C1CCC100046325B /* vicuna.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = vicuna.usdz; sourceTree = "<group>"; };
+		49C9288F2C1CCC100046325B /* white_deer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = white_deer.usdz; sourceTree = "<group>"; };
+		49C928902C1CCC110046325B /* red_deer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = red_deer.usdz; sourceTree = "<group>"; };
+		49C928912C1CCC110046325B /* river_wolf.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = river_wolf.usdz; sourceTree = "<group>"; };
+		49C928922C1CCC120046325B /* alpaca.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = alpaca.usdz; sourceTree = "<group>"; };
+		49C928932C1CCC120046325B /* giant_frog.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = giant_frog.usdz; sourceTree = "<group>"; };
+		49C928942C1CCC120046325B /* yellow_monkey.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = yellow_monkey.usdz; sourceTree = "<group>"; };
 		49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirculatButtonWithLogo.swift; sourceTree = "<group>"; };
 		49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginButton.swift; sourceTree = "<group>"; };
 		49DFB7552BFD9C7300EEA79E /* MaterialDesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDesignTextField.swift; sourceTree = "<group>"; };
 		49FBF1CD2BE567B3007D05D0 /* AnimalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalScreen.swift; sourceTree = "<group>"; };
-		49FBF1E92BE58590007D05D0 /* alpaca.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = alpaca.usdz; sourceTree = "<group>"; };
 		49FE80D12BD0C97100C23E57 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		49FE80DD2BD0CABC00C23E57 /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
 		49FE80DF2BD0CB1700C23E57 /* FavoriteAnimalsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAnimalsScreen.swift; sourceTree = "<group>"; };
@@ -264,8 +310,31 @@
 		49FBF1C82BE564A5007D05D0 /* 3DModels */ = {
 			isa = PBXGroup;
 			children = (
+				49C928922C1CCC120046325B /* alpaca.usdz */,
+				49C9287F2C1CCC0E0046325B /* andean_flamenco.usdz */,
+				49C928832C1CCC0F0046325B /* andean_fox.usdz */,
+				49C928852C1CCC0F0046325B /* andean_toucan.usdz */,
+				49C928802C1CCC0E0046325B /* black_caiman.usdz */,
+				49C928812C1CCC0E0046325B /* capibara.usdz */,
+				49C928862C1CCC0F0046325B /* carpenter.usdz */,
+				49C9288A2C1CCC0F0046325B /* cascabel.usdz */,
+				49C928892C1CCC0F0046325B /* charapa_turtle.usdz */,
+				49C928842C1CCC0F0046325B /* constrictor.usdz */,
+				49C928932C1CCC120046325B /* giant_frog.usdz */,
+				49C9287E2C1CCC0E0046325B /* jaguar.usdz */,
+				49C9288B2C1CCC0F0046325B /* lllama.usdz */,
+				49C928882C1CCC0F0046325B /* pelican.usdz */,
+				49C928822C1CCC0E0046325B /* pink_dolphin.usdz */,
+				49C9288C2C1CCC100046325B /* puma.usdz */,
+				49C928902C1CCC110046325B /* red_deer.usdz */,
+				49C9288D2C1CCC100046325B /* red_macaw.usdz */,
+				49C9287D2C1CCC0E0046325B /* red_monkey.usdz */,
+				49C928912C1CCC110046325B /* river_wolf.usdz */,
+				49C928872C1CCC0F0046325B /* sajino.usdz */,
+				49C9288E2C1CCC100046325B /* vicuna.usdz */,
+				49C9288F2C1CCC100046325B /* white_deer.usdz */,
+				49C928942C1CCC120046325B /* yellow_monkey.usdz */,
 				49A4297B2BF91FD500EC8E8B /* llama6.usdz */,
-				49FBF1E92BE58590007D05D0 /* alpaca.usdz */,
 			);
 			path = 3DModels;
 			sourceTree = "<group>";
@@ -466,10 +535,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49FBF1EA2BE58590007D05D0 /* alpaca.usdz in Resources */,
+				49C928952C1CCC120046325B /* red_monkey.usdz in Resources */,
+				49C928AB2C1CCC120046325B /* giant_frog.usdz in Resources */,
 				4928D3362BCCB9D0005420BF /* Preview Assets.xcassets in Resources */,
+				49C9289C2C1CCC120046325B /* constrictor.usdz in Resources */,
+				49C928982C1CCC120046325B /* black_caiman.usdz in Resources */,
 				49A4297C2BF91FD500EC8E8B /* llama6.usdz in Resources */,
+				49C928A22C1CCC120046325B /* cascabel.usdz in Resources */,
+				49C9289B2C1CCC120046325B /* andean_fox.usdz in Resources */,
+				49C928A12C1CCC120046325B /* charapa_turtle.usdz in Resources */,
+				49C9289D2C1CCC120046325B /* andean_toucan.usdz in Resources */,
+				49C928A02C1CCC120046325B /* pelican.usdz in Resources */,
+				49C928A92C1CCC120046325B /* river_wolf.usdz in Resources */,
+				49C928A82C1CCC120046325B /* red_deer.usdz in Resources */,
+				49C928A32C1CCC120046325B /* lllama.usdz in Resources */,
+				49C928992C1CCC120046325B /* capibara.usdz in Resources */,
+				49C928972C1CCC120046325B /* andean_flamenco.usdz in Resources */,
+				49C928AC2C1CCC120046325B /* yellow_monkey.usdz in Resources */,
+				49C928A72C1CCC120046325B /* white_deer.usdz in Resources */,
+				49C9289A2C1CCC120046325B /* pink_dolphin.usdz in Resources */,
+				49C9289E2C1CCC120046325B /* carpenter.usdz in Resources */,
+				49C928A42C1CCC120046325B /* puma.usdz in Resources */,
+				49C9289F2C1CCC120046325B /* sajino.usdz in Resources */,
+				49C928AA2C1CCC120046325B /* alpaca.usdz in Resources */,
+				49C928A52C1CCC120046325B /* red_macaw.usdz in Resources */,
 				4928D3332BCCB9D0005420BF /* Assets.xcassets in Resources */,
+				49C928962C1CCC120046325B /* jaguar.usdz in Resources */,
+				49C928A62C1CCC120046325B /* vicuna.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
