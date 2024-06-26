@@ -58,6 +58,7 @@
 		49E72AD32C2CB2120061332D /* llama.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72ABC2C2CB2120061332D /* llama.usdz */; };
 		49E72AD52C2CB9530061332D /* jaguar.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AD42C2CB9530061332D /* jaguar.usdz */; };
 		49E72AD72C2CD6710061332D /* pink_dolphin.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AD62C2CD6710061332D /* pink_dolphin.usdz */; };
+		49E72AD92C2CDC170061332D /* coast_fox.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AD82C2CDC170061332D /* coast_fox.usdz */; };
 		49FBF1CE2BE567B3007D05D0 /* AnimalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBF1CD2BE567B3007D05D0 /* AnimalScreen.swift */; };
 		49FE80D22BD0C97100C23E57 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80D12BD0C97100C23E57 /* MainScreen.swift */; };
 		49FE80DE2BD0CABC00C23E57 /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80DD2BD0CABC00C23E57 /* MapScreen.swift */; };
@@ -120,6 +121,7 @@
 		49E72ABC2C2CB2120061332D /* llama.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = llama.usdz; path = "../../../../../Library/CloudStorage/OneDrive-UniversidadPeruanadeCiencias/UPC/Tesis/modelos3d/listos/drive-download-20240614T184139Z-001/llama.usdz"; sourceTree = "<group>"; };
 		49E72AD42C2CB9530061332D /* jaguar.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = jaguar.usdz; sourceTree = "<group>"; };
 		49E72AD62C2CD6710061332D /* pink_dolphin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pink_dolphin.usdz; sourceTree = "<group>"; };
+		49E72AD82C2CDC170061332D /* coast_fox.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = coast_fox.usdz; sourceTree = "<group>"; };
 		49FBF1CD2BE567B3007D05D0 /* AnimalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalScreen.swift; sourceTree = "<group>"; };
 		49FE80D12BD0C97100C23E57 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		49FE80DD2BD0CABC00C23E57 /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 		49FBF1C82BE564A5007D05D0 /* 3DModels */ = {
 			isa = PBXGroup;
 			children = (
+				49E72AD82C2CDC170061332D /* coast_fox.usdz */,
 				49E72AD62C2CD6710061332D /* pink_dolphin.usdz */,
 				49E72AD42C2CB9530061332D /* jaguar.usdz */,
 				49E72AB22C2CB2100061332D /* alpaca.usdz */,
@@ -531,6 +534,7 @@
 			files = (
 				49E72AD22C2CB2120061332D /* red_monkey.usdz in Resources */,
 				49E72ACD2C2CB2120061332D /* charapa_turtle.usdz in Resources */,
+				49E72AD92C2CDC170061332D /* coast_fox.usdz in Resources */,
 				49E72AC02C2CB2120061332D /* carpenter.usdz in Resources */,
 				49E72AD02C2CB2120061332D /* constrictor.usdz in Resources */,
 				49E72AC12C2CB2120061332D /* puma.usdz in Resources */,
