@@ -28,38 +28,36 @@
 		499637772C163682004486BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499637762C163682004486BB /* AppDelegate.swift */; };
 		4996377A2C16370D004486BB /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 499637792C16370D004486BB /* GoogleSignIn */; };
 		4996377C2C16370D004486BB /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4996377B2C16370D004486BB /* GoogleSignInSwift */; };
-		49A4297C2BF91FD500EC8E8B /* llama6.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49A4297B2BF91FD500EC8E8B /* llama6.usdz */; };
 		49C928752C1A8A9F0046325B /* SeenAnimals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928742C1A8A9F0046325B /* SeenAnimals.swift */; };
 		49C928772C1A8AC00046325B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928762C1A8AC00046325B /* UserViewModel.swift */; };
 		49C9287A2C1A8B2E0046325B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928792C1A8B2E0046325B /* User.swift */; };
 		49C9287C2C1A967D0046325B /* UpdateUserForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C9287B2C1A967D0046325B /* UpdateUserForm.swift */; };
-		49C928952C1CCC120046325B /* red_monkey.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9287D2C1CCC0E0046325B /* red_monkey.usdz */; };
-		49C928962C1CCC120046325B /* jaguar.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9287E2C1CCC0E0046325B /* jaguar.usdz */; };
-		49C928972C1CCC120046325B /* andean_flamenco.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9287F2C1CCC0E0046325B /* andean_flamenco.usdz */; };
-		49C928982C1CCC120046325B /* black_caiman.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928802C1CCC0E0046325B /* black_caiman.usdz */; };
-		49C928992C1CCC120046325B /* capibara.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928812C1CCC0E0046325B /* capibara.usdz */; };
-		49C9289A2C1CCC120046325B /* pink_dolphin.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928822C1CCC0E0046325B /* pink_dolphin.usdz */; };
-		49C9289B2C1CCC120046325B /* andean_fox.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928832C1CCC0F0046325B /* andean_fox.usdz */; };
-		49C9289C2C1CCC120046325B /* constrictor.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928842C1CCC0F0046325B /* constrictor.usdz */; };
-		49C9289D2C1CCC120046325B /* andean_toucan.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928852C1CCC0F0046325B /* andean_toucan.usdz */; };
-		49C9289E2C1CCC120046325B /* carpenter.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928862C1CCC0F0046325B /* carpenter.usdz */; };
-		49C9289F2C1CCC120046325B /* sajino.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928872C1CCC0F0046325B /* sajino.usdz */; };
-		49C928A02C1CCC120046325B /* pelican.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928882C1CCC0F0046325B /* pelican.usdz */; };
-		49C928A12C1CCC120046325B /* charapa_turtle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928892C1CCC0F0046325B /* charapa_turtle.usdz */; };
-		49C928A22C1CCC120046325B /* cascabel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9288A2C1CCC0F0046325B /* cascabel.usdz */; };
-		49C928A32C1CCC120046325B /* lllama.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9288B2C1CCC0F0046325B /* lllama.usdz */; };
-		49C928A42C1CCC120046325B /* puma.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9288C2C1CCC100046325B /* puma.usdz */; };
-		49C928A52C1CCC120046325B /* red_macaw.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9288D2C1CCC100046325B /* red_macaw.usdz */; };
-		49C928A62C1CCC120046325B /* vicuna.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9288E2C1CCC100046325B /* vicuna.usdz */; };
-		49C928A72C1CCC120046325B /* white_deer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C9288F2C1CCC100046325B /* white_deer.usdz */; };
-		49C928A82C1CCC120046325B /* red_deer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928902C1CCC110046325B /* red_deer.usdz */; };
-		49C928A92C1CCC120046325B /* river_wolf.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928912C1CCC110046325B /* river_wolf.usdz */; };
-		49C928AA2C1CCC120046325B /* alpaca.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928922C1CCC120046325B /* alpaca.usdz */; };
-		49C928AB2C1CCC120046325B /* giant_frog.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928932C1CCC120046325B /* giant_frog.usdz */; };
-		49C928AC2C1CCC120046325B /* yellow_monkey.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49C928942C1CCC120046325B /* yellow_monkey.usdz */; };
 		49DFB7522BFD9C0800EEA79E /* CirculatButtonWithLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */; };
 		49DFB7542BFD9C5800EEA79E /* CustomLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */; };
 		49DFB7562BFD9C7300EEA79E /* MaterialDesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7552BFD9C7300EEA79E /* MaterialDesignTextField.swift */; };
+		49E72ABE2C2CB2120061332D /* river_wolf.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AA72C2CB20F0061332D /* river_wolf.usdz */; };
+		49E72ABF2C2CB2120061332D /* andean_toucan.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AA82C2CB20F0061332D /* andean_toucan.usdz */; };
+		49E72AC02C2CB2120061332D /* carpenter.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AA92C2CB20F0061332D /* carpenter.usdz */; };
+		49E72AC12C2CB2120061332D /* puma.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AAA2C2CB20F0061332D /* puma.usdz */; };
+		49E72AC22C2CB2120061332D /* andean_flamenco.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AAB2C2CB20F0061332D /* andean_flamenco.usdz */; };
+		49E72AC32C2CB2120061332D /* andean_fox.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AAC2C2CB20F0061332D /* andean_fox.usdz */; };
+		49E72AC42C2CB2120061332D /* red_macaw.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AAD2C2CB2100061332D /* red_macaw.usdz */; };
+		49E72AC52C2CB2120061332D /* pelican.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AAE2C2CB2100061332D /* pelican.usdz */; };
+		49E72AC62C2CB2120061332D /* vicuna.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AAF2C2CB2100061332D /* vicuna.usdz */; };
+		49E72AC82C2CB2120061332D /* giant_frog.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AB12C2CB2100061332D /* giant_frog.usdz */; };
+		49E72AC92C2CB2120061332D /* alpaca.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AB22C2CB2100061332D /* alpaca.usdz */; };
+		49E72ACA2C2CB2120061332D /* yellow_monkey.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AB32C2CB2100061332D /* yellow_monkey.usdz */; };
+		49E72ACB2C2CB2120061332D /* black_caiman.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AB42C2CB2100061332D /* black_caiman.usdz */; };
+		49E72ACC2C2CB2120061332D /* cascabel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AB52C2CB2110061332D /* cascabel.usdz */; };
+		49E72ACD2C2CB2120061332D /* charapa_turtle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AB62C2CB2110061332D /* charapa_turtle.usdz */; };
+		49E72ACE2C2CB2120061332D /* red_deer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AB72C2CB2110061332D /* red_deer.usdz */; };
+		49E72ACF2C2CB2120061332D /* sajino.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AB82C2CB2120061332D /* sajino.usdz */; };
+		49E72AD02C2CB2120061332D /* constrictor.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AB92C2CB2120061332D /* constrictor.usdz */; };
+		49E72AD12C2CB2120061332D /* white_deer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72ABA2C2CB2120061332D /* white_deer.usdz */; };
+		49E72AD22C2CB2120061332D /* red_monkey.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72ABB2C2CB2120061332D /* red_monkey.usdz */; };
+		49E72AD32C2CB2120061332D /* llama.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72ABC2C2CB2120061332D /* llama.usdz */; };
+		49E72AD52C2CB9530061332D /* jaguar.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AD42C2CB9530061332D /* jaguar.usdz */; };
+		49E72AD72C2CD6710061332D /* pink_dolphin.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 49E72AD62C2CD6710061332D /* pink_dolphin.usdz */; };
 		49FBF1CE2BE567B3007D05D0 /* AnimalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBF1CD2BE567B3007D05D0 /* AnimalScreen.swift */; };
 		49FE80D22BD0C97100C23E57 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80D12BD0C97100C23E57 /* MainScreen.swift */; };
 		49FE80DE2BD0CABC00C23E57 /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE80DD2BD0CABC00C23E57 /* MapScreen.swift */; };
@@ -92,38 +90,36 @@
 		499637742C1517D3004486BB /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		499637762C163682004486BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4996377D2C1639CB004486BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		49A4297B2BF91FD500EC8E8B /* llama6.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = llama6.usdz; sourceTree = "<group>"; };
 		49C928742C1A8A9F0046325B /* SeenAnimals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeenAnimals.swift; sourceTree = "<group>"; };
 		49C928762C1A8AC00046325B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		49C928792C1A8B2E0046325B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		49C9287B2C1A967D0046325B /* UpdateUserForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserForm.swift; sourceTree = "<group>"; };
-		49C9287D2C1CCC0E0046325B /* red_monkey.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = red_monkey.usdz; sourceTree = "<group>"; };
-		49C9287E2C1CCC0E0046325B /* jaguar.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = jaguar.usdz; sourceTree = "<group>"; };
-		49C9287F2C1CCC0E0046325B /* andean_flamenco.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = andean_flamenco.usdz; sourceTree = "<group>"; };
-		49C928802C1CCC0E0046325B /* black_caiman.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = black_caiman.usdz; sourceTree = "<group>"; };
-		49C928812C1CCC0E0046325B /* capibara.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = capibara.usdz; sourceTree = "<group>"; };
-		49C928822C1CCC0E0046325B /* pink_dolphin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pink_dolphin.usdz; sourceTree = "<group>"; };
-		49C928832C1CCC0F0046325B /* andean_fox.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = andean_fox.usdz; sourceTree = "<group>"; };
-		49C928842C1CCC0F0046325B /* constrictor.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = constrictor.usdz; sourceTree = "<group>"; };
-		49C928852C1CCC0F0046325B /* andean_toucan.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = andean_toucan.usdz; sourceTree = "<group>"; };
-		49C928862C1CCC0F0046325B /* carpenter.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = carpenter.usdz; sourceTree = "<group>"; };
-		49C928872C1CCC0F0046325B /* sajino.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sajino.usdz; sourceTree = "<group>"; };
-		49C928882C1CCC0F0046325B /* pelican.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pelican.usdz; sourceTree = "<group>"; };
-		49C928892C1CCC0F0046325B /* charapa_turtle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = charapa_turtle.usdz; sourceTree = "<group>"; };
-		49C9288A2C1CCC0F0046325B /* cascabel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = cascabel.usdz; sourceTree = "<group>"; };
-		49C9288B2C1CCC0F0046325B /* lllama.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = lllama.usdz; sourceTree = "<group>"; };
-		49C9288C2C1CCC100046325B /* puma.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = puma.usdz; sourceTree = "<group>"; };
-		49C9288D2C1CCC100046325B /* red_macaw.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = red_macaw.usdz; sourceTree = "<group>"; };
-		49C9288E2C1CCC100046325B /* vicuna.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = vicuna.usdz; sourceTree = "<group>"; };
-		49C9288F2C1CCC100046325B /* white_deer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = white_deer.usdz; sourceTree = "<group>"; };
-		49C928902C1CCC110046325B /* red_deer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = red_deer.usdz; sourceTree = "<group>"; };
-		49C928912C1CCC110046325B /* river_wolf.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = river_wolf.usdz; sourceTree = "<group>"; };
-		49C928922C1CCC120046325B /* alpaca.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = alpaca.usdz; sourceTree = "<group>"; };
-		49C928932C1CCC120046325B /* giant_frog.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = giant_frog.usdz; sourceTree = "<group>"; };
-		49C928942C1CCC120046325B /* yellow_monkey.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = yellow_monkey.usdz; sourceTree = "<group>"; };
 		49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirculatButtonWithLogo.swift; sourceTree = "<group>"; };
 		49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginButton.swift; sourceTree = "<group>"; };
 		49DFB7552BFD9C7300EEA79E /* MaterialDesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDesignTextField.swift; sourceTree = "<group>"; };
+		49E72AA72C2CB20F0061332D /* river_wolf.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = river_wolf.usdz; sourceTree = "<group>"; };
+		49E72AA82C2CB20F0061332D /* andean_toucan.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = andean_toucan.usdz; sourceTree = "<group>"; };
+		49E72AA92C2CB20F0061332D /* carpenter.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = carpenter.usdz; sourceTree = "<group>"; };
+		49E72AAA2C2CB20F0061332D /* puma.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = puma.usdz; sourceTree = "<group>"; };
+		49E72AAB2C2CB20F0061332D /* andean_flamenco.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = andean_flamenco.usdz; sourceTree = "<group>"; };
+		49E72AAC2C2CB20F0061332D /* andean_fox.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = andean_fox.usdz; sourceTree = "<group>"; };
+		49E72AAD2C2CB2100061332D /* red_macaw.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = red_macaw.usdz; sourceTree = "<group>"; };
+		49E72AAE2C2CB2100061332D /* pelican.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pelican.usdz; sourceTree = "<group>"; };
+		49E72AAF2C2CB2100061332D /* vicuna.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = vicuna.usdz; sourceTree = "<group>"; };
+		49E72AB12C2CB2100061332D /* giant_frog.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = giant_frog.usdz; sourceTree = "<group>"; };
+		49E72AB22C2CB2100061332D /* alpaca.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = alpaca.usdz; sourceTree = "<group>"; };
+		49E72AB32C2CB2100061332D /* yellow_monkey.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = yellow_monkey.usdz; sourceTree = "<group>"; };
+		49E72AB42C2CB2100061332D /* black_caiman.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = black_caiman.usdz; sourceTree = "<group>"; };
+		49E72AB52C2CB2110061332D /* cascabel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = cascabel.usdz; sourceTree = "<group>"; };
+		49E72AB62C2CB2110061332D /* charapa_turtle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = charapa_turtle.usdz; sourceTree = "<group>"; };
+		49E72AB72C2CB2110061332D /* red_deer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = red_deer.usdz; sourceTree = "<group>"; };
+		49E72AB82C2CB2120061332D /* sajino.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sajino.usdz; sourceTree = "<group>"; };
+		49E72AB92C2CB2120061332D /* constrictor.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = constrictor.usdz; sourceTree = "<group>"; };
+		49E72ABA2C2CB2120061332D /* white_deer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = white_deer.usdz; sourceTree = "<group>"; };
+		49E72ABB2C2CB2120061332D /* red_monkey.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = red_monkey.usdz; sourceTree = "<group>"; };
+		49E72ABC2C2CB2120061332D /* llama.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = llama.usdz; path = "../../../../../Library/CloudStorage/OneDrive-UniversidadPeruanadeCiencias/UPC/Tesis/modelos3d/listos/drive-download-20240614T184139Z-001/llama.usdz"; sourceTree = "<group>"; };
+		49E72AD42C2CB9530061332D /* jaguar.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = jaguar.usdz; sourceTree = "<group>"; };
+		49E72AD62C2CD6710061332D /* pink_dolphin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pink_dolphin.usdz; sourceTree = "<group>"; };
 		49FBF1CD2BE567B3007D05D0 /* AnimalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalScreen.swift; sourceTree = "<group>"; };
 		49FE80D12BD0C97100C23E57 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		49FE80DD2BD0CABC00C23E57 /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
@@ -310,31 +306,29 @@
 		49FBF1C82BE564A5007D05D0 /* 3DModels */ = {
 			isa = PBXGroup;
 			children = (
-				49C928922C1CCC120046325B /* alpaca.usdz */,
-				49C9287F2C1CCC0E0046325B /* andean_flamenco.usdz */,
-				49C928832C1CCC0F0046325B /* andean_fox.usdz */,
-				49C928852C1CCC0F0046325B /* andean_toucan.usdz */,
-				49C928802C1CCC0E0046325B /* black_caiman.usdz */,
-				49C928812C1CCC0E0046325B /* capibara.usdz */,
-				49C928862C1CCC0F0046325B /* carpenter.usdz */,
-				49C9288A2C1CCC0F0046325B /* cascabel.usdz */,
-				49C928892C1CCC0F0046325B /* charapa_turtle.usdz */,
-				49C928842C1CCC0F0046325B /* constrictor.usdz */,
-				49C928932C1CCC120046325B /* giant_frog.usdz */,
-				49C9287E2C1CCC0E0046325B /* jaguar.usdz */,
-				49C9288B2C1CCC0F0046325B /* lllama.usdz */,
-				49C928882C1CCC0F0046325B /* pelican.usdz */,
-				49C928822C1CCC0E0046325B /* pink_dolphin.usdz */,
-				49C9288C2C1CCC100046325B /* puma.usdz */,
-				49C928902C1CCC110046325B /* red_deer.usdz */,
-				49C9288D2C1CCC100046325B /* red_macaw.usdz */,
-				49C9287D2C1CCC0E0046325B /* red_monkey.usdz */,
-				49C928912C1CCC110046325B /* river_wolf.usdz */,
-				49C928872C1CCC0F0046325B /* sajino.usdz */,
-				49C9288E2C1CCC100046325B /* vicuna.usdz */,
-				49C9288F2C1CCC100046325B /* white_deer.usdz */,
-				49C928942C1CCC120046325B /* yellow_monkey.usdz */,
-				49A4297B2BF91FD500EC8E8B /* llama6.usdz */,
+				49E72AD62C2CD6710061332D /* pink_dolphin.usdz */,
+				49E72AD42C2CB9530061332D /* jaguar.usdz */,
+				49E72AB22C2CB2100061332D /* alpaca.usdz */,
+				49E72AAB2C2CB20F0061332D /* andean_flamenco.usdz */,
+				49E72AAC2C2CB20F0061332D /* andean_fox.usdz */,
+				49E72AA82C2CB20F0061332D /* andean_toucan.usdz */,
+				49E72AB42C2CB2100061332D /* black_caiman.usdz */,
+				49E72AA92C2CB20F0061332D /* carpenter.usdz */,
+				49E72AB52C2CB2110061332D /* cascabel.usdz */,
+				49E72AB62C2CB2110061332D /* charapa_turtle.usdz */,
+				49E72AB92C2CB2120061332D /* constrictor.usdz */,
+				49E72AB12C2CB2100061332D /* giant_frog.usdz */,
+				49E72ABC2C2CB2120061332D /* llama.usdz */,
+				49E72AAE2C2CB2100061332D /* pelican.usdz */,
+				49E72AAA2C2CB20F0061332D /* puma.usdz */,
+				49E72AB72C2CB2110061332D /* red_deer.usdz */,
+				49E72AAD2C2CB2100061332D /* red_macaw.usdz */,
+				49E72ABB2C2CB2120061332D /* red_monkey.usdz */,
+				49E72AA72C2CB20F0061332D /* river_wolf.usdz */,
+				49E72AB82C2CB2120061332D /* sajino.usdz */,
+				49E72AAF2C2CB2100061332D /* vicuna.usdz */,
+				49E72ABA2C2CB2120061332D /* white_deer.usdz */,
+				49E72AB32C2CB2100061332D /* yellow_monkey.usdz */,
 			);
 			path = 3DModels;
 			sourceTree = "<group>";
@@ -535,33 +529,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49C928952C1CCC120046325B /* red_monkey.usdz in Resources */,
-				49C928AB2C1CCC120046325B /* giant_frog.usdz in Resources */,
+				49E72AD22C2CB2120061332D /* red_monkey.usdz in Resources */,
+				49E72ACD2C2CB2120061332D /* charapa_turtle.usdz in Resources */,
+				49E72AC02C2CB2120061332D /* carpenter.usdz in Resources */,
+				49E72AD02C2CB2120061332D /* constrictor.usdz in Resources */,
+				49E72AC12C2CB2120061332D /* puma.usdz in Resources */,
+				49E72AC22C2CB2120061332D /* andean_flamenco.usdz in Resources */,
+				49E72AD32C2CB2120061332D /* llama.usdz in Resources */,
+				49E72ACA2C2CB2120061332D /* yellow_monkey.usdz in Resources */,
+				49E72AC32C2CB2120061332D /* andean_fox.usdz in Resources */,
+				49E72ACE2C2CB2120061332D /* red_deer.usdz in Resources */,
+				49E72AC62C2CB2120061332D /* vicuna.usdz in Resources */,
 				4928D3362BCCB9D0005420BF /* Preview Assets.xcassets in Resources */,
-				49C9289C2C1CCC120046325B /* constrictor.usdz in Resources */,
-				49C928982C1CCC120046325B /* black_caiman.usdz in Resources */,
-				49A4297C2BF91FD500EC8E8B /* llama6.usdz in Resources */,
-				49C928A22C1CCC120046325B /* cascabel.usdz in Resources */,
-				49C9289B2C1CCC120046325B /* andean_fox.usdz in Resources */,
-				49C928A12C1CCC120046325B /* charapa_turtle.usdz in Resources */,
-				49C9289D2C1CCC120046325B /* andean_toucan.usdz in Resources */,
-				49C928A02C1CCC120046325B /* pelican.usdz in Resources */,
-				49C928A92C1CCC120046325B /* river_wolf.usdz in Resources */,
-				49C928A82C1CCC120046325B /* red_deer.usdz in Resources */,
-				49C928A32C1CCC120046325B /* lllama.usdz in Resources */,
-				49C928992C1CCC120046325B /* capibara.usdz in Resources */,
-				49C928972C1CCC120046325B /* andean_flamenco.usdz in Resources */,
-				49C928AC2C1CCC120046325B /* yellow_monkey.usdz in Resources */,
-				49C928A72C1CCC120046325B /* white_deer.usdz in Resources */,
-				49C9289A2C1CCC120046325B /* pink_dolphin.usdz in Resources */,
-				49C9289E2C1CCC120046325B /* carpenter.usdz in Resources */,
-				49C928A42C1CCC120046325B /* puma.usdz in Resources */,
-				49C9289F2C1CCC120046325B /* sajino.usdz in Resources */,
-				49C928AA2C1CCC120046325B /* alpaca.usdz in Resources */,
-				49C928A52C1CCC120046325B /* red_macaw.usdz in Resources */,
+				49E72AC52C2CB2120061332D /* pelican.usdz in Resources */,
+				49E72AD52C2CB9530061332D /* jaguar.usdz in Resources */,
+				49E72AD12C2CB2120061332D /* white_deer.usdz in Resources */,
+				49E72ACF2C2CB2120061332D /* sajino.usdz in Resources */,
+				49E72ABE2C2CB2120061332D /* river_wolf.usdz in Resources */,
+				49E72AC92C2CB2120061332D /* alpaca.usdz in Resources */,
+				49E72ACB2C2CB2120061332D /* black_caiman.usdz in Resources */,
+				49E72ACC2C2CB2120061332D /* cascabel.usdz in Resources */,
+				49E72AC42C2CB2120061332D /* red_macaw.usdz in Resources */,
+				49E72ABF2C2CB2120061332D /* andean_toucan.usdz in Resources */,
 				4928D3332BCCB9D0005420BF /* Assets.xcassets in Resources */,
-				49C928962C1CCC120046325B /* jaguar.usdz in Resources */,
-				49C928A62C1CCC120046325B /* vicuna.usdz in Resources */,
+				49E72AD72C2CD6710061332D /* pink_dolphin.usdz in Resources */,
+				49E72AC82C2CB2120061332D /* giant_frog.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

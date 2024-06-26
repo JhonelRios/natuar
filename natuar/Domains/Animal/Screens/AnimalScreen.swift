@@ -65,36 +65,56 @@ struct AnimalScreen: View {
     }
 }
 
+
+// Info: https://medium.com/journey-of-one-thousand-apps/arkit-and-corelocation-part-one-fc7cb2fa0150
 struct ARViewContainer: UIViewRepresentable {
     var animal: Animal
     
     func makeUIView(context: Context) -> ARView {
         ARVariables.arView = ARView(frame: .zero)
+        ARVariables.arView.environment.lighting.intensityExponent = 2
+        
+        ARVariables.arView.automaticallyConfigureSession = false
         
         let config = ARWorldTrackingConfiguration()
-        config.planeDetection = [.horizontal, .vertical]
-        config.environmentTexturing = .automatic
+        //        config.planeDetection = [.horizontal, .vertical]
+        config.isLightEstimationEnabled = true
+        config.planeDetection = [.horizontal]
+        config.environmentTexturing = .none
+        
         
         if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
             config.sceneReconstruction = .mesh
         }
         //
-//        ARVariables.arView.session.run(config)
+        ARVariables.arView.session.run(config)
         print(animal.model_name)
         //
-//        let animal = try! Entity.load(named: animal.model_name)
-//        
-//        if let animalAnimation = animal.availableAnimations.first {
-//            animal.playAnimation(animalAnimation.repeat(duration: .infinity), transitionDuration: 0.5, startsPaused: false)
-//        } else {
-//            print("No animation in USDZ")
-//        }
+        let animal = try! Entity.load(named: animal.model_name)
         
-//        let anchor = AnchorEntity(plane: .horizontal)
-//        
-//        anchor.addChild(animal)
-//        
-//        ARVariables.arView.scene.addAnchor(anchor)
+        if let animalAnimation = animal.availableAnimations.first {
+            animal.playAnimation(animalAnimation.repeat(duration: .infinity), transitionDuration: 0.5, startsPaused: false)
+        } else {
+            print("No animation in USDZ")
+        }
+        
+        let anchor = AnchorEntity(plane: .horizontal)
+        
+        anchor.addChild(animal)
+        
+        let frontLight = CustomFrontLight()
+        let upperLight = CustomFrontLight()
+        let lowerLight = CustomFrontLight()
+//        let rightLight = CustomFrontLight()
+        upperLight.position = [0, 2, -1.8]
+        frontLight.position = [0, 0, 2]
+        lowerLight.position = [0, -2, -1.8]
+//        rightLight.position = [2.5, 0, -2.5]
+        anchor.addChild(frontLight)
+        anchor.addChild(upperLight)
+        anchor.addChild(lowerLight)
+        
+        ARVariables.arView.scene.addAnchor(anchor)
         
         return ARVariables.arView
     }
@@ -103,6 +123,19 @@ struct ARViewContainer: UIViewRepresentable {
         print("View is updating")
     }
 }
+
+// Info: https://medium.com/macoclock/realitykit-911-lighting-and-shadows-66f99bcd5219
+class CustomFrontLight: Entity, HasPointLight {
+    required init() {
+        super.init()
+        self.light = PointLightComponent(color: .white,
+                                         intensity: 70000,
+                                         attenuationRadius: 30)
+        
+        self.position = [0, -0.5, 0.5]
+    }
+}
+
 
 #Preview {
     AnimalScreen(selectedAnimal: Animal(id: 1, name: "Llama", scientific_name: "Llama cientifica", description: "Descripcion del animal", weigth: 20, height: 13, average_age: 32, habitat: "Peru", diet: "Pasto", gestation: "Tiene un tiempo de gestacion en prueba", in_danger: false, images: [""], model_name: "llama", latitude: -12.23, longitude: -12.23, spotId: 1))
