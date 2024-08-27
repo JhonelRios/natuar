@@ -8,77 +8,43 @@
 import SwiftUI
 
 struct ImagePreviewView: View {
+    @Environment(\.presentationMode) var presentationMode
     let image: UIImage
-    @Binding var isPresented: Bool
-    
-    func shareImage() {
-        let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let rootViewController = windowScene.windows.first?.rootViewController {
-            rootViewController.present(activityVC, animated: true, completion: nil)
-        }
-    }
+    let onDismiss: () -> Void
     
     var body: some View {
-        VStack {
-            HStack {
-                Spacer()
+        ZStack(alignment: .topLeading) {
+            ZStack(alignment: .bottom) {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+//                    .frame(height: UIScreen.main.bounds.height * 0.8)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .ignoresSafeArea()
+//                    .cornerRadius(10)
                 
-                Button(action: {
-                    isPresented = false
-                }) {
-                    Image(systemName: "xmark.circle.fill")
+                /*
+                 This share link opens a new sheet, so if there is a current sheet in the view it won't be showed
+                 so you need to ensure to hide the another sheet or use this element inside a new view
+                 */
+                ShareLink(item: Image(uiImage: image), preview: SharePreview("Fotografía", image: Image(uiImage: image))) {
+                    Text("Compartir experiencia")
                         .foregroundColor(.white)
-                        .font(.title)
-                        .padding()
+                        .padding(.all, 10)
+                        .background(Color.blue)
+                        .cornerRadius(10)
                 }
+                .padding(.bottom, 60)
             }
-            .padding(.leading, 10)
             
-            Spacer().frame(height: 5)
-            
-            Image(uiImage: image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: UIScreen.main.bounds.height * 0.5)
-                .padding()
-            
-            //            ShareLink(item: Image(uiImage: image), preview: SharePreview("Fotografía", image: Image(uiImage: image))) {
-            //                Text("Compartir experiencia")
-            //                    .padding()
-            //                    .background(Color.blue)
-            //                    .foregroundColor(.white)
-            //            }
-            //            .padding(.bottom)
-            //            if let tempURL = saveImageToTemporaryFile() {
-            //                ShareLink(item: tempURL, preview: SharePreview("Fotografía", image: Image(uiImage: image))) {
-            //                    Text("Compartir experiencia")
-            //                        .padding()
-            //                        .background(Color.blue)
-            //                        .foregroundColor(.white)
-            //                }
-            //                .padding(.bottom)
-            //            }
-            //            ShareLink(item: URL(string: "https://google.com")!) {
-            //                Text("Compartir experiencia")
-            //                    .padding()
-            //                    .background(Color.blue)
-            //                    .foregroundColor(.white)
-            //            }
-            //            .padding(.bottom)
-            Button(action: {
-                shareImage()
-            }) {
-                Text("Compartir experiencia")
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-            }
-            .padding(.bottom)
+            BackButton(action: {
+                presentationMode.wrappedValue.dismiss()
+                onDismiss()
+            })
+            .padding(.top, 40)
         }
-        .background(Color.black.opacity(0.8))
-        .edgesIgnoringSafeArea(.all)
+        .navigationBarHidden(true)
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 

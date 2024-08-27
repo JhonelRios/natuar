@@ -52,6 +52,7 @@ struct AnimalScreen: View {
                     //                    UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
                     if let compressedImage = UIImage(data: (image?.pngData())!) {
                         self.capturedImage = compressedImage
+                        self.showDetails = false
                         self.showImagePreview = true
                     }
                 }
@@ -67,13 +68,13 @@ struct AnimalScreen: View {
                     .padding(.bottom, 45)
             }
         }
-        .overlay(
-            Group {
-                if showImagePreview, let image = capturedImage {
-                    ImagePreviewView(image: image, isPresented: $showImagePreview)
-                }
+        .navigationDestination(isPresented: $showImagePreview) {
+            if let image = capturedImage {
+                ImagePreviewView(image: image, onDismiss: {
+                    self.showDetails = true
+                })
             }
-        )
+        }
         .onAppear {
             animalViewModel.markAsSeen(animalId: selectedAnimal.id)
         }
