@@ -32,6 +32,7 @@
 		49C928772C1A8AC00046325B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928762C1A8AC00046325B /* UserViewModel.swift */; };
 		49C9287A2C1A8B2E0046325B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928792C1A8B2E0046325B /* User.swift */; };
 		49C9287C2C1A967D0046325B /* UpdateUserForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C9287B2C1A967D0046325B /* UpdateUserForm.swift */; };
+		49D53E992C7D35300093E900 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D53E982C7D35300093E900 /* ImagePreviewView.swift */; };
 		49DFB7522BFD9C0800EEA79E /* CirculatButtonWithLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */; };
 		49DFB7542BFD9C5800EEA79E /* CustomLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */; };
 		49DFB7562BFD9C7300EEA79E /* MaterialDesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFB7552BFD9C7300EEA79E /* MaterialDesignTextField.swift */; };
@@ -95,6 +96,7 @@
 		49C928762C1A8AC00046325B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		49C928792C1A8B2E0046325B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		49C9287B2C1A967D0046325B /* UpdateUserForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserForm.swift; sourceTree = "<group>"; };
+		49D53E982C7D35300093E900 /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
 		49DFB7512BFD9C0800EEA79E /* CirculatButtonWithLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirculatButtonWithLogo.swift; sourceTree = "<group>"; };
 		49DFB7532BFD9C5800EEA79E /* CustomLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginButton.swift; sourceTree = "<group>"; };
 		49DFB7552BFD9C7300EEA79E /* MaterialDesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDesignTextField.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				49737BC22C016961009D4459 /* AnimalDetailsView.swift */,
 				49737BC52C016A93009D4459 /* InfoCardView.swift */,
+				49D53E982C7D35300093E900 /* ImagePreviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				49FE80E22BD0CB3B00C23E57 /* UserConfigScreen.swift in Sources */,
 				49FE80EC2BD37F8E00C23E57 /* UbicationDetailsView.swift in Sources */,
 				49737BC92C017424009D4459 /* SegmentedPicker.swift in Sources */,
+				49D53E992C7D35300093E900 /* ImagePreviewView.swift in Sources */,
 				4996376B2C0821A5004486BB /* Animal.swift in Sources */,
 				49FE80E72BD0D4E400C23E57 /* ToggleMapStyleButton.swift in Sources */,
 				4928D32F2BCCB9CF005420BF /* natuarApp.swift in Sources */,

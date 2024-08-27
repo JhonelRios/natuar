@@ -21,6 +21,10 @@ struct AnimalScreen: View {
     var selectedAnimal: Animal
     var fromFavorites: Bool = false
     
+    // Captured image preview
+    @State private var capturedImage: UIImage?
+    @State private var showImagePreview = false
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .topLeading) {
@@ -43,9 +47,13 @@ struct AnimalScreen: View {
             Button {
                 // Placeholder: take a snapshot
                 ARVariables.arView.snapshot(saveToHDR: false) { (image) in
-                    let compressedImage = UIImage(data: (image?.pngData())!)
-                    
-                    UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+                    //                    let compressedImage = UIImage(data: (image?.pngData())!)
+                    //
+                    //                    UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+                    if let compressedImage = UIImage(data: (image?.pngData())!) {
+                        self.capturedImage = compressedImage
+                        self.showImagePreview = true
+                    }
                 }
             } label: {
                 Image(systemName: "camera.aperture")
@@ -59,6 +67,13 @@ struct AnimalScreen: View {
                     .padding(.bottom, 45)
             }
         }
+        .overlay(
+            Group {
+                if showImagePreview, let image = capturedImage {
+                    ImagePreviewView(image: image, isPresented: $showImagePreview)
+                }
+            }
+        )
         .onAppear {
             animalViewModel.markAsSeen(animalId: selectedAnimal.id)
         }
@@ -105,11 +120,11 @@ struct ARViewContainer: UIViewRepresentable {
         let frontLight = CustomFrontLight()
         let upperLight = CustomFrontLight()
         let lowerLight = CustomFrontLight()
-//        let rightLight = CustomFrontLight()
+        //        let rightLight = CustomFrontLight()
         upperLight.position = [0, 2, -1.8]
         frontLight.position = [0, 0, 2]
         lowerLight.position = [0, -2, -1.8]
-//        rightLight.position = [2.5, 0, -2.5]
+        //        rightLight.position = [2.5, 0, -2.5]
         anchor.addChild(frontLight)
         anchor.addChild(upperLight)
         anchor.addChild(lowerLight)
