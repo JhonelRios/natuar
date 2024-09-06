@@ -13,45 +13,19 @@ class MapViewModel : ObservableObject {
     @Published var errorMessage: String?
     
     func fetchNearestSpot(latitude: Double, longitude: Double, completion: @escaping (Bool) -> Void) {
-        let nearestSpotUrl = "\(Constants.backendURL)/spots/nearest?lat=\(latitude)&lon=\(longitude)"
-        guard let url = URL(string: nearestSpotUrl) else {
-            errorMessage = "Invalid URL"
-            return
+        let nearestSpot = spotsData.min { (spot1, spot2) -> Bool in
+            let distance1 = haversineDistance(lat1: latitude, lon1: longitude, lat2: spot1.latitude, lon2: spot1.longitude)
+            let distance2 = haversineDistance(lat1: latitude, lon1: longitude, lat2: spot2.latitude, lon2: spot2.longitude)
+            return distance1 < distance2
         }
         
-        let accessToken = UserDefaultsManager().getAccessToken()
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization") // Add your token
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        isLoading = true
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            DispatchQueue.main.async {
-                self.isLoading = false
-                
-                if let error = error {
-                    self.errorMessage = "Spot request failed: \(error.localizedDescription)"
-                    completion(false)
-                    return
-                }
-                
-                guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    self.errorMessage = "Error: Non-200 HTTP status code"
-                    completion(false)
-                    return
-                }
-                
-                if let spotResponse = try? JSONDecoder().decode(Spot.self, from: data) {
-                    self.spot = spotResponse
-                    completion(true)
-                } else {
-                    self.errorMessage = "Failed to decode spot response"
-                    completion(false)
-                }
-            }
-        }.resume()
+        if let nearest = nearestSpot {
+            self.spot = nearest
+            completion(true)
+        } else {
+            print("Unable to find the nearest spot.")
+            self.errorMessage = "Unable to find the nearest spot."
+            completion(false)
+        }
     }
 }

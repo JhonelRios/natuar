@@ -31,6 +31,7 @@
 		49A333B12C867C14007B1F86 /* AnimalsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A333B02C867C14007B1F86 /* AnimalsData.swift */; };
 		49A333B32C8BAC98007B1F86 /* SpotsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A333B22C8BAC98007B1F86 /* SpotsData.swift */; };
 		49A333B72C8BAED2007B1F86 /* OfflineUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A333B62C8BAED2007B1F86 /* OfflineUser.swift */; };
+		49A333BA2C8BBB30007B1F86 /* HaversineDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A333B92C8BBB30007B1F86 /* HaversineDistance.swift */; };
 		49C928752C1A8A9F0046325B /* SeenAnimals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928742C1A8A9F0046325B /* SeenAnimals.swift */; };
 		49C928772C1A8AC00046325B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928762C1A8AC00046325B /* UserViewModel.swift */; };
 		49C9287A2C1A8B2E0046325B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C928792C1A8B2E0046325B /* User.swift */; };
@@ -98,6 +99,7 @@
 		49A333B02C867C14007B1F86 /* AnimalsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsData.swift; sourceTree = "<group>"; };
 		49A333B22C8BAC98007B1F86 /* SpotsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsData.swift; sourceTree = "<group>"; };
 		49A333B62C8BAED2007B1F86 /* OfflineUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineUser.swift; sourceTree = "<group>"; };
+		49A333B92C8BBB30007B1F86 /* HaversineDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaversineDistance.swift; sourceTree = "<group>"; };
 		49C928742C1A8A9F0046325B /* SeenAnimals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeenAnimals.swift; sourceTree = "<group>"; };
 		49C928762C1A8AC00046325B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		49C928792C1A8B2E0046325B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -281,6 +283,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		49A333B82C8BBB1A007B1F86 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				49A333B92C8BBB30007B1F86 /* HaversineDistance.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		49C928732C1A8A7E0046325B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +409,7 @@
 		49FE80D42BD0CA2900C23E57 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				49A333B82C8BBB1A007B1F86 /* Utils */,
 				499637682C082180004486BB /* ViewModel */,
 				49FE80E82BD0DFB500C23E57 /* Models */,
 				49FE80D82BD0CA8900C23E57 /* Views */,
@@ -596,6 +607,7 @@
 				49C9287C2C1A967D0046325B /* UpdateUserForm.swift in Sources */,
 				499637772C163682004486BB /* AppDelegate.swift in Sources */,
 				49FE80DE2BD0CABC00C23E57 /* MapScreen.swift in Sources */,
+				49A333BA2C8BBB30007B1F86 /* HaversineDistance.swift in Sources */,
 				499637652C08033A004486BB /* UserDefaultsManager.swift in Sources */,
 				499637722C1150C9004486BB /* AnimalCard.swift in Sources */,
 				4928D3312BCCB9CF005420BF /* ContentView.swift in Sources */,
