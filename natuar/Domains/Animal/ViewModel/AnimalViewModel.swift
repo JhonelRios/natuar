@@ -37,6 +37,7 @@ class AnimalViewModel : ObservableObject {
         }
         
         offlineUser.favoriteAnimals.append(selectedAnimal)
+        self.isFavorite = true
         completion(true)
     }
     
@@ -44,6 +45,7 @@ class AnimalViewModel : ObservableObject {
         offlineUser.favoriteAnimals = offlineUser.favoriteAnimals.filter {
             $0.id != animalId
         }
+        self.isFavorite = false
         completion(true)
     }
     
