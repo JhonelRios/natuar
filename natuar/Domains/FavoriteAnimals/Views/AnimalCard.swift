@@ -13,6 +13,8 @@ struct AnimalCard: View {
     
     @StateObject private var favoriteViewModel = FavoriteViewModel()
     
+    var onDelete: () -> Void
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -49,6 +51,7 @@ struct AnimalCard: View {
                     favoriteViewModel.deleteFavoriteAnimals(animalId: animal.id) { success in
                         if success {
                             print("successful deleted")
+                            onDelete()
                         } else {
                             print(favoriteViewModel.errorMessage ?? "")
                         }
@@ -72,5 +75,5 @@ struct AnimalCard: View {
 }
 
 #Preview {
-    AnimalCard(animal: Animal(id: 1, name: "Llama", scientific_name: "Llama cientifica", description: "Descripcion del animal", weigth: 20, height: 13, average_age: 32, habitat: "Peru", diet: "Pasto", gestation: "Tiene un tiempo de gestacion en prueba", in_danger: false, images: [""], model_name: "llama", latitude: -12.23, longitude: -12.23, spotId: 1), background: .green)
+    AnimalCard(animal: Animal(id: 1, name: "Llama", scientific_name: "Llama cientifica", description: "Descripcion del animal", weigth: 20, height: 13, average_age: 32, habitat: "Peru", diet: "Pasto", gestation: "Tiene un tiempo de gestacion en prueba", in_danger: false, images: [""], model_name: "llama", latitude: -12.23, longitude: -12.23, spotId: 1), background: .green, onDelete: {})
 }
