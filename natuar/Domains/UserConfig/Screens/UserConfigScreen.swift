@@ -26,7 +26,9 @@ struct UserConfigScreen: View {
                             .padding([.top, .leading])
                         
                         List {
-                            NavigationLink(destination: Text("hola"), label: {
+                            NavigationLink(destination: UpdateUserForm(currentUser: userViewModel.user!, updateUserData: {
+                                userViewModel.fetchUserDetails()
+                            }), label: {
                                 Text("Actualizar datos")
                             })
                             

@@ -108,10 +108,14 @@ class UserViewModel: ObservableObject {
         
         let accessToken = UserDefaultsManager().getAccessToken()
         
+        let body = ["name": name]
+        guard let jsonBody = try? JSONSerialization.data(withJSONObject: body) else { return }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "PATCH"
         request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization") // Add your token
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonBody
         
         isLoading = true
         
