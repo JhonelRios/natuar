@@ -122,25 +122,25 @@ struct LoginScreen: View {
                             }
                         }, isLoading: loginViewModel.isLoading)
                         
-                        Button("Olvidaste tu contraseña?") {
-                            //TODO: login
-                        }
+//                        Button("Olvidaste tu contraseña?") {
+//                            //TODO: login
+//                        }
                         
-                        Text("o").foregroundColor(Color(.gray))
+//                        Text("o").foregroundColor(Color(.gray))
                         
-                        HStack {
-                            Spacer() // Agrega un espacio antes del botón de Google
-                            CircularButtonWithLogo(imageName: "google-logo") {
-                                // Acción del botón de Google
-                                handleGoogleSignIn()
-                            }
-                            
-//                            CircularButtonWithLogo(imageName: "apple-logo") {
-//                                // Acción del botón de Apple
+//                        HStack {
+//                            Spacer() // Agrega un espacio antes del botón de Google
+//                            CircularButtonWithLogo(imageName: "google-logo") {
+//                                // Acción del botón de Google
+//                                handleGoogleSignIn()
 //                            }
-                            
-                            Spacer() // Agrega un espacio
-                        }
+//                            
+////                            CircularButtonWithLogo(imageName: "apple-logo") {
+////                                // Acción del botón de Apple
+////                            }
+//                            
+//                            Spacer() // Agrega un espacio
+//                        }
                     }.frame(width: geometry.size.width * 0.9).font(.system(size: 16, weight: .bold)).foregroundColor(Color("PrimaryColor"))
                     
                     
