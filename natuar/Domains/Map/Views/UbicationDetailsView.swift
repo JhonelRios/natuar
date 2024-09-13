@@ -16,14 +16,20 @@ struct UbicationDetailsView : View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             VStack(alignment: .leading) {
-                AsyncImage(url: URL(string: spot.picture)) { image in
-                    image.resizable().aspectRatio(contentMode: .fill)
-                } placeholder: {
-                    ProgressView()
-                }
-                .containerRelativeFrame(.horizontal)
-                .frame(height: 450, alignment: .bottom)
-                .clipped()
+                //                AsyncImage(url: URL(string: spot.picture)) { image in
+                //                    image.resizable().aspectRatio(contentMode: .fill)
+                //                } placeholder: {
+                //                    ProgressView()
+                //                }
+                //                .containerRelativeFrame(.horizontal)
+                //                .frame(height: 450, alignment: .bottom)
+                //                .clipped()
+                Image(spot.picture)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .containerRelativeFrame(.horizontal)
+                    .frame(height: 450, alignment: .bottom)
+                    .clipped()
                 
                 Spacer()
             }
@@ -79,14 +85,20 @@ struct DetailsView : View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
                         ForEach(spot.images, id: \.self) { imageUrl in
-                            AsyncImage(url: URL(string: imageUrl)) { image in
-                                image.resizable().aspectRatio(contentMode: .fill)
-                            } placeholder: {
-                                ProgressView()
-                            }
-                            .frame(width: 200, height: 200)
-                            .clipped()
-                            .clipShape(RoundedRectangle(cornerRadius: 4))
+//                            AsyncImage(url: URL(string: imageUrl)) { image in
+//                                image.resizable().aspectRatio(contentMode: .fill)
+//                            } placeholder: {
+//                                ProgressView()
+//                            }
+//                            .frame(width: 200, height: 200)
+//                            .clipped()
+//                            .clipShape(RoundedRectangle(cornerRadius: 4))
+                            Image(imageUrl)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 200, height: 200)
+                                .clipped()
+                                .clipShape(RoundedRectangle(cornerRadius: 4))
                         }
                     }
                 }

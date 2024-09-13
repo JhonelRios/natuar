@@ -21,9 +21,9 @@ let animalsData: [Animal] = [
         gestation: "28 días de incubación, con 2 a 4 huevos por nidada.",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/OIP.hYWP9ZkxZietAj8Nm8864gAAAA?rs=1&pid=ImgDetMain",
-            "https://infoanimales.net/wp-content/uploads/2020/08/perfil-guacamayo-rojo-453x300.jpg",
-            "https://th.bing.com/th/id/OIP.K83vb46m6ugbmqOFXLWnlwAAAA?rs=1&pid=ImgDetMain"
+            "red_macaw-image-1",
+            "red_macaw-image-2",
+            "red_macaw-image-3"
         ],
         model_name: "red_macaw",
         latitude: -12.83,
@@ -43,9 +43,9 @@ let animalsData: [Animal] = [
         gestation: "Incubación de 16 a 18 días, con 2 a 4 huevos por nidada.",
         in_danger: false,
         images: [
-            "https://extincionanimal.org/wp-content/uploads/2020/05/tucan-andino-1-480x379.jpg",
-            "https://extincionanimal.org/wp-content/uploads/2020/05/tucan-andino-2-480x360.jpg",
-            "https://th.bing.com/th/id/OIP.ngy6VPfcnzt5eY0DWreZ1wAAAA?rs=1&pid=ImgDetMain"
+            "andean_toucan-image-1",
+            "andean_toucan-image-2",
+            "andean_toucan-image-3"
         ],
         model_name: "andean_toucan",
         latitude: -5.65,
@@ -65,9 +65,9 @@ let animalsData: [Animal] = [
         gestation: "Aproximadamente 342 días, normalmente dando a luz a una cría.",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/OIP.MOHlpjI8R0AUBdIvgsBpJAAAAA?rs=1&pid=ImgDetMain",
-            "https://th.bing.com/th/id/OIP.5D9xNj8_wJuOBVROwvJm_wAAAA?rs=1&pid=ImgDetMain",
-            "https://th.bing.com/th/id/OIP._joX0FeDyxrSF3ayAoKB9gAAAA?rs=1&pid=ImgDetMain"
+            "alpaca-image-1",
+            "alpaca-image-2",
+            "alpaca-image-3"
         ],
         model_name: "alpaca",
         latitude: -15.925,
@@ -87,9 +87,9 @@ let animalsData: [Animal] = [
         gestation: "Pone hasta 500 huevos en una temporada de cría.",
         in_danger: true,
         images: [
-            "https://th.bing.com/th/id/OIP.hywp9dthizoN8QdAxeT6SwAAAA?rs=1&pid=ImgDetMain",
-            "https://imgs.mongabay.com/wp-content/uploads/sites/25/2016/11/09195758/plan_conservacion_mongabay-8-493x330.jpg",
-            "https://1.bp.blogspot.com/-6lQpc_268J0/XAbxk5MPFKI/AAAAAAAAkv0/9rZGiGagl_0tQDCP3SPdNB6QDIsaT2-RgCLcBGAs/s400/region-puno-declara-de-interes-regional-a-la-9420-jpg_604x0.jpg"
+            "giant_frog-image-1",
+            "giant_frog-image-2",
+            "giant_frog-image-3"
         ],
         model_name: "giant_frog",
         latitude: -15.92,
@@ -109,9 +109,9 @@ let animalsData: [Animal] = [
         gestation: "145 días, con camadas de 2 a 4 crías.",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/R.36377ba1d1891bbff18785c90565e89e?rik=s4DhDB6aOClCAQ",
-            "https://1.bp.blogspot.com/-DGALd1nbGfo/W8yZ8m7nfyI/AAAAAAAAixk/_1oPdm9yljssk9fU1uBiBnT8KIlnV-C5QCLcBGAs/s1600/sajino.jpg",
-            "https://lh4.googleusercontent.com/-X2-6KV6jSts/TWxJU8oMReI/AAAAAAAAABw/P5PXiGUBttk/s1600/3903441-el-sajino-tayassu-tajacu-de-pie-en-pastizales.jpg"
+            "sajino-image-1",
+            "sajino-image-2",
+            "sajino-image-3"
         ],
         model_name: "sajino",
         latitude: -12.217778,
@@ -131,8 +131,8 @@ let animalsData: [Animal] = [
         gestation: "Gestación de aproximadamente 240 días, con un parto de 1-2 crías.",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/R.86475b8f942cb1852da42f726166c4b0?rik=pmCqBURRmHoBxQ&riu=http%3a%2f%2fwww.venadopedia.com%2fwp-content%2fuploads%2f2012%2f10%2fred-deer-2.jpg&ehk=cFNJvUPB57AY5jsHPInDo%2fTa4iByDnCqZJTMWJ0M6wk%3d&risl=&pid=ImgRaw&r=0",
-            "https://th.bing.com/th/id/OIP.Or4Sze8wW29yPbl2gXrMpAAAAA?rs=1&pid=ImgDetMain"
+            "red_deer-image-1",
+            "red_deer-image-2"
         ],
         model_name: "red_deer",
         latitude: -12.84,
@@ -152,9 +152,8 @@ let animalsData: [Animal] = [
         gestation: "Gestación de aproximadamente 200 días, usualmente dando a luz a uno o dos cervatillos.",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/R.c22a62b1a38f92b5eb2b18d04789f4ff?rik=dBpVo9VhPs9mNw&pid=ImgRaw&r=0&sres=1&sresct=1",
-            "https://th.bing.com/th/id/OIP.2CwicqAXKn8ZaoTGT3iABgAAAA?rs=1&pid=ImgDetMain",
-            "https://th.bing.com/th/id/R.c5c2c5b13ae722a3fd3d8eb4ad9176e0?rik=82FExvA4Gml82g&riu=http%3a%2f%2fimg3.wikia.nocookie.net%2f__cb20120630160816%2fhonduras%2fes%2fimages%2ff%2ff9%2fVenadocb3portafw0.jpg&ehk=IsZ81bSZGhhh83zz%2bv3I4vdb2NuraAGsY0F3SAfs00I%3d&risl=&pid=ImgRaw&r=0"
+            "white_deer-image-2",
+            "white_deer-image-3"
         ],
         model_name: "white_deer",
         latitude: -11.35,
@@ -174,8 +173,7 @@ let animalsData: [Animal] = [
         gestation: "11 meses, con una sola cría por camada.",
         in_danger: false,
         images: [
-            "https://medicoplus.com/_next/image?url=https:%2F%2Fplustatic.com%2F2091%2Fconversions%2Fvicu%C3%B1a-large.jpg&w=1024&q=75",
-            "https://img.myloview.de/fototapeten/vicuna-comiendo-arbustos-en-el-paramo-de-la-sierra-ecuatoriana-400-277560130.jpg"
+            "vicuna-image-2"
         ],
         model_name: "vicuna",
         latitude: -15.723056,
@@ -195,9 +193,9 @@ let animalsData: [Animal] = [
         gestation: "Incubación de 90 a 100 días.",
         in_danger: true,
         images: [
-            "https://th.bing.com/th/id/R.6445761f9daa4873491f69d2aa2568b4?rik=SBwFvVzQ9dO%2b7w&riu=http%3a%2f%2fwww.conserva.co%2fsites%2fdefault%2ffiles%2fstyles%2freport_gallery_medium%2fpublic%2fimages_report%2fIMG_1011a.jpg%3fitok%3dCJeEfq_4&ehk=RTpg8On70tsyKEU8KLRksCk90CDqmicyDL6jQUc9KYI%3d&risl=&pid=ImgRaw&r=0",
-            "https://th.bing.com/th/id/R.eb20fb93a802c001a3d42abd962befe2?rik=GnXvRSLtrhU%2bsg&pid=ImgRaw&r=0",
-            "https://2.bp.blogspot.com/-jVj7J4-JpZg/W-Dbb3sN4AI/AAAAAAAAjH8/NRoJseh44aYDlBvcTpp9WRKEgk6xS5nLgCEwYBhgL/s400/598de8161cf36.jpeg"
+            "charapa_turtle-image-1",
+            "charapa_turtle-image-2",
+            "charapa_turtle-image-3"
         ],
         model_name: "charapa_turtle",
         latitude: -5.66,
@@ -217,9 +215,9 @@ let animalsData: [Animal] = [
         gestation: "65 a 70 días, con camadas de 1 a 5 crías.",
         in_danger: true,
         images: [
-            "https://cdn.arcgis.com/sharing/rest/content/items/294a8087ba354d428a8eeac86de34e44/resources/71Wz2VC-mipany0pLAqh0.jpeg?w=400",
-            "https://th.bing.com/th/id/OIP.JNgkNu2rAe-bbyFkISG2mwAAAA?rs=1&pid=ImgDetMain",
-            "https://4.bp.blogspot.com/-D8-U14iouRI/WATm-WDGjqI/AAAAAAAAeeI/CCjl5zc7iUQ0QREfxKoOZArNq27_sXNNQCLcB/s1600/lobo%2Bde%2Brio%2B11.jpg"
+            "river_wolf-image-1",
+            "river_wolf-image-2",
+            "river_wolf-image-3"
         ],
         model_name: "river_wolf",
         latitude: -12.82,
@@ -239,9 +237,9 @@ let animalsData: [Animal] = [
         gestation: "93 a 105 días, con camadas de 1 a 4 crías.",
         in_danger: true,
         images: [
-            "https://th.bing.com/th/id/OIP.IBD2TVV4Edg0UDQjRHjW6AAAAA?rs=1&pid=ImgDetMain",
-            "https://th.bing.com/th/id/OIP.2lY3VAD8ZBUaBzPtKUv5pgAAAA?rs=1&pid=ImgDetMain",
-            "https://th.bing.com/th/id/R.653d2872d0bcce324cc8be6bea7f4858?rik=UQIDSbtPt1rkBw&pid=ImgRaw&r=0&sres=1&sresct=1"
+            "jaguar-image-1",
+            "jaguar-image-2",
+            "jaguar-image-3"
         ],
         model_name: "jaguar",
         latitude: -12,
@@ -261,9 +259,9 @@ let animalsData: [Animal] = [
         gestation: "Incubación de 90 a 100 días.",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/R.a21e8ffbd1506e7d4a6c43b5d4cf3de2?rik=CRhgWFiWkhH2jQ&riu=http%3a%2f%2fwww.cocodrilopedia.com%2fwp-content%2fuploads%2f2011%2f12%2fcaiman-negro.jpg&ehk=%2fkDxyq9egiAWYWuGkVhJK8LGFqT27Td3DMkeVQM6EJw%3d&risl=&pid=ImgRaw&r=0",
-            "https://latinrootstravel.com/wp-content/uploads/2019/10/Black-Caiman-1-480x343.jpg",
-            "https://th.bing.com/th/id/R.0fef2373fec89d3d24b40beada344f93?rik=zrl2mhoYbKtQpg&riu=http%3a%2f%2f2.bp.blogspot.com%2f_aDylgVjO-2A%2fSvSbyyVUtlI%2fAAAAAAAAADw%2fUN7n6IwuiRE%2fs320%2fYacare.jpg&ehk=Wok9ls52Cpj4r5l4ID55Kgd5CQuUxHjyDpmcjfVCCTE%3d&risl=&pid=ImgRaw&r=0"
+            "black_caiman-image-1",
+            "black_caiman-image-2",
+            "black_caiman-image-3"
         ],
         model_name: "black_caiman",
         latitude: -5.5,
@@ -283,9 +281,9 @@ let animalsData: [Animal] = [
         gestation: "225 días, con una sola cría por camada.",
         in_danger: true,
         images: [
-            "https://th.bing.com/th/id/R.1f5ab064656f2514b9f78a3b093b5701?rik=jEZF8stZ2AUGwA&pid=ImgRaw&r=0",
-            "https://cdn.shopify.com/s/files/1/0461/1774/8901/files/Mono_Choro_Cola_Amarilla_2_a2e6b110-0e15-4b0b-800f-715fee1cd66b_480x480.jpg?v=1638542508",
-            "https://alchetron.com/cdn/yellow-tailed-woolly-monkey-f6d16e7a-5107-44ff-8741-bff24e331b1-resize-750.jpg"
+            "yellow_monkey-image-1",
+            "yellow_monkey-image-2",
+            "yellow_monkey-image-3"
         ],
         model_name: "yellow_monkey",
         latitude: -6.007778,
@@ -305,9 +303,9 @@ let animalsData: [Animal] = [
         gestation: "91 días, con camadas de 1 a 6 crías.",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/OIP.c981gsRT77-eNEEJS5a8IwAAAA?rs=1&pid=ImgDetMain",
-            "https://th.bing.com/th/id/OIP.NxpW_lE9JdDXClpZvSlYJwAAAA?rs=1&pid=ImgDetMain",
-            "https://i.pinimg.com/474x/fb/c1/77/fbc1771ebfa19f3144841cf8349bd11a.jpg"
+            "puma-image-1",
+            "puma-image-2",
+            "puma-image-3"
         ],
         model_name: "puma",
         latitude: -15.609329,
@@ -327,9 +325,8 @@ let animalsData: [Animal] = [
         gestation: "Gestación de 11 meses, con una sola cría por camada.",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/OIP.YzvysN0NFull8CSqBfydkAAAAA?rs=1&pid=ImgDetMain",
-            "https://th.bing.com/th/id/OIP.l58FxMTt_qPybW0i5l1oGgAAAA?rs=1&pid=ImgDetMain",
-            "https://th.bing.com/th/id/R.e697c20c864ba700aa15de0070ec1bdd?rik=%2bhBtyfJQQVNB7Q&riu=http%3a%2f%2f1.bp.blogspot.com%2f_KZYjBtEY_rU%2fSq6as2NJCTI%2fAAAAAAAACaw%2fg7n50Aw-ccY%2fs400%2fDelfinrosado-AMAZONAS.jpg&ehk=PaAGQEJtMfgbacnA4Xjcd9ccxgUzqo%2bM7tp86gN%2fAic%3d&risl=&pid=ImgRaw&r=0"
+            "pink_dolphin-image-1",
+            "pink_dolphin-image-3"
         ],
         model_name: "pink_dolphin",
         latitude: -5.51,
@@ -349,9 +346,9 @@ let animalsData: [Animal] = [
         gestation: "Gestación de 6 a 7 meses, con camadas de 10 a 20 crías.",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/R.00601c26641181b5edae4873bc0db34f?rik=%2fJGyJwCBYKFLLg&riu=http%3a%2f%2fwww.anipedia.net%2fimages%2ffotos-cascabel.jpg&ehk=Iq9tJQIRC0%2fRnoCE2tkSNfQalev9t%2fxCjjbO47mTlcg%3d&risl=&pid=ImgRaw&r=0",
-            "https://animalesde.net/wp-content/uploads/2016/08/Cascabel-diamante-478x300.jpg",
-            "https://th.bing.com/th/id/R.6d38d1c941dbe9494721a8ea254e80f7?rik=if0aqYfDOi7X%2fQ&pid=ImgRaw&r=0"
+            "cascabel-image-1",
+            "cascabel-image-2",
+            "cascabel-image-3"
         ],
         model_name: "cascabel",
         latitude: -13.834722,
@@ -371,8 +368,8 @@ let animalsData: [Animal] = [
         gestation: "Gestación de 5 a 8 meses, con camadas de 10 a 64 crías.",
         in_danger: false,
         images: [
-            "https://i.ytimg.com/vi/p2eu1LoOjUc/hqdefault.jpg",
-            "https://th.bing.com/th/id/OIP.-vpTr5yB_f0IaAzwO4-fSQHaFs?w=600&h=461&rs=1&pid=ImgDetMain"
+            "constrictor-image-1",
+            "constrictor-image-2"
         ],
         model_name: "constrictor",
         latitude: -11.13,
@@ -392,9 +389,9 @@ let animalsData: [Animal] = [
         gestation: "Gestación de aproximadamente 6 meses, con una cría por parto.",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/OIP.9Ik_GlnmIYZSD7Lngbgj9QAAAA?rs=1&pid=ImgDetMain",
-            "https://1.bp.blogspot.com/-o8jUWDpuk3A/Xqyc2WMYjtI/AAAAAAAALg0/Zi95YdO0qzQu5zpgtFQa1xQIryIZCX12gCLcBGAsYHQ/s400/gettyimages-697865234-612x612.jpg",
-            "https://1.bp.blogspot.com/-CnobSJgvaj4/Xqyc2F1qiVI/AAAAAAAALgs/myhwtc09AgQ6rvJmix1WsWpeI0G7PZztgCLcBGAsYHQ/s400/gettyimages-697865078-612x612.jpg"
+            "red_monkey-image-1",
+            "red_monkey-image-2",
+            "red_monkey-image-3"
         ],
         model_name: "red_monkey",
         latitude: -12.81,
@@ -414,9 +411,9 @@ let animalsData: [Animal] = [
         gestation: "Incubación de aproximadamente 28 a 32 días, con una nidada de un solo huevo.",
         in_danger: false,
         images: [
-            "https://extincionanimal.org/wp-content/uploads/2020/05/flamenco-andino-3.jpg",
-            "https://th.bing.com/th/id/OIP.qKb6sUfTAqyJ8KI2A-7pIAAAAA?rs=1&pid=ImgDetMain",
-            "https://th.bing.com/th/id/OIP.4RmVDiZuKHzPfYU8U1JVxgAAAA?rs=1&pid=ImgDetMain"
+            "andean_flamenco-image-1",
+            "andean_flamenco-image-2",
+            "andean_flamenco-image-3"
         ],
         model_name: "andean_flamenco",
         latitude: -15.93,
@@ -436,9 +433,9 @@ let animalsData: [Animal] = [
         gestation: "Gestación de aproximadamente 55 a 60 días, con camadas de 2 a 4 cachorros.",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/OIP.KVywP16aXJKZXY8uxGaR_gAAAA?rs=1&pid=ImgDetMain",
-            "https://th.bing.com/th/id/R.1285f40e96f6a45333cde40a4b753ba6?rik=vAIr0AdEtqB7yw&riu=http%3a%2f%2f2.bp.blogspot.com%2f__M3zo0LRQPY%2fR3lPx6n3qtI%2fAAAAAAAAB5A%2fmjDWPNtEkK8%2fw1200-h630-p-k-no-nu%2fZorro%2b2.jpg&ehk=YqPs7dWVzOv7nPkpqqcOu%2b1w2fc5H0wVOiGryeFu3Y4%3d&risl=&pid=ImgRaw&r=0",
-            "https://th.bing.com/th/id/OIP.htSk_D0YNA9dd5NUTJJkFwHaE7?rs=1&pid=ImgDetMain"
+            "andean_fox-image-1",
+            "andean_fox-image-2",
+            "andean_fox-image-3"
         ],
         model_name: "andean_fox",
         latitude: -9,
@@ -458,9 +455,9 @@ let animalsData: [Animal] = [
         gestation: "350 a 360 días, generalmente dando a luz a una cría, conocida como \"cria\".",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/OIP.cbAOhXQDvumK4HZ6_R7VlwAAAA?rs=1&pid=ImgDetMain",
-            "https://amoviajar.com.mx/wp-content/uploads/Viaje-Amoviajar-MACHU-PICCHU-1-1.jpg",
-            "https://th.bing.com/th/id/OIP.KW9hY0WU4A1ijyb5z54DqwAAAA?rs=1&pid=ImgDetMain"
+            "llama-image-1",
+            "llama-image-2",
+            "llama-image-3"
         ],
         model_name: "llama",
         latitude: -15.924,
@@ -480,8 +477,8 @@ let animalsData: [Animal] = [
         gestation: "Gestación de aproximadamente 50 días, con camadas de 3 a 6 cachorros.",
         in_danger: false,
         images: [
-            "https://2.bp.blogspot.com/-rN-NH99YV94/W8y1IA6aWvI/AAAAAAAAi0Q/2s3mE82t9hciz7owHQgPuPP8RnUY7im-ACLcBGAs/s400/Zorrodesechura_03-min-1.jpg",
-            "https://th.bing.com/th/id/R.3684e1b0911a10e33495523234b66396?rik=LYet6F6aaiPPeQ&pid=ImgRaw&r=0"
+            "coast_fox-image-1",
+            "coast_fox-image-2"
         ],
         model_name: "coast_fox",
         latitude: -11.36,
@@ -501,9 +498,9 @@ let animalsData: [Animal] = [
         gestation: "Incubación de aproximadamente 30 a 36 días, con nidadas de 2 a 3 huevos.",
         in_danger: false,
         images: [
-            "https://www.mundoecologia.com.br/wp-content/uploads/2019/10/Pelicano-Peruano-3.jpg",
-            "https://i.pinimg.com/originals/ae/17/1d/ae171d32c9fe0882837d2177baf31e69.jpg",
-            "https://i.pinimg.com/474x/73/30/a2/7330a211001976bafb3d88a0c8a3b59b--belly-shoebill.jpg"
+            "pelican-image-1",
+            "pelican-image-2",
+            "pelican-image-3"
         ],
         model_name: "pelican",
         latitude: -12.218,
@@ -523,9 +520,9 @@ let animalsData: [Animal] = [
         gestation: "Pone de 2 a 4 huevos por nidada, incubación de aproximadamente 14-18 días.",
         in_danger: false,
         images: [
-            "https://th.bing.com/th/id/R.2a8cdbb49f909f3c94d064231177e703?rik=JJiJPxfFKmUiJw&pid=ImgRaw&r=0",
-            "https://i.pinimg.com/originals/6d/86/e0/6d86e0e017e486133e5be667fe5782d3.jpg",
-            "https://images.pxsol.com/1852/company/library/user/133329896481a7d0964bd4153a9a713222f07d0a073.jpg?auto=format&browser=Default%20Browser&h=400&ixlib=php-3.3.1&w=400&s=5387e18d853440ac7f9a4fcf6f595727"
+            "carpenter-image-1",
+            "carpenter-image-2",
+            "carpenter-image-3"
         ],
         model_name: "carpenter",
         latitude: -5.66,

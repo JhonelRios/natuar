@@ -123,14 +123,20 @@ struct AnimalDetailsView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
                         ForEach(animal.images, id: \.self) { imageUrl in
-                            AsyncImage(url: URL(string: imageUrl)) { image in
-                                image.resizable().aspectRatio(contentMode: .fill)
-                            } placeholder: {
-                                ProgressView()
-                            }
-                            .frame(width: 200, height: 200)
-                            .clipped()
-                            .clipShape(RoundedRectangle(cornerRadius: 4))
+                            //                            AsyncImage(url: URL(string: imageUrl)) { image in
+                            //                                image.resizable().aspectRatio(contentMode: .fill)
+                            //                            } placeholder: {
+                            //                                ProgressView()
+                            //                            }
+                            //                            .frame(width: 200, height: 200)
+                            //                            .clipped()
+                            //                            .clipShape(RoundedRectangle(cornerRadius: 4))
+                            Image(imageUrl)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 200, height: 200)
+                                .clipped()
+                                .clipShape(RoundedRectangle(cornerRadius: 4))
                         }
                     }
                 }
