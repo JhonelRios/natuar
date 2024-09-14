@@ -73,54 +73,77 @@ struct LoginScreen: View {
     @State var hasLoginError: Bool = false
     
     var body : some View {
-        GeometryReader{ geometry in
-            VStack{
-                Image("FrontPage")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: geometry.size.width*1, height: geometry.size.height*0.4)
-                
-                VStack(alignment: .leading){
+        NavigationView {
+            GeometryReader{ geometry in
+                VStack{
+                    Image("FrontPage")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: geometry.size.width*1, height: geometry.size.height*0.4)
                     
-                    Text("Iniciar Sesión").font(.system(size: 24,weight: .bold))
-                    
-                    //                    VStack {
-                    //                    Form {
-                    MaterialDesignTextField($viewModel.text1,
-                                            placeholder: viewModel.placeholder1,
-                                            hint: $viewModel.hint1,
-                                            editing: $editingTextField1,
-                                            valid: $viewModel.text1Valid,
-                                            autocapitalization: .never)
-                    
-                    MaterialDesignTextField($viewModel.text2,
-                                            placeholder: viewModel.placeholder2,
-                                            hint: $viewModel.hint2,
-                                            editing: $editingTextField2,
-                                            valid: $viewModel.text2Valid,
-                                            autocapitalization: .never,
-                                            isPassword: true)
-                    //                    }
-                    //                    .formStyle(.columns)
-                    
-                    //                    }
-                    //                    .contentShape(Rectangle())
-                    //                    .onTapGesture {
-                    //                        editingTextField1 = false
-                    //                        editingTextField2 = false
-                    //                    }
-                    
-                    VStack(alignment: .center, spacing: 20){
-                        CustomLoginButton(text: "Ingresar", action: {
-                            loginViewModel.login(email: viewModel.text1, password: viewModel.text2) { success in
-                                if success {
-                                    loginAction()
-                                } else {
-                                    print("Login failed")
-                                    hasLoginError = true
+                    VStack(alignment: .leading){
+                        
+                        Text("Iniciar Sesión").font(.system(size: 24,weight: .bold))
+                        
+                        MaterialDesignTextField($viewModel.text1,
+                                                placeholder: viewModel.placeholder1,
+                                                hint: $viewModel.hint1,
+                                                editing: $editingTextField1,
+                                                valid: $viewModel.text1Valid,
+                                                autocapitalization: .never)
+                        
+                        MaterialDesignTextField($viewModel.text2,
+                                                placeholder: viewModel.placeholder2,
+                                                hint: $viewModel.hint2,
+                                                editing: $editingTextField2,
+                                                valid: $viewModel.text2Valid,
+                                                autocapitalization: .never,
+                                                isPassword: true)
+                        
+                        VStack(alignment: .center, spacing: 20){
+                            CustomLoginButton(text: "Ingresar", action: {
+                                loginViewModel.login(email: viewModel.text1, password: viewModel.text2) { success in
+                                    if success {
+                                        loginAction()
+                                    } else {
+                                        print("Login failed")
+                                        hasLoginError = true
+                                    }
+                                }
+                            }, isLoading: loginViewModel.isLoading)
+                            
+                            //                        Button("Olvidaste tu contraseña?") {
+                            //                        }
+                            
+                            Text("o").foregroundColor(Color(.gray))
+                            
+                            HStack {
+                                Spacer() // Agrega un espacio antes del botón de Google
+                                CircularButtonWithLogo(imageName: "google-logo") {
+                                    // Acción del botón de Google
+                                    handleGoogleSignIn()
+                                }
+                                
+                                //                            CircularButtonWithLogo(imageName: "apple-logo") {
+                                //                                // Acción del botón de Apple
+                                //                            }
+                                
+                                Spacer() // Agrega un espacio
+                            }
+                            
+                            HStack(spacing: 0) {
+                                Text("¿Aún no tienes una cuenta?").font(.system(size: 16))
+                                    .foregroundColor(.black)
+                                
+                                Spacer().frame(width: 5)
+                                
+                                NavigationLink(destination: RegisterScreen()) {
+                                    Text("Crea una")
+                                        .foregroundColor(Color("PrimaryColor"))
+                                        .underline()
                                 }
                             }
-                        }, isLoading: loginViewModel.isLoading)
+                        }.frame(width: geometry.size.width * 0.9).font(.system(size: 16, weight: .bold)).foregroundColor(Color("PrimaryColor"))
                         
 //                        Button("Olvidaste tu contraseña?") {
 //                            //TODO: login
@@ -154,6 +177,7 @@ struct LoginScreen: View {
                 Text(loginViewModel.errorMessage ?? "Ha ocurrido un error")
             }
         }
+        .navigationBarHidden(true)
     }
     
     func handleGoogleSignIn() {

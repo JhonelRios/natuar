@@ -1,41 +1,25 @@
 //
-//  UserViewModel.swift
+//  RegisterViewModel.swift
 //  natuar
 //
-//  Created by Jhonel Rios Jaimes on 12/06/24.
+//  Created by Jhonel Rios Jaimes on 9/09/24.
 //
 
 import Foundation
 
-class UserViewModel: ObservableObject {
-    @Published var user: User?
-    @Published var seenAnimals: [Animal] = []
-    @Published var isLoading = false
+class RegisterViewModel : ObservableObject {
     @Published var errorMessage: String?
+    @Published var isLoading: Bool = false
     
-    func fetchUserDetails() {
-        self.user = offlineUser.user
-    }
-    
-    func fetchSeenAnimals() {
-        self.seenAnimals = offlineUser.seenAnimals
-    }
-    
-    func updateUser(userId: Int, name: String, completion: @escaping (Bool) -> Void) {
-        let userUrl = "\(Constants.backendURL)/tourists/\(userId)"
-        guard let url = URL(string: userUrl) else {
-            errorMessage = "Invalid URL"
-            return
-        }
+    func register(name: String, email: String, password: String, completion: @escaping (Bool) -> Void) {
+        let registerURL = "\(Constants.backendURL)/auth/register"
+        guard let url = URL(string: registerURL) else { return }
         
-        let accessToken = UserDefaultsManager().getAccessToken()
-        
-        let body = ["name": name]
+        let body = ["name": name, "email": email, "password": password]
         guard let jsonBody = try? JSONSerialization.data(withJSONObject: body) else { return }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "PATCH"
-        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization") // Add your token
+        request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonBody
         
@@ -46,7 +30,7 @@ class UserViewModel: ObservableObject {
                 self.isLoading = false
                 
                 if let error = error {
-                    self.errorMessage = "Update user request failed: \(error.localizedDescription)"
+                    self.errorMessage = "Register request failed: \(error.localizedDescription)"
                     completion(false)
                     return
                 }
@@ -58,7 +42,7 @@ class UserViewModel: ObservableObject {
                 }
                 
                 switch httpResponse.statusCode {
-                case 200:
+                case 201:
                     completion(true)
                 default:
                     self.errorMessage = "Failed with HTTP code: \(httpResponse.statusCode)"
@@ -66,13 +50,5 @@ class UserViewModel: ObservableObject {
                 }
             }
         }.resume()
-    }
-    
-    func deleteUser(userId: Int, completion: @escaping (Bool) -> Void) {
-        completion(true)
-    }
-    
-    func logout() {
-        UserDefaultsManager().clearAccessToken()
     }
 }

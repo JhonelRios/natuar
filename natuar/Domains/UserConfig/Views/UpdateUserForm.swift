@@ -22,10 +22,20 @@ final class UpdateUserViewModel: ObservableObject {
     func validateName() {
         // TODO
     }
+    
+    func setCurrentName(currentName: String) {
+        self.name = currentName
+    }
 }
 
 struct UpdateUserForm: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    var currentUser: User
+    var updateUserData: () -> Void
+    
     @StateObject private var viewModel = UpdateUserViewModel()
+    @StateObject private var userViewModel = UserViewModel()
     
     @State private var editingName = false
     
@@ -46,24 +56,27 @@ struct UpdateUserForm: View {
                 )
                 
                 CustomLoginButton(text: "Guardar cambios", action: {
-    //                loginViewModel.login(email: viewModel.text1, password: viewModel.text2) { success in
-    //                    if success {
-    //                        loginAction()
-    //                    } else {
-    //                        print("Login failed")
-    //                        hasLoginError = true
-    //                    }
-    //                }
-                }, isLoading: false)
+                    userViewModel.updateUser(userId: currentUser.id, name: viewModel.name) { success in
+                        if success {
+                            updateUserData()
+                            presentationMode.wrappedValue.dismiss()
+                        } else {
+                            print("Update user failed")
+                        }
+                    }
+                }, isLoading: userViewModel.isLoading)
                 
                 Spacer()
             }
             .padding()
             .navigationTitle("Actualizar datos")
+            .onAppear {
+                viewModel.setCurrentName(currentName: currentUser.name)
+            }
         }
     }
 }
 
-#Preview {
-    UpdateUserForm()
-}
+//#Preview {
+//    UpdateUserForm(currentUserName: "Jhonel Rios")
+//}

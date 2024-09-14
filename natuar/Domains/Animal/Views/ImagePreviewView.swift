@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ImagePreviewView: View {
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var globalData: GlobalData
+    
     let image: UIImage
     let onDismiss: () -> Void
     
@@ -45,6 +47,12 @@ struct ImagePreviewView: View {
         }
         .navigationBarHidden(true)
         .toolbar(.hidden, for: .tabBar)
+        .onAppear {
+            globalData.hideTabBar()
+        }
+        .onDisappear {
+            globalData.showTabBar()
+        }
     }
 }
 
