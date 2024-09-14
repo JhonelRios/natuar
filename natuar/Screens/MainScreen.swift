@@ -7,8 +7,22 @@
 
 import SwiftUI
 
+class GlobalData: ObservableObject {
+    @Published var isTabBarShowed = true
+    
+    func hideTabBar() {
+        isTabBarShowed = false
+    }
+    
+    func showTabBar() {
+        isTabBarShowed = true
+    }
+}
+
 struct MainScreen: View {
     @State var logged = false
+    
+    @StateObject var globalData = GlobalData()
     
     var body: some View {
         if !logged {
@@ -20,12 +34,14 @@ struct MainScreen: View {
                         Image(systemName: "mappin.and.ellipse")
                         Text("Mapa")
                     }
+                    .toolbar(globalData.isTabBarShowed ? .visible : .hidden, for: .tabBar)
                 
                 FavoriteAnimalsScreen()
                     .tabItem {
                         Image(systemName: "heart").environment(\.symbolVariants, .none)
                         Text("Favoritos")
                     }
+                    .toolbar(globalData.isTabBarShowed ? .visible : .hidden, for: .tabBar)
                 
                 UserConfigScreen(logoutAction: { logged.toggle() })
                     .tabItem {
@@ -34,6 +50,7 @@ struct MainScreen: View {
                     }
             }
             .accentColor(Color("PrimaryColor"))
+            .environmentObject(globalData)
         }
     }
 }
