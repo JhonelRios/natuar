@@ -24,17 +24,28 @@ struct FavoriteAnimalsScreen: View {
         NavigationStack {
             ZStack {
                 List {
-                    ForEach(filteredAnimals, id: \.id) { animal in
-                        AnimalCard(animal: animal, background: colors[animal.id % colors.count], onDelete: {
-                            favoriteViewModel.fetchFavoriteAnimals() { success in
-                                if success {
-                                    print(favoriteViewModel.favoriteAnimals)
-                                } else {
-                                    print(favoriteViewModel.errorMessage ?? "")
-                                }
-                            }
-                        })
+                    if filteredAnimals.isEmpty {
+                        VStack {
+                            Text("No tienes animales favoritos aún. Agrega algunos a tu lista.")
+                                .font(.headline)
+                                .foregroundColor(.secondary)
+                                .multilineTextAlignment(.center)
+                                .padding()
+                        }
                         .listRowSeparator(.hidden)
+                    } else {
+                        ForEach(filteredAnimals, id: \.id) { animal in
+                            AnimalCard(animal: animal, background: colors[animal.id % colors.count], onDelete: {
+                                favoriteViewModel.fetchFavoriteAnimals() { success in
+                                    if success {
+                                        print(favoriteViewModel.favoriteAnimals)
+                                    } else {
+                                        print(favoriteViewModel.errorMessage ?? "")
+                                    }
+                                }
+                            })
+                            .listRowSeparator(.hidden)
+                        }
                     }
                 }
                 .navigationTitle("Animales Favoritos")
