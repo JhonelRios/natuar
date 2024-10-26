@@ -30,7 +30,7 @@ class RegisterViewModel : ObservableObject {
                 self.isLoading = false
                 
                 if let error = error {
-                    self.errorMessage = "Error en el registro: \(error.localizedDescription)"
+                    self.errorMessage = "Datos inválidos"
                     completion(false)
                     return
                 }
@@ -45,7 +45,7 @@ class RegisterViewModel : ObservableObject {
                 case 201:
                     completion(true)
                 case 400..<500:
-                    self.errorMessage = "Error en el registro. Verifica tus datos."
+                    self.errorMessage = "Datos inválidos"
                     completion(false)
                 default:
                     self.errorMessage = "Failed with HTTP code: \(httpResponse.statusCode)"

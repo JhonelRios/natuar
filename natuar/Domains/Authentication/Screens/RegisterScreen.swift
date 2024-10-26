@@ -167,7 +167,7 @@ struct RegisterScreen: View {
                 }.padding()
             }
             .ignoresSafeArea()
-            .alert("Error al crear usuario", isPresented: $hasRegisterError) {
+            .alert("Error al crear cuenta", isPresented: $hasRegisterError) {
                 Button("OK", role: .cancel) { }
             } message: {
                 Text(registerViewModel.errorMessage ?? "Ha ocurrido un error")
